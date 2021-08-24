@@ -1,0 +1,6 @@
+.idea
+result
+test
+data
+*model.ckpt*
+*checkpoint
