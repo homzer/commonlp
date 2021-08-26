@@ -4,7 +4,7 @@ import re
 import tensorflow as tf
 
 
-def filter_compatible_params(ckpt_dir):
+def filter_compatible_params(checkpoint_file):
     """
     Filter the same parameters both in `trainable params` and `checkpoint params`.
     For example:
@@ -21,11 +21,10 @@ def filter_compatible_params(ckpt_dir):
         [<tf.Variable 'B:0' shape=(512, 768) dtype=float32_ref>,
         <tf.Variable 'C:0' shape=(768,) dtype=float32_ref>]
         Because only `C` and `B` are both shared by `trainable params` and `checkpoint params`
-    :param ckpt_dir: directory of checkpoint.
+    :param checkpoint_file: directory of checkpoint file.
     :return: list of tf.Variable
     """
-    ckpt_state = tf.train.get_checkpoint_state(ckpt_dir)
-    reader = tf.train.NewCheckpointReader(ckpt_state.model_checkpoint_path)
+    reader = tf.train.NewCheckpointReader(checkpoint_file)
     ckpt_vars = reader.get_variable_to_shape_map()
     ckpt_vars = sorted(ckpt_vars.items(), key=lambda x: x[0])
     train_vars = tf.trainable_variables()
@@ -107,8 +106,10 @@ class CheckpointHelper:
                 new_name = new_name.replace("self/", '')
             if 'bert/' in new_name:
                 new_name = new_name.replace('bert/', '')
-            if ':0' in new_name:
-                new_name = new_name.replace(':0', '')
+            if 'encoder' in new_name:
+                new_name = new_name.replace('encoder', 'layer')
+            if 'transformer' in new_name:
+                new_name = new_name.replace('transformer', 'encoder')
             name_to_variable[new_name] = var
         saver = tf.train.Saver(name_to_variable)
         saver.save(sess, save_ckpt_file)

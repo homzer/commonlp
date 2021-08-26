@@ -88,12 +88,11 @@ class Model(object):
         saver.save(self.sess, save_path)
         print("Saving model complete!")
 
-    def restore(self, ckpt_dir="config"):
-        ckpt_state = tf.train.get_checkpoint_state(ckpt_dir)
-        print("Restore model from %s......" % ckpt_state.model_checkpoint_path)
+    def restore(self, checkpoint_file="config/model.ckpt"):
+        print("Restore model from %s......" % checkpoint_file)
         # Filtering compatible parameters
-        rvars = filter_compatible_params(ckpt_dir)
+        rvars = filter_compatible_params(checkpoint_file)
         print("\n".join([str(var.name) for var in rvars]))
         saver = tf.train.Saver(rvars)
-        saver.restore(self.sess, ckpt_state.model_checkpoint_path)
+        saver.restore(self.sess, checkpoint_file)
         print("Restoring model complete!")

@@ -5,6 +5,7 @@ from src.input.data_generator import DataGenerator
 from src.model.cnn.Conv1D import Conv1D, Pooling1D, Flatten1D
 from src.model.dnn.Dense import Dense
 from src.model.dnn.Dropout import Dropout
+from src.model.dnn.LayerNorm import LayerNorm
 from src.model.modeling import Model
 from src.model.transformer.Embedding import Embedding
 from src.model.transformer.Encoder import Encoder
@@ -23,12 +24,17 @@ def model_graph(input_ids, label_ids):
     embeddings = Embedding(input_ids)
     with tf.variable_scope("encoder"):
         attention_mask = create_attention_mask(input_ids, create_tensor_mask(input_ids))
-        encoder_output, _ = Encoder(embeddings, attention_mask, scope='layer_1')
-        encoder_output, _ = Encoder(encoder_output, attention_mask, scope='layer_2')
-        encoder_output, _ = Encoder(encoder_output, attention_mask, scope='layer_3')
-        encoder_output, _ = Encoder(encoder_output, attention_mask, scope='layer_4')
-        encoder_output, _ = Encoder(encoder_output, attention_mask, scope='layer_5')
-        encoder_output, probs = Encoder(encoder_output, attention_mask, scope='layer_6')
+        encoder_output, _ = Encoder(embeddings, attention_mask, scope='layer_0')
+        encoder_output, _ = Encoder(encoder_output, attention_mask, scope='layer_1')
+    # embeddings = reshape2Matrix(embeddings)
+    # dense_output = Dense(embeddings, 3072)
+    # dense_output = Dense(dense_output, 768)
+    # dense_output = Dropout(dense_output)
+    # norm_output = LayerNorm(dense_output + embeddings)
+    # dense_output = Dense(norm_output, 3072)
+    # dense_output = Dense(dense_output, 768)
+    # dense_output = Dropout(dense_output)
+    # norm_output = LayerNorm(dense_output + norm_output)
     with tf.variable_scope("conv"):
         conv_input = reshape2Matrix(encoder_output)  # [b*s, 768]
         conv_output = Conv1D(conv_input, [3, 1, 16], name="filter_1")  # [b*s, 768, 16]
@@ -51,7 +57,7 @@ def model_graph(input_ids, label_ids):
     loss = tf.reduce_mean(
         tf.nn.sparse_softmax_cross_entropy_with_logits(
             logits=logits, labels=label_ids))
-    return predicts, loss, tf.reshape(probs, [-1, ConfigUtil.seq_length, ConfigUtil.seq_length])
+    return predicts, loss, None
 
 
 def read_file(filename):
@@ -66,9 +72,9 @@ def read_file(filename):
     return texts, labels
 
 
-def train():
-    train_features, train_labels = read_file("./data/topic_train.txt")
-    test_features, test_labels = read_file("./data/topic_test.txt")
+def train(checkpoint_file, save_steps=5000):
+    train_features, train_labels = read_file("./data/new_topic_train.txt")
+    test_features, test_labels = read_file("./data/new_topic_test.txt")
     print("*****Examples*****")
     for i in range(5):
         print("Text: ", train_features[i])
@@ -83,25 +89,22 @@ def train():
     for i in range(5):
         print("input_ids: ", " ".join([str(x) for x in train_features[i]]))
         print("label_ids: ", train_labels[i])
-        print("")
 
     train_generator = DataGenerator(
-        batch_size=4,
-        epochs=32,
+        batch_size=8,
+        epochs=64,
         features=train_features,
         labels=train_labels)
-
     test_generator = DataGenerator(
         batch_size=8,
         epochs=4,
         features=test_features,
         labels=test_labels)
-
     model = Model(features=tf.placeholder("int32", [None, ConfigUtil.seq_length]),
                   labels=tf.placeholder("int32", [None, ]),
                   model_graph=model_graph)
 
-    model.restore("config")
+    model.restore(checkpoint_file)
     total_steps = train_generator.total_steps
     for step in range(total_steps):
         train_batch_features, train_batch_labels = train_generator.next_batch()
@@ -127,12 +130,12 @@ def train():
             print("Evaluate Labels:\t", " ".join([str(label) for label in eval_batch_labels]))
             print("Evaluate Predicts:\t", " ".join([str(pred) for pred in predicts]))
             print("************************************")
-        if step % 10000 == 0:
-            model.save(step, ConfigUtil.output_dir)
-    model.save(total_steps, ConfigUtil.output_dir)
+        if step % save_steps == 0 and step != 0:
+            model.save(step, "result/topic")
+    model.save(total_steps, "result/topic")
 
 
-def predict():
+def predict(checkpoint_file):
     texts = ['外需国内地产周期羸弱带动经济下行', '新冠肺炎疫情导致股市下跌', '今天亲师附小即将开学了可能会因为疫情推迟', '今天亲师附小即将开学了可能会推迟']
     labels = [0]
     processor = DataProcessor(ConfigUtil.vocab_file)
@@ -141,12 +144,12 @@ def predict():
         features=tf.placeholder("int32", [None, ConfigUtil.seq_length]),
         labels=tf.placeholder("int32", [None, ]),
         model_graph=model_graph)
-    model.restore("result/topic")
+    model.restore(checkpoint_file)
     predictions = model.predict(features, labels)
     print("predicts: ", [id2label.get(prediction) for prediction in predictions])
 
 
-def validate():
+def validate(checkpoint_file):
     texts = ['外需国内地产周期羸弱带动经济下行', '新冠肺炎疫情导致股市下跌', '今天亲师附小即将开学了可能会因为疫情推迟', '今天亲师附小即将开学了可能会推迟']
     labels = [0, 1, 1, 2]
     processor = DataProcessor(ConfigUtil.vocab_file)
@@ -155,10 +158,12 @@ def validate():
         features=tf.placeholder("int32", [None, ConfigUtil.seq_length]),
         labels=tf.placeholder("int32", [None, ]),
         model_graph=model_graph)
-    model.restore("result")
+    model.restore(checkpoint_file)
     variables = model.validate(features, labels)
-    draw_array_img(variables, 'result/image')
+    draw_array_img(variables, 'result/topic/image')
 
 
 if __name__ == '__main__':
-    train()
+    checkpoint = 'config/model.ckpt'
+    train(checkpoint, 3000)
+    # validate()
