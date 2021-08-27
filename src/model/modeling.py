@@ -50,11 +50,7 @@ class Model(object):
             feed_dict={
                 self.features: features,
                 self.labels: labels})
-        global_step = self.sess.run(
-            self.global_step,
-            feed_dict={
-                self.features: features,
-                self.labels: labels})
+        global_step = self.sess.run(self.global_step)
         return global_step
 
     def evaluate(self, features, labels):
@@ -96,3 +92,6 @@ class Model(object):
         saver = tf.train.Saver(rvars)
         saver.restore(self.sess, checkpoint_file)
         print("Restoring model complete!")
+
+    def __delete__(self, instance):
+        self.sess.close()

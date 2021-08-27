@@ -1,18 +1,15 @@
-import tensorflow as tf
 import numpy as np
+import tensorflow as tf
+from tensorflow.contrib.layers.python.layers import initializers
 
 from src.input.data_generator import DataGenerator
-from src.model.cnn.Conv1D import Conv1D, Pooling1D, Flatten1D
-from src.model.dnn.Dense import Dense
-from src.model.dnn.Dropout import Dropout
-from src.model.dnn.LayerNorm import LayerNorm
+from src.input.data_processor import DataProcessor
 from src.model.modeling import Model
 from src.model.transformer.Embedding import Embedding
 from src.model.transformer.Encoder import Encoder
 from src.utils import ConfigUtil
 from src.utils import LogUtil
-from src.utils.TensorUtil import create_tensor_mask, create_attention_mask, reshape2Matrix
-from src.input.data_processor import DataProcessor
+from src.utils.TensorUtil import create_tensor_mask, create_attention_mask
 from src.utils.VisualUtil import draw_array_img
 
 LogUtil.set_verbosity(LogUtil.ERROR)
@@ -20,43 +17,56 @@ label2id = {'非金融': 0, '疫情金融': 1, '金融': 2, '疫情非金融': 3
 id2label = {0: '非金融', 1: '疫情金融', 2: '金融', 3: '疫情非金融'}
 
 
+def max_and_mean_concat(embeddings, input_mask):
+    """
+    根据掩码计算embeddings最后一维的平均值和最大值，并将其连接
+    :param embeddings: [batch_size, seq_length, embedding_size]
+    :param input_mask: [batch_size, seq_length] 1 为有效， 0 为无效
+    :return: embeds_mix [batch_size, embedding_size * 2]
+    """
+    input_mask = tf.cast(input_mask, dtype=tf.float32)
+    lengths = tf.reduce_sum(input_mask, axis=-1, keepdims=True)  # [batch_size, 1]
+    # 根据掩码对 embeddings 后面不需要部分置零
+    embeddings = embeddings * tf.expand_dims(input_mask, axis=-1)
+    # 求和取平均
+    embeds_mean = tf.reduce_sum(embeddings, axis=1) / lengths  # [batch_size, embedding_size]
+    # 求最大值
+    embeds_max = tf.reduce_max(embeddings, axis=1)  # [batch_size, embedding_size]
+    # 交叉连接
+    embeds_mean = tf.expand_dims(embeds_mean, axis=-1)
+    embeds_max = tf.expand_dims(embeds_max, axis=-1)
+    embeds_mix = tf.concat([embeds_mean, embeds_max], axis=-1)  # [batch_size, embedding_size, 2]
+    embeds_mix = tf.reshape(embeds_mix, shape=[-1, 2 * 768])
+    return embeds_mix
+
+
 def model_graph(input_ids, label_ids):
     embeddings = Embedding(input_ids)
     with tf.variable_scope("encoder"):
-        attention_mask = create_attention_mask(input_ids, create_tensor_mask(input_ids))
+        input_mask = create_tensor_mask(input_ids)
+        attention_mask = create_attention_mask(input_ids, input_mask)
         encoder_output, _ = Encoder(embeddings, attention_mask, scope='layer_0')
         encoder_output, _ = Encoder(encoder_output, attention_mask, scope='layer_1')
-    # embeddings = reshape2Matrix(embeddings)
-    # dense_output = Dense(embeddings, 3072)
-    # dense_output = Dense(dense_output, 768)
-    # dense_output = Dropout(dense_output)
-    # norm_output = LayerNorm(dense_output + embeddings)
-    # dense_output = Dense(norm_output, 3072)
-    # dense_output = Dense(dense_output, 768)
-    # dense_output = Dropout(dense_output)
-    # norm_output = LayerNorm(dense_output + norm_output)
-    with tf.variable_scope("conv"):
-        conv_input = reshape2Matrix(encoder_output)  # [b*s, 768]
-        conv_output = Conv1D(conv_input, [3, 1, 16], name="filter_1")  # [b*s, 768, 16]
-        conv_output = Pooling1D(conv_output, 4)  # [b*s, 192, 16]
-        conv_output = Dropout(conv_output)
-        conv_output = Conv1D(conv_output, [3, 16, 32], name="filter_2")  # [b*s, 384, 32]
-        conv_output = Pooling1D(conv_output, 4)  # [b*s, 48, 32]
-        conv_output = Dropout(conv_output)
-        conv_output = Conv1D(conv_output, [3, 32, 64], name="filter_3")  # [b*s, 192, 64]
-        conv_output = Pooling1D(conv_output, 4)  # [b*s, 12, 64]
-        conv_output = Dropout(conv_output)
-        flatten_output = Flatten1D(conv_output, 32)  # [b*s, 32]
-    with tf.variable_scope("projection"):
-        dense_output = Dense(flatten_output, 16)  # [b*s, 16]
-        dense_output = tf.reshape(
-            dense_output, shape=[-1, ConfigUtil.seq_length * int(dense_output.shape[-1])])
-        dense_output = Dropout(dense_output)  # [b, s * 16]
-        logits = Dense(dense_output, 4)
-    predicts = tf.argmax(logits, axis=-1)
-    loss = tf.reduce_mean(
-        tf.nn.sparse_softmax_cross_entropy_with_logits(
-            logits=logits, labels=label_ids))
+        encoder_output, _ = Encoder(encoder_output, attention_mask, scope='layer_2')
+        encoder_output, _ = Encoder(encoder_output, attention_mask, scope='layer_3')
+        encoder_output, _ = Encoder(encoder_output, attention_mask, scope='layer_4')
+        encoder_output, _ = Encoder(encoder_output, attention_mask, scope='layer_5')
+    with tf.variable_scope("theme"):
+        concat_embeds = max_and_mean_concat(encoder_output, input_mask)
+        with tf.variable_scope("logits"):
+            w = tf.get_variable(
+                'w', shape=[768 * 2, 4],
+                dtype=tf.float32, initializer=initializers.xavier_initializer())
+            b = tf.get_variable(
+                'b', shape=[4], dtype=tf.float32,
+                initializer=tf.zeros_initializer())
+            logits = tf.tanh(tf.nn.xw_plus_b(concat_embeds, w, b))  # [batch_size, num_themes]
+            # 获取最大下标，得到预测值
+            predicts = tf.argmax(logits, -1)
+        with tf.variable_scope("loss"):
+            loss = tf.reduce_mean(
+                tf.nn.sparse_softmax_cross_entropy_with_logits(
+                    logits=logits, labels=label_ids))
     return predicts, loss, None
 
 
@@ -164,6 +174,6 @@ def validate(checkpoint_file):
 
 
 if __name__ == '__main__':
-    checkpoint = 'config/model.ckpt'
+    checkpoint = 'config/model.ckpt-5088'
     train(checkpoint, 3000)
     # validate()

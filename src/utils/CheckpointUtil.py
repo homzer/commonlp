@@ -51,29 +51,44 @@ def print_param(name):
         print(sess.run(param))
 
 
-class CheckpointHelper:
-    def __init__(self, ckpt_file):
-        self.ckpt_file = ckpt_file
+def print_checkpoint_variables(checkpoint_file):
+    """ Print some variables from model checkpoint file. """
+    reader = tf.train.NewCheckpointReader(checkpoint_file)
+    var_dict = reader.get_variable_to_shape_map()
+    var_dict = sorted(var_dict.items(), key=lambda x: x[0])
+    for item in var_dict:
+        if 'adam' in item[0] or 'Adam' in item[0]:
+            continue
+        print(item)
 
-    def print_variables(self):
-        reader = tf.train.NewCheckpointReader(self.ckpt_file)
-        var_dict = reader.get_variable_to_shape_map()
-        var_dict = sorted(var_dict.items(), key=lambda x: x[0])
-        for item in var_dict:
-            if 'adam' in item[0] or 'Adam' in item[0]:
-                continue
-            print(item)
 
-    def init_from_checkpoint(self):
-        """ Restore parameters from checkpoint. """
-        tvars = tf.trainable_variables()
-        (assignment_map, initialized_variable_names) = self.get_assignment_map_from_checkpoint(tvars)
-        tf.train.init_from_checkpoint(self.ckpt_file, assignment_map)
+def rename_checkpoint_variables(checkpoint_file, save_path="./result/model.ckpt"):
+    """ Rename checkpoint variables """
+    sess = tf.Session()
+    imported_meta = tf.train.import_meta_graph(checkpoint_file + '.meta')
+    imported_meta.restore(sess, checkpoint_file)
+    name_to_variable = collections.OrderedDict()
+    for var in tf.global_variables():
+        new_name = var.name
+        if 'self/' in new_name:
+            new_name = new_name.replace("self/", '')
+        if 'bert/' in new_name:
+            new_name = new_name.replace('bert/', '')
+        if 'encoder' in new_name:
+            new_name = new_name.replace('encoder', 'layer')
+        if 'transformer' in new_name:
+            new_name = new_name.replace('transformer', 'encoder')
+        if ':0' in new_name:
+            new_name = new_name.replace(':0', '')
+        name_to_variable[new_name] = var
+    saver = tf.train.Saver(name_to_variable)
+    saver.save(sess, save_path)
 
-    def get_assignment_map_from_checkpoint(self, tvars):
-        """Compute the union of the current variables and checkpoint variables."""
+
+def restore_model(checkpoint_file):
+    """ restore model params from checkpoint file. """
+    def get_assignment_map():
         initialized_variable_names = {}
-
         name_to_variable = collections.OrderedDict()
         for var in tvars:
             name = var.name
@@ -81,35 +96,17 @@ class CheckpointHelper:
             if m is not None:
                 name = m.group(1)
             name_to_variable[name] = var
-
-        init_vars = tf.train.list_variables(self.ckpt_file)
-
-        assignment_map = collections.OrderedDict()
+        init_vars = tf.train.list_variables(checkpoint_file)
+        assign_map = collections.OrderedDict()
         for x in init_vars:
             (name, var) = (x[0], x[1])
             if name not in name_to_variable:
                 continue
-            assignment_map[name] = name
+            assign_map[name] = name
             initialized_variable_names[name] = 1
             initialized_variable_names[name + ":0"] = 1
-
-        return assignment_map, initialized_variable_names
-
-    def rename_variables(self, save_ckpt_file="./result/model.ckpt"):
-        sess = tf.Session()
-        imported_meta = tf.train.import_meta_graph(self.ckpt_file + '.meta')
-        imported_meta.restore(sess, self.ckpt_file)
-        name_to_variable = collections.OrderedDict()
-        for var in tf.global_variables():
-            new_name = var.name
-            if 'self/' in new_name:
-                new_name = new_name.replace("self/", '')
-            if 'bert/' in new_name:
-                new_name = new_name.replace('bert/', '')
-            if 'encoder' in new_name:
-                new_name = new_name.replace('encoder', 'layer')
-            if 'transformer' in new_name:
-                new_name = new_name.replace('transformer', 'encoder')
-            name_to_variable[new_name] = var
-        saver = tf.train.Saver(name_to_variable)
-        saver.save(sess, save_ckpt_file)
+        return assign_map, initialized_variable_names
+    tvars = tf.trainable_variables()
+    print("Loading Trainable Variables From init_checkpoint: %s" % checkpoint_file)
+    current_ckpt, assignment_map = get_assignment_map()
+    tf.train.init_from_checkpoint(current_ckpt, assignment_map)
