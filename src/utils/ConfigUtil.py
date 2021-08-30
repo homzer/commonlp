@@ -16,4 +16,6 @@ num_attention_heads = 12
 dropout_prob = 0.1
 intermediate_size = 3072
 activation = "gelu"
-save_checkpoint_steps = 100
+save_checkpoint_steps = 500
+save_summary_steps = 100
+learning_rate = 0.001

@@ -108,5 +108,5 @@ def restore_model(checkpoint_file):
         return assign_map, initialized_variable_names
     tvars = tf.trainable_variables()
     print("Loading Trainable Variables From init_checkpoint: %s" % checkpoint_file)
-    current_ckpt, assignment_map = get_assignment_map()
-    tf.train.init_from_checkpoint(current_ckpt, assignment_map)
+    (assignment_map, _) = get_assignment_map()
+    tf.train.init_from_checkpoint(checkpoint_file, assignment_map)

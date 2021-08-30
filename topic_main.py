@@ -45,12 +45,12 @@ def model_graph(input_ids, label_ids):
     with tf.variable_scope("encoder"):
         input_mask = create_tensor_mask(input_ids)
         attention_mask = create_attention_mask(input_ids, input_mask)
-        encoder_output, _ = Encoder(embeddings, attention_mask, scope='layer_0')
-        encoder_output, _ = Encoder(encoder_output, attention_mask, scope='layer_1')
-        encoder_output, _ = Encoder(encoder_output, attention_mask, scope='layer_2')
-        encoder_output, _ = Encoder(encoder_output, attention_mask, scope='layer_3')
-        encoder_output, _ = Encoder(encoder_output, attention_mask, scope='layer_4')
-        encoder_output, _ = Encoder(encoder_output, attention_mask, scope='layer_5')
+        encoder_output = Encoder(embeddings, attention_mask, scope='layer_0')
+        encoder_output = Encoder(encoder_output, attention_mask, scope='layer_1')
+        encoder_output = Encoder(encoder_output, attention_mask, scope='layer_2')
+        encoder_output = Encoder(encoder_output, attention_mask, scope='layer_3')
+        encoder_output = Encoder(encoder_output, attention_mask, scope='layer_4')
+        encoder_output = Encoder(encoder_output, attention_mask, scope='layer_5')
     with tf.variable_scope("theme"):
         concat_embeds = max_and_mean_concat(encoder_output, input_mask)
         with tf.variable_scope("logits"):
@@ -118,10 +118,10 @@ def train(checkpoint_file, save_steps=5000):
     total_steps = train_generator.total_steps
     for step in range(total_steps):
         train_batch_features, train_batch_labels = train_generator.next_batch()
-        global_step = model.train(train_batch_features, train_batch_labels)
+        model.train(train_batch_features, train_batch_labels)
         if step % 100 == 0:
-            print("Global Step %d of %d" % (global_step, total_steps))
-        if step % 500 == 0:
+            print("Global Step %d of %d" % (step, total_steps))
+        if step % 300 == 0:
             print("Evaluating......")
             all_loss = []
             all_acc = []
@@ -175,5 +175,5 @@ def validate(checkpoint_file):
 
 if __name__ == '__main__':
     checkpoint = 'config/model.ckpt-5088'
-    train(checkpoint, 3000)
+    train(checkpoint, 1000)
     # validate()

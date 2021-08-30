@@ -4,6 +4,7 @@ import numpy as np
 import tensorflow as tf
 
 from src.utils.CheckpointUtil import filter_compatible_params
+from src.optimizer.adam import AdamOptimizer
 
 __all__ = ['Model']
 
@@ -36,7 +37,7 @@ class Model(object):
             self.features, self.labels)
         self.global_step = tf.Variable(
             initial_value=0, trainable=False, name='global_step', dtype=tf.int32)
-        self.optimizer = tf.train.AdamOptimizer(0.001).minimize(self.loss, self.global_step)
+        self.optimizer = AdamOptimizer(1e-5).minimize(self.loss, self.global_step)
         print("Building model graph complete!")
 
     def __initialize(self):

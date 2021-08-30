@@ -34,4 +34,4 @@ def Encoder(
                 kernel_initializer=create_initializer())
             encoder_output = dropout(encoder_output)
             encoder_output = layer_norm(encoder_output + attention_output)
-    return tf.reshape(encoder_output, shape=[-1, seq_length, hidden_size]), probs
+    return tf.reshape(encoder_output, shape=[-1, seq_length, hidden_size])

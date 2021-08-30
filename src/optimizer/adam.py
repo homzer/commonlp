@@ -16,17 +16,13 @@ class AdamOptimizer(Optimizer):
                  beta1=0.9,
                  beta2=0.999,
                  epsilon=1e-8,
-                 # num_train_steps=None,
                  use_locking=False,
                  name="Adam"):
         super(AdamOptimizer, self).__init__(use_locking, name)
-        self._init_lr = learning_rate
         self._lr = learning_rate
         self._beta1 = beta1
         self._beta2 = beta2
         self._epsilon = epsilon
-        # self._train_steps = num_train_steps
-        # self._warmup_steps = int(num_train_steps * 0.1) if num_train_steps else None
 
     def apply_gradients(self, grads_and_vars, global_step=None, name=None):
 
@@ -67,24 +63,6 @@ class AdamOptimizer(Optimizer):
                  gate_gradients=GATE_OP, aggregation_method=None,
                  colocate_gradients_with_ops=False, name=None,
                  grad_loss=None):
-        learning_rate = tf.constant(value=self._init_lr, shape=[], dtype=tf.float32)
-        # # Implements linear decay of the learning rate.
-        # if self._train_steps and global_step:
-        #     learning_rate = tf.train.polynomial_decay(
-        #         learning_rate, global_step, self._train_steps,
-        #         end_learning_rate=0.0, power=1.0, cycle=False)
-        # # Implements linear warmup.
-        # if self._warmup_steps and global_step:
-        #     global_steps_int = tf.cast(global_step, tf.int32)
-        #     warmup_steps_int = tf.constant(self._warmup_steps, dtype=tf.int32)
-        #     global_steps_float = tf.cast(global_steps_int, tf.float32)
-        #     warmup_steps_float = tf.cast(warmup_steps_int, tf.float32)
-        #     warmup_percent_done = global_steps_float / warmup_steps_float
-        #     warmup_learning_rate = self._init_lr * warmup_percent_done
-        #     is_warmup = tf.cast(global_steps_int < warmup_steps_int, tf.float32)
-        #     learning_rate = ((1.0 - is_warmup) * learning_rate + is_warmup * warmup_learning_rate)
-
-        self._lr = learning_rate
         tvars = tf.trainable_variables()
         grads = tf.gradients(loss, tvars)
         (grads, _) = tf.clip_by_global_norm(grads, clip_norm=1.0)

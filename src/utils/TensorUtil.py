@@ -88,6 +88,7 @@ def max_and_mean_concat(embeddings, input_mask):
     :param input_mask: [batch_size, seq_length] 1 为有效， 0 为无效
     :return: embeds_mix [batch_size, embedding_size * 2]
     """
+    embedding_size = embeddings.shape[-1]
     input_mask = tf.cast(input_mask, dtype=tf.float32)
     lengths = tf.reduce_sum(input_mask, axis=-1, keepdims=True)  # [batch_size, 1]
     # 根据掩码对 embeddings 后面不需要部分置零
@@ -100,5 +101,5 @@ def max_and_mean_concat(embeddings, input_mask):
     embeds_mean = tf.expand_dims(embeds_mean, axis=-1)
     embeds_max = tf.expand_dims(embeds_max, axis=-1)
     embeds_mix = tf.concat([embeds_mean, embeds_max], axis=-1)  # [batch_size, embedding_size, 2]
-    embeds_mix = tf.reshape(embeds_mix, shape=[embeds_mix.shape[0], -1])
+    embeds_mix = tf.reshape(embeds_mix, shape=[-1, embedding_size * 2])
     return embeds_mix
