@@ -21,7 +21,7 @@ def Conv1D(input_tensor, filter_shape, name):
     return conv_output
 
 
-def Pooling1D(input_tensor, filter_size):
+def Pooling1D(input_tensor, filter_size=2):
     """
     Apply 1-D pooling function
     :param input_tensor: 3-D `Tensor` with shape of [batch_size, width, in_channels]
