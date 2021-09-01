@@ -3,50 +3,43 @@ import numpy as np
 
 from src.input.data_generator import DataGenerator
 from src.input.data_processor import DataProcessor
-from src.model.cnn.Conv1D import Conv1D, Pooling1D, Flatten1D
 from src.model.dnn.Dense import Dense
 from src.model.dnn.Dropout import Dropout
 from src.model.modeling import Model
 from src.model.transformer.Embedding import Embedding
 from src.model.transformer.Encoder import Encoder
 from src.utils import ConfigUtil
-from src.utils.TensorUtil import reshape2Matrix, create_tensor_mask, create_attention_mask
+from src.utils.TensorUtil import reshape2Matrix, create_tensor_mask, create_attention_mask, max_and_mean_concat
 from src.utils.LogUtil import set_verbosity
+from src.utils.VisualUtil import draw_array_img
 
 set_verbosity()
 
 
 def model_graph(features, labels):
-    seq_length = features.shape[-1]
     input_ids = reshape2Matrix(features)
-    embedding_output = Embedding(input_ids)  # [b * 2, s, e]
+    embedding_output = Embedding(input_ids)  # [b * 2, s, h]
     hidden_size = embedding_output.shape[-1]
     with tf.variable_scope("encoder"):
-        attention_mask = create_attention_mask(input_ids, create_tensor_mask(input_ids))
+        input_mask = create_tensor_mask(input_ids)
+        attention_mask = create_attention_mask(input_ids, input_mask)
         encoder_output = Encoder(embedding_output, attention_mask, scope='layer_0')
         encoder_output = Encoder(encoder_output, attention_mask, scope='layer_1')
         encoder_output = Encoder(encoder_output, attention_mask, scope='layer_2')
-    with tf.variable_scope("conv"):
-        conv_input = tf.reshape(encoder_output, [-1, 2, seq_length, hidden_size])
-        conv_input = tf.reduce_sum(conv_input, axis=1)  # [b, s, e]
-        conv_input = reshape2Matrix(conv_input)  # [b*s, 768]
-        conv_output = Conv1D(conv_input, [3, 1, 16], name="filter_1")  # [b*s, 768, 16]
-        conv_output = Pooling1D(conv_output, 4)  # [b*s, 192, 16]
-        conv_output = Dropout(conv_output)
-        conv_output = Conv1D(conv_output, [3, 16, 32], name="filter_2")  # [b*s, 384, 32]
-        conv_output = Pooling1D(conv_output, 4)  # [b*s, 48, 32]
-        conv_output = Dropout(conv_output)
-        flatten_output = Flatten1D(conv_output, 32)  # [b*s, 32]
-    with tf.variable_scope("projection"):
-        dense_input = tf.reshape(flatten_output, shape=[-1, seq_length * 32])
-        dense_output = Dense(dense_input, 32)
-        dense_output = Dropout(dense_output)
-        logits = Dense(dense_output, 2)
+        encoder_output = Encoder(encoder_output, attention_mask, scope='layer_3')
+        encoder_output = Encoder(encoder_output, attention_mask, scope='layer_4')
+        encoder_output = Encoder(encoder_output, attention_mask, scope='layer_5')
+    with tf.variable_scope("project"):
+        project_input = max_and_mean_concat(encoder_output, input_mask)  # [b*2, h*2]
+        project_input = tf.reshape(project_input, [-1, 4 * hidden_size])
+        project_output = Dense(project_input, 32)
+        project_output = Dropout(project_output)
+        logits = Dense(project_output, 2)
         predicts = tf.argmax(logits, axis=-1)
         loss = tf.reduce_mean(
             tf.nn.sparse_softmax_cross_entropy_with_logits(
                 logits=logits, labels=labels))
-    return predicts, loss, None
+    return predicts, loss, tf.reshape(embedding_output, [-1, 2 * 128, hidden_size])
 
 
 def read_file(filename):
@@ -63,7 +56,7 @@ def read_file(filename):
     return labels, ens, cns
 
 
-def train(save_checkpoint_steps=2000):
+def train(checkpoint_file, save_checkpoint_steps=2000):
     train_labels, train_ens, train_cns = read_file('data/trans_train.txt')
     eval_labels, eval_ens, eval_cns = read_file('data/trans_dev.txt')
     print("*****Examples*****")
@@ -104,7 +97,9 @@ def train(save_checkpoint_steps=2000):
         features=tf.placeholder("int32", [None, 2, ConfigUtil.seq_length]),
         labels=tf.placeholder("int32", [None, ]),
         model_graph=model_graph)
-    model.restore("config/model.ckpt")
+    # model.freeze(['embeddings', 'encoder'])
+    model.compile()
+    model.restore(checkpoint_file)
     # training
     total_steps = train_generator.total_steps
     for step in range(total_steps):
@@ -112,7 +107,7 @@ def train(save_checkpoint_steps=2000):
         global_step = model.train(train_batch_features, train_batch_labels)
         if step % 100 == 0:
             print("Global Step %d of %d" % (global_step, total_steps))
-        if step % 300 == 0:
+        if step % 500 == 0:
             print("Evaluating......")
             all_loss = []
             all_acc = []
@@ -138,11 +133,23 @@ def train(save_checkpoint_steps=2000):
 
 
 def predict(checkpoint_file):
-    ens = ["I don't understand", "How does the weather?", "Why don't you go for a run?", "I want to go for a picnic"]
-    cns = ["我不明白", "饭菜真香啊", "你为什么不去跑步？", "桌子多少钱"]
+    ens = [
+        "The library is on the second floor.",
+        "Look at me with your books closed.",
+        "I still love him.",
+        "Hang your coat on the hook.",
+        "It was heartless of him to say such a thing to the sick man.",
+        "Because of heavy snow, the plane from Beijing arrived 20 minutes late."]
+    cns = [
+        "日本有很多温泉。",
+        "把你的書閤起來看著我。",
+        "我依旧爱着他。",
+        "內用還是外帶?",
+        "他对一个生病的男人说这种事真是没良心。",
+        "由于大雪，从北京起飞的飞机晚点了20分钟。"]
     processor = DataProcessor(ConfigUtil.vocab_file)
     features = []
-    labels = [1, 1]
+    labels = [0, 1, 1, 0, 1, 0]
     for en, cn in zip(ens, cns):
         en = processor.text2ids(en, ConfigUtil.seq_length)
         cn = processor.text2ids(cn, ConfigUtil.seq_length)
@@ -156,6 +163,39 @@ def predict(checkpoint_file):
     print("predicts: ", [prediction for prediction in predictions])
 
 
+def validate(checkpoint_file):
+    ens = [
+        "The library is on the second floor.",
+        "Look at me with your books closed.",
+        "I still love him.",
+        "Hang your coat on the hook.",
+        "It was heartless of him to say such a thing to the sick man.",
+        "Because of heavy snow, the plane from Beijing arrived 20 minutes late."]
+    cns = [
+        "日本有很多温泉。",
+        "把你的書閤起來看著我。",
+        "我依旧爱着他。",
+        "內用還是外帶?",
+        "他对一个生病的男人说这种事真是没良心。",
+        "由于大雪，从北京起飞的飞机晚点了20分钟。"]
+    processor = DataProcessor(ConfigUtil.vocab_file)
+    features = []
+    labels = [0, 1, 1, 0, 1, 0]
+    for en, cn in zip(ens, cns):
+        en = processor.text2ids(en, ConfigUtil.seq_length)
+        cn = processor.text2ids(cn, ConfigUtil.seq_length)
+        features.append([en, cn])
+    model = Model(
+        features=tf.placeholder("int32", [None, 2, ConfigUtil.seq_length]),
+        labels=tf.placeholder("int32", [None, ]),
+        model_graph=model_graph)
+    model.restore(checkpoint_file)
+    var = model.validate(features, labels)
+    draw_array_img(var, 'result/trans/img')
+
+
 if __name__ == '__main__':
-    # train()
-    predict('result/trans/model.ckpt-8000')
+    checkpoint = 'result/trans/model.ckpt-8000'
+    train(checkpoint, 2000)
+    # predict(checkpoint)
+    # validate(checkpoint)

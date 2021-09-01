@@ -3,6 +3,8 @@ import re
 
 import tensorflow as tf
 
+from src.utils.variable_util import get_variable_name
+
 
 def filter_compatible_params(checkpoint_file):
     """
@@ -37,7 +39,7 @@ def filter_compatible_params(checkpoint_file):
         else:
             raise ValueError("Unknown checkpoint type: %s" % type(ckpt_var))
         for train_var in train_vars:
-            train_var_name = re.match("^(.*):\\d+$", train_var.name).group(1)
+            train_var_name = get_variable_name(train_var)
             if train_var_name == ckpt_var_name:
                 compatible_vars.append(train_var)
                 break
@@ -91,10 +93,7 @@ def restore_model(checkpoint_file):
         initialized_variable_names = {}
         name_to_variable = collections.OrderedDict()
         for var in tvars:
-            name = var.name
-            m = re.match("^(.*):\\d+$", name)
-            if m is not None:
-                name = m.group(1)
+            name = get_variable_name(var)
             name_to_variable[name] = var
         init_vars = tf.train.list_variables(checkpoint_file)
         assign_map = collections.OrderedDict()

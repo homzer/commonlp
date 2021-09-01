@@ -63,7 +63,7 @@ class AdamOptimizer(Optimizer):
                  gate_gradients=GATE_OP, aggregation_method=None,
                  colocate_gradients_with_ops=False, name=None,
                  grad_loss=None):
-        tvars = tf.trainable_variables()
+        tvars = tf.trainable_variables() if var_list is None else var_list
         grads = tf.gradients(loss, tvars)
         (grads, _) = tf.clip_by_global_norm(grads, clip_norm=1.0)
         return self.apply_gradients(zip(grads, tvars), global_step=global_step)

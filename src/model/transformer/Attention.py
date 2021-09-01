@@ -64,7 +64,7 @@ def Attention(
         attention_probs = dropout(attention_probs)
         scaled_output = tf.matmul(attention_probs, v)
         scaled_output = tf.transpose(scaled_output, [0, 2, 1, 3])
-        return scaled_output, attention_probs
+        return scaled_output
 
     with tf.variable_scope("attention"):
         from_tensor = reshape2Matrix(from_tensor)
@@ -76,7 +76,7 @@ def Attention(
         key = transpose_for_scores(key, to_seq_length)
         value = transpose_for_scores(value, to_seq_length)
 
-        attention_output, probs = scaled_dot_product(query, key, value)
+        attention_output = scaled_dot_product(query, key, value)
         attention_output = tf.reshape(
             attention_output, [-1, num_attention_heads * size_per_head])
 
@@ -86,4 +86,4 @@ def Attention(
                 kernel_initializer=create_initializer())
             attention_output = dropout(attention_output)
             attention_output = layer_norm(attention_output + from_tensor)
-    return attention_output, probs
+    return attention_output

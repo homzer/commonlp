@@ -20,7 +20,7 @@ def Encoder(
     seq_length = input_tensor.shape[1]
     hidden_size = input_tensor.shape[2]
     with tf.variable_scope(scope, default_name="encoder"):
-        attention_output, probs = Attention(input_tensor, attention_mask=attention_mask)
+        attention_output = Attention(input_tensor, attention_mask=attention_mask)
 
         with tf.variable_scope("intermediate"):
             intermediate_output = tf.layers.dense(
