@@ -1,19 +1,22 @@
 import tensorflow as tf
 import numpy as np
+import random
 
 from src.input.data_generator import DataGenerator
 from src.input.data_processor import DataProcessor
 from src.model.dnn.Dense import Dense
 from src.model.dnn.Dropout import Dropout
+from src.model.cnn.Conv2D import Conv2D, Pooling2D, Flatten2D, MeanPooling2D
 from src.model.modeling import Model
 from src.model.transformer.Embedding import Embedding
 from src.model.transformer.Encoder import Encoder
-from src.utils import ConfigUtil
 from src.utils.TensorUtil import reshape2Matrix, create_tensor_mask, create_attention_mask, max_and_mean_concat
 from src.utils.LogUtil import set_verbosity
 from src.utils.VisualUtil import draw_array_img
 
 set_verbosity()
+seq_length = 48
+vocab_file = 'config/vocab.txt'
 
 
 def model_graph(features, labels):
@@ -27,19 +30,34 @@ def model_graph(features, labels):
         encoder_output = Encoder(encoder_output, attention_mask, scope='layer_1')
         encoder_output = Encoder(encoder_output, attention_mask, scope='layer_2')
         encoder_output = Encoder(encoder_output, attention_mask, scope='layer_3')
-        encoder_output = Encoder(encoder_output, attention_mask, scope='layer_4')
-        encoder_output = Encoder(encoder_output, attention_mask, scope='layer_5')
-    with tf.variable_scope("project"):
-        project_input = max_and_mean_concat(encoder_output, input_mask)  # [b*2, h*2]
-        project_input = tf.reshape(project_input, [-1, 4 * hidden_size])
-        project_output = Dense(project_input, 32)
-        project_output = Dropout(project_output)
-        logits = Dense(project_output, 2)
+        # encoder_output = Encoder(encoder_output, attention_mask, scope='layer_4')
+        # encoder_output = Encoder(encoder_output, attention_mask, scope='layer_5')
+    with tf.variable_scope("conv"):
+        # [b, 2, h]
+        conv_input = tf.reshape(tf.reduce_mean(encoder_output, axis=1), [-1, 2, hidden_size])
+
+        conv_output = Conv2D(conv_input, [2, 8, 1, 16], name='layer_0')
+        conv_output = MeanPooling2D(conv_output, [1, 4])  # [b, 2, h/4, 16]
+        conv_output = Dropout(conv_output)
+
+        conv_output = Conv2D(conv_output, [2, 8, 16, 32], name='layer_1')
+        conv_output = MeanPooling2D(conv_output, [1, 4])  # [b, 2, h/16, 32]
+        conv_output = Dropout(conv_output)
+
+        conv_output = Conv2D(conv_output, [2, 8, 32, 64], name='layer_2')
+        conv_output = MeanPooling2D(conv_output, [2, 4])  # [b, 1, h/64, 64]
+        conv_output = Dropout(conv_output)
+
+        dense_input = Flatten2D(conv_output, 256, name='flatten')
+        dense_output = Dropout(dense_input)
+        dense_output = Dense(dense_output, 64, name='dense64')
+        dense_output = Dropout(dense_output)
+        logits = Dense(dense_output, 2, name='dense2')
         predicts = tf.argmax(logits, axis=-1)
         loss = tf.reduce_mean(
             tf.nn.sparse_softmax_cross_entropy_with_logits(
                 logits=logits, labels=labels))
-    return predicts, loss, tf.reshape(embedding_output, [-1, 2 * 128, hidden_size])
+    return predicts, loss, conv_input
 
 
 def read_file(filename):
@@ -47,7 +65,9 @@ def read_file(filename):
     ens = []
     cns = []
     with open(filename, 'r', encoding='utf-8') as reader:
-        for line in reader.readlines():
+        lines = reader.readlines()
+        random.shuffle(lines)
+        for line in lines:
             line = line.strip()
             line = line.split("\t")
             labels.append(line[0])
@@ -65,11 +85,11 @@ def train(checkpoint_file, save_checkpoint_steps=2000):
         print("English: ", train_ens[i])
         print("Chinese: ", train_cns[i])
         print("Label: ", train_labels[i])
-    processor = DataProcessor(ConfigUtil.vocab_file)
-    train_ens = processor.texts2ids(train_ens, ConfigUtil.seq_length)
-    train_cns = processor.texts2ids(train_cns, ConfigUtil.seq_length)
-    eval_ens = processor.texts2ids(eval_ens, ConfigUtil.seq_length)
-    eval_cns = processor.texts2ids(eval_cns, ConfigUtil.seq_length)
+    processor = DataProcessor(vocab_file)
+    train_ens = processor.texts2ids(train_ens, seq_length)
+    train_cns = processor.texts2ids(train_cns, seq_length)
+    eval_ens = processor.texts2ids(eval_ens, seq_length)
+    eval_cns = processor.texts2ids(eval_cns, seq_length)
     train_features = []
     for en, cn in zip(train_ens, train_cns):
         train_features.append([en, cn])
@@ -94,7 +114,7 @@ def train(checkpoint_file, save_checkpoint_steps=2000):
         features=eval_features,
         labels=eval_labels)
     model = Model(
-        features=tf.placeholder("int32", [None, 2, ConfigUtil.seq_length]),
+        features=tf.placeholder("int32", [None, 2, seq_length]),
         labels=tf.placeholder("int32", [None, ]),
         model_graph=model_graph)
     # model.freeze(['embeddings', 'encoder'])
@@ -107,7 +127,7 @@ def train(checkpoint_file, save_checkpoint_steps=2000):
         global_step = model.train(train_batch_features, train_batch_labels)
         if step % 100 == 0:
             print("Global Step %d of %d" % (global_step, total_steps))
-        if step % 500 == 0:
+        if step % 1000 == 0:
             print("Evaluating......")
             all_loss = []
             all_acc = []
@@ -147,15 +167,15 @@ def predict(checkpoint_file):
         "內用還是外帶?",
         "他对一个生病的男人说这种事真是没良心。",
         "由于大雪，从北京起飞的飞机晚点了20分钟。"]
-    processor = DataProcessor(ConfigUtil.vocab_file)
+    processor = DataProcessor(vocab_file)
     features = []
     labels = [0, 1, 1, 0, 1, 0]
     for en, cn in zip(ens, cns):
-        en = processor.text2ids(en, ConfigUtil.seq_length)
-        cn = processor.text2ids(cn, ConfigUtil.seq_length)
+        en = processor.text2ids(en, seq_length)
+        cn = processor.text2ids(cn, seq_length)
         features.append([en, cn])
     model = Model(
-        features=tf.placeholder("int32", [None, 2, ConfigUtil.seq_length]),
+        features=tf.placeholder("int32", [None, 2, seq_length]),
         labels=tf.placeholder("int32", [None, ]),
         model_graph=model_graph)
     model.restore(checkpoint_file)
@@ -172,21 +192,21 @@ def validate(checkpoint_file):
         "It was heartless of him to say such a thing to the sick man.",
         "Because of heavy snow, the plane from Beijing arrived 20 minutes late."]
     cns = [
-        "日本有很多温泉。",
-        "把你的書閤起來看著我。",
+        "图书馆在二楼",
+        "想学外语来找我。",
         "我依旧爱着他。",
         "內用還是外帶?",
         "他对一个生病的男人说这种事真是没良心。",
-        "由于大雪，从北京起飞的飞机晚点了20分钟。"]
-    processor = DataProcessor(ConfigUtil.vocab_file)
+        "雪下得太大了，导致从北京起飞的飞机晚点20分钟。"]
+    processor = DataProcessor(vocab_file)
     features = []
-    labels = [0, 1, 1, 0, 1, 0]
+    labels = [1, 0, 1, 0, 1, 1]
     for en, cn in zip(ens, cns):
-        en = processor.text2ids(en, ConfigUtil.seq_length)
-        cn = processor.text2ids(cn, ConfigUtil.seq_length)
+        en = processor.text2ids(en, seq_length)
+        cn = processor.text2ids(cn, seq_length)
         features.append([en, cn])
     model = Model(
-        features=tf.placeholder("int32", [None, 2, ConfigUtil.seq_length]),
+        features=tf.placeholder("int32", [None, 2, seq_length]),
         labels=tf.placeholder("int32", [None, ]),
         model_graph=model_graph)
     model.restore(checkpoint_file)
@@ -195,7 +215,7 @@ def validate(checkpoint_file):
 
 
 if __name__ == '__main__':
-    checkpoint = 'result/trans/model.ckpt-8000'
-    train(checkpoint, 2000)
+    checkpoint = 'result/trans/model.ckpt-6000'
+    train(checkpoint, 3000)
     # predict(checkpoint)
     # validate(checkpoint)

@@ -1,12 +1,13 @@
 import os
 
 import numpy
+import matplotlib.pyplot as plt
 from PIL import Image
 
-__all__ = ['draw_array_img']
+__all__ = ['draw_array_img', 'draw_histogram']
 
 
-def clean_or_make_dir(output_dir):
+def __clean_or_make_dir(output_dir):
     if os.path.exists(output_dir):
         def del_file(path):
             dir_list = os.listdir(path)
@@ -23,14 +24,35 @@ def clean_or_make_dir(output_dir):
         os.mkdir(output_dir)
 
 
-def draw_array_img(array, output_dir):
+def draw_histogram(count_dict: dict):
+    """
+    Draw histogram according to labels and counts.
+    len(labels) must be equal to len(counts)
+    :param count_dict: dictionary of labels and count.
+    which's key is `str` and value is `int`.
+    """
+    labels = []
+    counts = []
+    for item in count_dict.items():
+        labels.append(item[0])
+        counts.append(item[1])
+    plt.figure()
+    plt.bar(labels, counts, width=0.7, align='center')
+    plt.xlabel('Sequence Length')
+    plt.ylabel('Count')
+    plt.ylim(0, 800)
+    plt.show()
+
+
+def draw_array_img(array, output_dir, normalizing=False):
     """
     draw images of array
+    :param normalizing: whether to normalize.
     :param output_dir: directory of images.
     :param array: 3-D array [batch, width, height]
     """
     assert numpy.array(array).ndim == 3
-    clean_or_make_dir(output_dir)
+    __clean_or_make_dir(output_dir)
 
     def array2Picture(arr, name):
         img = Image.fromarray(arr * 255)
@@ -47,5 +69,5 @@ def draw_array_img(array, output_dir):
         return arr
 
     for index, mtx in enumerate(array):
-        # mtx = normalize(mtx)
+        mtx = normalize(mtx) if normalizing else mtx
         array2Picture(numpy.array(mtx), index)
