@@ -112,11 +112,11 @@ class Model(object):
         print("Restore model from %s......" % checkpoint_file)
         # Filtering compatible parameters
         rvars = filter_compatible_params(checkpoint_file)
-        print("\n".join([str(var.name) for var in rvars]))
+        print("\n".join([str(var.name) + ' ' + str(var.shape) for var in rvars]))
         saver = tf.train.Saver(rvars)
         saver.restore(self._sess, checkpoint_file)
         print("Restoring model complete!")
 
-    def __delete__(self, instance):
+    def __del__(self):
         self._sess.close()
         print("Session closed!")

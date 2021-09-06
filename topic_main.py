@@ -11,7 +11,7 @@ from src.model.transformer.Embedding import Embedding
 from src.model.transformer.Encoder import Encoder
 from src.utils import ConfigUtil
 from src.utils import LogUtil
-from src.utils.TensorUtil import create_tensor_mask, create_attention_mask, reshape2Matrix
+from src.utils.TensorUtil import create_tensor_mask, create_attention_mask, reshape_to_matrix
 from src.utils.VisualUtil import draw_array_img
 
 LogUtil.set_verbosity(LogUtil.ERROR)
@@ -29,7 +29,7 @@ def model_graph(input_ids, label_ids):
         encoder_output = Encoder(encoder_output, attention_mask, scope='layer_1')
         encoder_output = Encoder(encoder_output, attention_mask, scope='layer_2')
     with tf.variable_scope("conv"):
-        conv_input = reshape2Matrix(encoder_output)  # [b*s, h]
+        conv_input = reshape_to_matrix(encoder_output)  # [b*s, h]
         conv_output = Conv1D(conv_input, [3, 1, 16], "layer_0")  # [b*s, h, 16]
         conv_output = Pooling1D(conv_output, 2)  # [b*s, h/2, 16]
         conv_output = Conv1D(conv_output, [3, 16, 32], "layer_1")  # [b*s, h/2, 32]

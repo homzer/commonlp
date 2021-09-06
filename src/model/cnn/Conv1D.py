@@ -37,10 +37,11 @@ def Pooling1D(input_tensor, filter_size=2):
         padding='SAME')
 
 
-def Flatten1D(input_tensor, units):
+def Flatten1D(input_tensor, units, name=None):
     """
     Apply 1-D Flatten Layer after CNN layers,
     reshape the output of `CNN` to the input of `DNN`
+    :param name:
     :param input_tensor: `Tensor` of shape [batch_size, width, in_channels]
     :param units: `int` the number of units in `DNN`
     :return: [batch_size, units]
@@ -53,5 +54,6 @@ def Flatten1D(input_tensor, units):
         inputs=input_tensor,
         units=units,
         activation=get_activation("gelu"),
-        kernel_initializer=create_initializer())
+        kernel_initializer=create_initializer(),
+        name=name)
     return flatten_output

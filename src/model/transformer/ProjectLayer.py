@@ -1,7 +1,7 @@
 import tensorflow as tf
 
 from src.utils import ConfigUtil
-from src.utils.TensorUtil import reshape2Matrix, get_activation, create_initializer
+from src.utils.TensorUtil import reshape_to_matrix, get_activation, create_initializer
 
 
 def ProjectLayer(input_tensor, label_ids, scope=None):
@@ -15,7 +15,7 @@ def ProjectLayer(input_tensor, label_ids, scope=None):
     a scalar of loss
     """
     with tf.variable_scope(scope, default_name="softmax"):
-        input_tensor = reshape2Matrix(input_tensor)
+        input_tensor = reshape_to_matrix(input_tensor)
         with tf.variable_scope("logits"):
             logits = tf.layers.dense(
                 inputs=input_tensor,

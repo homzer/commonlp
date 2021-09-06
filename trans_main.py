@@ -4,13 +4,14 @@ import random
 
 from src.input.data_generator import DataGenerator
 from src.input.data_processor import DataProcessor
+from src.model.cnn.Conv1D import Conv1D, Pooling1D, Flatten1D
 from src.model.dnn.Dense import Dense
 from src.model.dnn.Dropout import Dropout
 from src.model.cnn.Conv2D import Conv2D, Pooling2D, Flatten2D, MeanPooling2D
 from src.model.modeling import Model
 from src.model.transformer.Embedding import Embedding
 from src.model.transformer.Encoder import Encoder
-from src.utils.TensorUtil import reshape2Matrix, create_tensor_mask, create_attention_mask, max_and_mean_concat
+from src.utils.TensorUtil import reshape_to_matrix, create_tensor_mask, create_attention_mask, max_and_mean_concat
 from src.utils.LogUtil import set_verbosity
 from src.utils.VisualUtil import draw_array_img
 
@@ -20,7 +21,7 @@ vocab_file = 'config/vocab.txt'
 
 
 def model_graph(features, labels):
-    input_ids = reshape2Matrix(features)
+    input_ids = reshape_to_matrix(features)
     embedding_output = Embedding(input_ids)  # [b * 2, s, h]
     hidden_size = embedding_output.shape[-1]
     with tf.variable_scope("encoder"):
@@ -30,7 +31,7 @@ def model_graph(features, labels):
         encoder_output = Encoder(encoder_output, attention_mask, scope='layer_1')
         encoder_output = Encoder(encoder_output, attention_mask, scope='layer_2')
         encoder_output = Encoder(encoder_output, attention_mask, scope='layer_3')
-        # encoder_output = Encoder(encoder_output, attention_mask, scope='layer_4')
+        encoder_output = Encoder(encoder_output, attention_mask, scope='layer_4')
         # encoder_output = Encoder(encoder_output, attention_mask, scope='layer_5')
     with tf.variable_scope("conv"):
         # [b, 2, h]
@@ -57,7 +58,7 @@ def model_graph(features, labels):
         loss = tf.reduce_mean(
             tf.nn.sparse_softmax_cross_entropy_with_logits(
                 logits=logits, labels=labels))
-    return predicts, loss, conv_input
+    return predicts, loss, tf.reshape(encoder_output, [-1, 2 * seq_length, hidden_size])
 
 
 def read_file(filename):
@@ -127,22 +128,30 @@ def train(checkpoint_file, save_checkpoint_steps=2000):
         global_step = model.train(train_batch_features, train_batch_labels)
         if step % 100 == 0:
             print("Global Step %d of %d" % (global_step, total_steps))
-        if step % 1000 == 0:
+        if step % 500 == 0:
             print("Evaluating......")
-            all_loss = []
-            all_acc = []
+            all_eval_loss = []
+            all_train_loss = []
+            all_train_acc = []
+            all_eval_acc = []
             for eval_step in range(100):
                 if eval_step % 10 == 0:
                     print("Evaluate Step %d of %d......" % (eval_step, 100))
                 eval_batch_features, eval_batch_labels = eval_generator.next_batch()
-                loss, acc = model.evaluate(eval_batch_features, eval_batch_labels)
-                all_loss.append(loss)
-                all_acc.append(acc)
+                train_batch_features, train_batch_labels = train_generator.next_batch()
+                eval_loss, eval_acc = model.evaluate(eval_batch_features, eval_batch_labels)
+                train_loss, train_acc = model.evaluate(train_batch_features, train_batch_labels)
+                all_train_loss.append(train_loss)
+                all_train_acc.append(train_acc)
+                all_eval_loss.append(eval_loss)
+                all_eval_acc.append(eval_acc)
             eval_batch_features, eval_batch_labels = eval_generator.next_batch()
             predicts = model.predict(eval_batch_features, eval_batch_labels)
             print("************************************")
-            print("Evaluation Loss: ", np.mean(all_loss))
-            print("Evaluation Accuracy: ", np.mean(all_acc))
+            print("Evaluation Loss: ", np.mean(all_eval_loss))
+            print("Evaluation Accuracy: ", np.mean(all_eval_acc))
+            print("Train Loss: ", np.mean(all_train_loss))
+            print("Train Accuracy: ", np.mean(all_train_acc))
             print("Evaluate Labels:\t", " ".join([str(label) for label in eval_batch_labels]))
             print("Evaluate Predicts:\t", " ".join([str(pred) for pred in predicts]))
             print("************************************")
@@ -215,7 +224,7 @@ def validate(checkpoint_file):
 
 
 if __name__ == '__main__':
-    checkpoint = 'result/trans/model.ckpt-6000'
+    checkpoint = 'result/trans/model.ckpt-3000'
     train(checkpoint, 3000)
     # predict(checkpoint)
     # validate(checkpoint)

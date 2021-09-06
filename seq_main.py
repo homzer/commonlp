@@ -10,7 +10,7 @@ from src.model.transformer.Embedding import Embedding
 from src.model.transformer.Encoder import Encoder
 from src.utils import ConfigUtil
 from src.utils import LogUtil
-from src.utils.TensorUtil import create_tensor_mask, create_attention_mask, reshape2Matrix
+from src.utils.TensorUtil import create_tensor_mask, create_attention_mask, reshape_to_matrix
 
 LogUtil.set_verbosity()
 
@@ -26,7 +26,7 @@ def model_graph(input_ids, label_ids):
         encoder_output, _ = Encoder(encoder_output, attention_mask, scope='layer_5')
         encoder_output, probs = Encoder(encoder_output, attention_mask, scope='layer_6')
     with tf.variable_scope("projection"):
-        project_input = reshape2Matrix(encoder_output)
+        project_input = reshape_to_matrix(encoder_output)
         project_input = Dense(project_input, 128)
         project_input = Dropout(project_input)
         project_input = Dense(project_input, 64)

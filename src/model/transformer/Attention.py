@@ -2,7 +2,7 @@ import math
 
 import tensorflow as tf
 
-from src.utils.TensorUtil import reshape2Matrix, create_initializer, dropout, layer_norm
+from src.utils.TensorUtil import reshape_to_matrix, create_initializer, dropout, layer_norm
 
 
 def Attention(
@@ -67,8 +67,8 @@ def Attention(
         return scaled_output
 
     with tf.variable_scope("attention"):
-        from_tensor = reshape2Matrix(from_tensor)
-        to_tensor = reshape2Matrix(to_tensor)
+        from_tensor = reshape_to_matrix(from_tensor)
+        to_tensor = reshape_to_matrix(to_tensor)
         query = create_layer(from_tensor, 'query')
         key = create_layer(to_tensor, 'key')
         value = create_layer(to_tensor, 'value')

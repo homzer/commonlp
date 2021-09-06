@@ -2,7 +2,7 @@ import tensorflow as tf
 from tensorflow.contrib.layers import layer_norm as ln
 
 
-def reshape2Matrix(input_tensor):
+def reshape_to_matrix(input_tensor):
     """ Reshape tensor to a rank 2 tensor """
     width = input_tensor.shape[-1]
     return tf.reshape(input_tensor, [-1, width])
