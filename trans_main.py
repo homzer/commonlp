@@ -1,19 +1,20 @@
-import tensorflow as tf
-import numpy as np
 import random
+
+import numpy as np
+import tensorflow as tf
 
 from src.input.data_generator import DataGenerator
 from src.input.data_processor import DataProcessor
-from src.model.cnn.Conv1D import Conv1D, Pooling1D, Flatten1D
+from src.model.cnn.Conv2D import Conv2D, Flatten2D, MeanPooling2D
 from src.model.dnn.Dense import Dense
 from src.model.dnn.Dropout import Dropout
-from src.model.cnn.Conv2D import Conv2D, Pooling2D, Flatten2D, MeanPooling2D
 from src.model.modeling import Model
+from src.model.rnn.Lstm import Lstm, BiLstm
 from src.model.transformer.Embedding import Embedding
 from src.model.transformer.Encoder import Encoder
-from src.utils.TensorUtil import reshape_to_matrix, create_tensor_mask, create_attention_mask, max_and_mean_concat
-from src.utils.LogUtil import set_verbosity
-from src.utils.VisualUtil import draw_array_img
+from src.utils.log_util import set_verbosity
+from src.utils.tensor_util import reshape_to_matrix, create_tensor_mask, create_attention_mask
+from src.utils.visual_util import draw_array_img
 
 set_verbosity()
 seq_length = 48
@@ -22,43 +23,20 @@ vocab_file = 'config/vocab.txt'
 
 def model_graph(features, labels):
     input_ids = reshape_to_matrix(features)
-    embedding_output = Embedding(input_ids)  # [b * 2, s, h]
-    hidden_size = embedding_output.shape[-1]
-    with tf.variable_scope("encoder"):
-        input_mask = create_tensor_mask(input_ids)
-        attention_mask = create_attention_mask(input_ids, input_mask)
-        encoder_output = Encoder(embedding_output, attention_mask, scope='layer_0')
-        encoder_output = Encoder(encoder_output, attention_mask, scope='layer_1')
-        encoder_output = Encoder(encoder_output, attention_mask, scope='layer_2')
-        encoder_output = Encoder(encoder_output, attention_mask, scope='layer_3')
-        encoder_output = Encoder(encoder_output, attention_mask, scope='layer_4')
-        # encoder_output = Encoder(encoder_output, attention_mask, scope='layer_5')
-    with tf.variable_scope("conv"):
-        # [b, 2, h]
-        conv_input = tf.reshape(tf.reduce_mean(encoder_output, axis=1), [-1, 2, hidden_size])
-
-        conv_output = Conv2D(conv_input, [2, 8, 1, 16], name='layer_0')
-        conv_output = MeanPooling2D(conv_output, [1, 4])  # [b, 2, h/4, 16]
-        conv_output = Dropout(conv_output)
-
-        conv_output = Conv2D(conv_output, [2, 8, 16, 32], name='layer_1')
-        conv_output = MeanPooling2D(conv_output, [1, 4])  # [b, 2, h/16, 32]
-        conv_output = Dropout(conv_output)
-
-        conv_output = Conv2D(conv_output, [2, 8, 32, 64], name='layer_2')
-        conv_output = MeanPooling2D(conv_output, [2, 4])  # [b, 1, h/64, 64]
-        conv_output = Dropout(conv_output)
-
-        dense_input = Flatten2D(conv_output, 256, name='flatten')
-        dense_output = Dropout(dense_input)
-        dense_output = Dense(dense_output, 64, name='dense64')
+    embeddings = Embedding(input_ids)  # [b * 2, s, h]
+    hidden_size = embeddings.shape[-1]
+    with tf.variable_scope("lstm"):
+        lstm_output, fw_state, bw_state = BiLstm(embeddings)  # [b*2, h]
+    with tf.variable_scope("softmax"):
+        dense_input = tf.reshape(lstm_output, [-1, hidden_size * 2])
+        dense_output = Dense(dense_input, 64, name='dense64')
         dense_output = Dropout(dense_output)
         logits = Dense(dense_output, 2, name='dense2')
         predicts = tf.argmax(logits, axis=-1)
         loss = tf.reduce_mean(
             tf.nn.sparse_softmax_cross_entropy_with_logits(
                 logits=logits, labels=labels))
-    return predicts, loss, tf.reshape(encoder_output, [-1, 2 * seq_length, hidden_size])
+    return predicts, loss, None
 
 
 def read_file(filename):
@@ -118,7 +96,6 @@ def train(checkpoint_file, save_checkpoint_steps=2000):
         features=tf.placeholder("int32", [None, 2, seq_length]),
         labels=tf.placeholder("int32", [None, ]),
         model_graph=model_graph)
-    # model.freeze(['embeddings', 'encoder'])
     model.compile()
     model.restore(checkpoint_file)
     # training
@@ -180,8 +157,8 @@ def predict(checkpoint_file):
     features = []
     labels = [0, 1, 1, 0, 1, 0]
     for en, cn in zip(ens, cns):
-        en = processor.text2ids(en, seq_length)
-        cn = processor.text2ids(cn, seq_length)
+        en = processor.texts2ids(en, seq_length)
+        cn = processor.texts2ids(cn, seq_length)
         features.append([en, cn])
     model = Model(
         features=tf.placeholder("int32", [None, 2, seq_length]),
@@ -211,8 +188,8 @@ def validate(checkpoint_file):
     features = []
     labels = [1, 0, 1, 0, 1, 1]
     for en, cn in zip(ens, cns):
-        en = processor.text2ids(en, seq_length)
-        cn = processor.text2ids(cn, seq_length)
+        en = processor.texts2ids(en, seq_length)
+        cn = processor.texts2ids(cn, seq_length)
         features.append([en, cn])
     model = Model(
         features=tf.placeholder("int32", [None, 2, seq_length]),
@@ -224,7 +201,7 @@ def validate(checkpoint_file):
 
 
 if __name__ == '__main__':
-    checkpoint = 'result/trans/model.ckpt-3000'
+    checkpoint = 'config/model.ckpt'
     train(checkpoint, 3000)
     # predict(checkpoint)
     # validate(checkpoint)

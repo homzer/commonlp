@@ -9,6 +9,7 @@ class Tokenizer:
     UNK = '[UNK]'
     START_TOKEN = '[CLS]'
     END_TOKEN = '[SEP]'
+    MASK_TOKEN = '[MASK]'
 
     def __init__(self, vocab_file):
         """

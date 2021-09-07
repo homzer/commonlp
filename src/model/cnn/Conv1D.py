@@ -1,6 +1,6 @@
 import tensorflow as tf
 
-from src.utils.TensorUtil import gelu, get_activation, create_initializer
+from src.utils.tensor_util import gelu, get_activation, create_initializer
 
 
 def Conv1D(input_tensor, filter_shape, name):

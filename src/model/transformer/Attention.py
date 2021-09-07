@@ -2,7 +2,7 @@ import math
 
 import tensorflow as tf
 
-from src.utils.TensorUtil import reshape_to_matrix, create_initializer, dropout, layer_norm
+from src.utils.tensor_util import reshape_to_matrix, create_initializer, dropout, layer_norm
 
 
 def Attention(

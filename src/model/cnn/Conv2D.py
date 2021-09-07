@@ -1,6 +1,6 @@
 import tensorflow as tf
 
-from src.utils.TensorUtil import gelu, get_activation, create_initializer
+from src.utils.tensor_util import gelu, get_activation, create_initializer
 
 
 def Conv2D(input_tensor, filter_shape, name):
@@ -72,3 +72,23 @@ def Flatten2D(input_tensor, units, name=None):
         kernel_initializer=create_initializer(),
         name=name)
     return flatten_output
+
+
+def Deconv2D(input_tensor, filter_shape, output_shape, name):
+    """
+    2D Deconvolution Layer.
+    :param input_tensor: A 4-D `Tensor` of type `float` and shape
+      `[batch, height, width, in_channels]`
+    :param filter_shape: A 4-D `Tensor` with the same type as `value` and shape
+      `[height, width, output_channels, in_channels]`
+    :param output_shape:
+    :param name:
+    :return:
+    """
+    conv_filter = tf.get_variable(name=name, shape=filter_shape, initializer=create_initializer())
+    conv_output = tf.nn.conv2d_transpose(
+        input_tensor, conv_filter,
+        tf.pack([batch, width*output_shape, hight*output_shape, out_channels]),
+        strides=[1, 1, 1, 1])
+    conv_output = gelu(conv_output)
+    return conv_output

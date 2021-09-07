@@ -1,6 +1,6 @@
 import tensorflow as tf
 
-from src.utils.TensorUtil import get_activation, create_initializer
+from src.utils.tensor_util import get_activation, create_initializer
 
 
 def Dense(input_tensor, units, activation="gelu", name=None):

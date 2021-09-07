@@ -1,8 +1,8 @@
 import tensorflow as tf
 
 from src.model.transformer.Attention import Attention
-from src.utils import ConfigUtil
-from src.utils.TensorUtil import create_initializer, layer_norm, dropout, get_activation
+from src.utils import config_util
+from src.utils.tensor_util import create_initializer, layer_norm, dropout, get_activation
 
 
 def Decoder(
@@ -21,7 +21,7 @@ def Decoder(
             attention_output = tf.layers.dense(
                 attention_output, hidden_size,
                 kernel_initializer=create_initializer())
-            attention_output = dropout(attention_output, ConfigUtil.dropout_prob)
+            attention_output = dropout(attention_output)
             attention_output = layer_norm(attention_output + input_tensor)
 
         """ Enc-Dec Attention Layer """
@@ -32,7 +32,7 @@ def Decoder(
             enc_dec_attention_output = tf.layers.dense(
                 enc_dec_attention_output, hidden_size,
                 kernel_initializer=create_initializer())
-            enc_dec_attention_output = dropout(enc_dec_attention_output, ConfigUtil.dropout_prob)
+            enc_dec_attention_output = dropout(enc_dec_attention_output)
             enc_dec_attention_output = layer_norm(enc_dec_attention_output + attention_output)
 
         with tf.variable_scope("intermediate"):

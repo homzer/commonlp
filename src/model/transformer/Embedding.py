@@ -1,20 +1,21 @@
 import tensorflow as tf
 
-from src.utils import ConfigUtil
-from src.utils.TensorUtil import create_initializer, dropout, layer_norm
+from src.utils import config_util
+from src.utils.tensor_util import create_initializer, dropout, layer_norm
 
 __all__ = ['Embedding']
 
 
-def Embedding(input_ids, positional=True):
+def Embedding(input_ids, vocab_size=21128, positional=True):
     """
      Construct embedding layer
+    :param vocab_size: size of vocabulary.
     :param input_ids: Tensor of shape [batch_size, seq_length]
     :param positional: whether to add the positional information.
     :return: float Tensor of shape [batch_size, seq_length, embedding_size].
     """
     with tf.variable_scope("embeddings", reuse=tf.AUTO_REUSE):
-        embedding_output = embedding_lookup(input_ids, ConfigUtil.vocab_size)
+        embedding_output = embedding_lookup(input_ids, vocab_size)
         if positional:
             embedding_output = position_embedding(embedding_output)
     return embedding_output

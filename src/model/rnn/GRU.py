@@ -3,8 +3,8 @@ from tensorflow.nn import dynamic_rnn
 from tensorflow.nn.rnn_cell import GRUCell
 import tensorflow as tf
 
-from src.utils import ConfigUtil
-from src.utils.TensorUtil import create_initializer
+from src.utils import config_util
+from src.utils.tensor_util import create_initializer
 
 
 def GRULayer(input_tensor, num_layers=1):

@@ -4,7 +4,7 @@ import numpy as np
 import tensorflow as tf
 
 from src.optimizer.adam import AdamOptimizer
-from src.utils.CheckpointUtil import filter_compatible_params
+from src.utils.checkpoint_util import filter_compatible_params
 from src.utils.variable_util import get_variable_name
 
 __all__ = ['Model']

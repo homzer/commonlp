@@ -1,7 +1,7 @@
 import tensorflow as tf
 
 from src.model.transformer.Attention import Attention
-from src.utils.TensorUtil import create_initializer, dropout, layer_norm, get_activation, reshape_to_matrix
+from src.utils.tensor_util import create_initializer, dropout, layer_norm, get_activation
 
 __all__ = ['Encoder']
 
