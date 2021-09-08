@@ -36,11 +36,12 @@ def draw_histogram(count_dict: dict):
     for item in count_dict.items():
         labels.append(item[0])
         counts.append(item[1])
+    max_y_lim = max(counts)
     plt.figure()
     plt.bar(labels, counts, width=0.7, align='center')
     plt.xlabel('Sequence Length')
     plt.ylabel('Count')
-    plt.ylim(0, 800)
+    plt.ylim(0, max_y_lim + 10)
     plt.show()
 
 

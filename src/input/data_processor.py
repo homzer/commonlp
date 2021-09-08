@@ -18,14 +18,16 @@ class DataProcessor:
     def __init__(self, vocab_file='config/vocab.txt'):
         self._tokenizer = Tokenizer(vocab_file)
 
-    def texts2ids(self, texts, fixed_length: int):
+    def texts2ids(self, texts, fixed_length: int, add_start_id=False):
         """
         Texts -> Tokens -> Ids.
         :param texts: `list` of `str`
         :param fixed_length: `int` the fixed length of text.
+        :param add_start_id: whether to add start id.
         :return: 2-D `list` the ids of tokens.
         """
-        return self.tokens2ids(self.texts2tokens(texts), fixed_length)
+        return self.tokens2ids(
+            self.texts2tokens(texts), fixed_length, add_start_id)
 
     def texts2tokens(self, texts):
         """
@@ -46,23 +48,32 @@ class DataProcessor:
                 % type(texts))
         return tokens
 
-    def tokens2ids(self, tokens: list, fixed_length: int):
+    def tokens2ids(self, tokens: list, fixed_length: int, add_start_id=False):
         """
         Convert tokens to ids.
         :param tokens: can be either 2D or 1D `list`.
         :param fixed_length: padding or Truncating according to the fixed length.
+        :param add_start_id: whether to add start id.
         :return: `list` same shape of tokens
         """
         tokens_ids = []
         if type(tokens[0]) == list:
             for token in tokens:
-                token_ids = self._tokenizer.tokens2ids(token)
+                if add_start_id:
+                    token_ids = [self._tokenizer.get_start_id()]
+                    token_ids.extend(self._tokenizer.tokens2ids(token))
+                else:
+                    token_ids = self._tokenizer.tokens2ids(token)
                 token_ids = padding(token_ids, fixed_length)
                 token_ids = truncating(token_ids, fixed_length)
                 assert len(token_ids) == fixed_length
                 tokens_ids.append(token_ids)
         elif type(tokens[0]) == str:
-            tokens_ids = self._tokenizer.tokens2ids(tokens)
+            if add_start_id:
+                tokens_ids = [self._tokenizer.get_start_id()]
+                tokens_ids.extend(self._tokenizer.tokens2ids(tokens))
+            else:
+                tokens_ids = self._tokenizer.tokens2ids(tokens)
             tokens_ids = padding(tokens_ids, fixed_length)
             tokens_ids = truncating(tokens_ids, fixed_length)
             assert len(tokens_ids) == fixed_length

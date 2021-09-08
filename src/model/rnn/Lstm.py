@@ -35,7 +35,7 @@ def BiLstm(input_tensor):
     lstm_bw_cell = LSTMCell(num_units=input_size)
     outputs, fw_state, bw_state = static_bidirectional_rnn(
         lstm_fw_cell, lstm_bw_cell, input_tensor, dtype=tf.float32)
-    return outputs[-1], fw_state, bw_state
+    return outputs[-1], fw_state[0], bw_state[0]
 
 
 

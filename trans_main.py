@@ -5,6 +5,7 @@ import tensorflow as tf
 
 from src.input.data_generator import DataGenerator
 from src.input.data_processor import DataProcessor
+from src.model.cnn.Conv1D import Conv1D, Pooling1D, Flatten1D
 from src.model.cnn.Conv2D import Conv2D, Flatten2D, MeanPooling2D
 from src.model.dnn.Dense import Dense
 from src.model.dnn.Dropout import Dropout
@@ -18,19 +19,30 @@ from src.utils.visual_util import draw_array_img
 
 set_verbosity()
 seq_length = 48
+hidden_size = 768
 vocab_file = 'config/vocab.txt'
 
 
 def model_graph(features, labels):
     input_ids = reshape_to_matrix(features)
     embeddings = Embedding(input_ids)  # [b * 2, s, h]
-    hidden_size = embeddings.shape[-1]
-    with tf.variable_scope("lstm"):
-        lstm_output, fw_state, bw_state = BiLstm(embeddings)  # [b*2, h]
-    with tf.variable_scope("softmax"):
-        dense_input = tf.reshape(lstm_output, [-1, hidden_size * 2])
-        dense_output = Dense(dense_input, 64, name='dense64')
+    with tf.variable_scope("encoder"):
+        input_mask = create_tensor_mask(input_ids)
+        attention_mask = create_attention_mask(input_ids, input_mask)
+        encoder_output = Encoder(embeddings, attention_mask, 'layer_0')
+        encoder_output = Encoder(encoder_output, attention_mask, 'layer_1')
+        encoder_output = Encoder(encoder_output, attention_mask, 'layer_2')
+        encoder_output = Encoder(encoder_output, attention_mask, 'layer_3')
+        encoder_output = Encoder(encoder_output, attention_mask, 'layer_4')
+    with tf.variable_scope("dense"):
+        dense_input = tf.slice(encoder_output, [0, 0, 0], [-1, 1, -1])  # [b*2, 1, h]
+        dense_input = tf.reshape(dense_input, [-1, 2 * hidden_size])
+        dense_output = Dense(dense_input, 128, name='dense128')
         dense_output = Dropout(dense_output)
+        dense_output = Dense(dense_output, 64, name='dense64')
+        dense_output = Dropout(dense_output)
+
+    with tf.variable_scope("softmax"):
         logits = Dense(dense_output, 2, name='dense2')
         predicts = tf.argmax(logits, axis=-1)
         loss = tf.reduce_mean(
@@ -65,10 +77,10 @@ def train(checkpoint_file, save_checkpoint_steps=2000):
         print("Chinese: ", train_cns[i])
         print("Label: ", train_labels[i])
     processor = DataProcessor(vocab_file)
-    train_ens = processor.texts2ids(train_ens, seq_length)
-    train_cns = processor.texts2ids(train_cns, seq_length)
-    eval_ens = processor.texts2ids(eval_ens, seq_length)
-    eval_cns = processor.texts2ids(eval_cns, seq_length)
+    train_ens = processor.texts2ids(train_ens, seq_length, True)
+    train_cns = processor.texts2ids(train_cns, seq_length, True)
+    eval_ens = processor.texts2ids(eval_ens, seq_length, True)
+    eval_cns = processor.texts2ids(eval_cns, seq_length, True)
     train_features = []
     for en, cn in zip(train_ens, train_cns):
         train_features.append([en, cn])
@@ -201,7 +213,7 @@ def validate(checkpoint_file):
 
 
 if __name__ == '__main__':
-    checkpoint = 'config/model.ckpt'
-    train(checkpoint, 3000)
+    checkpoint = 'result/trans/model.ckpt-5-layers'
+    train(checkpoint, 5000)
     # predict(checkpoint)
     # validate(checkpoint)
