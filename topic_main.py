@@ -3,7 +3,7 @@ import tensorflow as tf
 
 from src.input.data_generator import DataGenerator
 from src.input.data_processor import DataProcessor
-from src.model.cnn.Conv1D import Conv1D, Flatten1D, Pooling1D
+from src.model.cnn.conv1d_v1 import Conv1D, Flatten1D, Pooling1D
 from src.model.dnn.Dense import Dense
 from src.model.dnn.Dropout import Dropout
 from src.model.modeling import Model

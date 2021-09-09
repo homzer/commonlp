@@ -5,12 +5,9 @@ import tensorflow as tf
 
 from src.input.data_generator import DataGenerator
 from src.input.data_processor import DataProcessor
-from src.model.cnn.Conv1D import Conv1D, Pooling1D, Flatten1D
-from src.model.cnn.Conv2D import Conv2D, Flatten2D, MeanPooling2D
 from src.model.dnn.Dense import Dense
 from src.model.dnn.Dropout import Dropout
 from src.model.modeling import Model
-from src.model.rnn.Lstm import Lstm, BiLstm
 from src.model.transformer.Embedding import Embedding
 from src.model.transformer.Encoder import Encoder
 from src.utils.log_util import set_verbosity
