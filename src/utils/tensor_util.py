@@ -103,3 +103,51 @@ def max_and_mean_concat(embeddings, input_mask):
     embeds_mix = tf.concat([embeds_mean, embeds_max], axis=-1)  # [batch_size, embedding_size, 2]
     embeds_mix = tf.reshape(embeds_mix, shape=[-1, embedding_size * 2])
     return embeds_mix
+
+
+def loop_slice(input_tensor, stride, width, num, axis):
+    """
+    Repeat to slice a tensor into several pieces. If meet to an end,
+    start over from the very beginning.
+    For example:
+
+    ```python
+    x = tf.constant([[1, 1], [2, 2], [3, 3]])
+    loop_slice(x, stride=1, width=2, num=3, axis=0)  # [[[1, 1], [2, 2]],
+                                                        [[2, 2], [3, 3]],
+                                                        [[3, 3], [1, 1]]]]
+    ```
+    :param input_tensor: `Tensor` that you want to slice.
+    :param stride: `Integer` the step moves while slicing.
+    :param width: `Integer` the size of slicing window.
+    :param axis: `Integer` the axis of dim that you want to slice.
+    :param num: `Integer` the number of the result.
+    :return: `list` of `Tensor`, whose length is `num`.
+    """
+    _rank = input_tensor.shape.ndims
+    assert axis < _rank
+    if axis == -1:
+        axis = _rank - 1
+    _begins = [0 for _ in range(_rank)]
+    _sizes = [-1 for _ in range(_rank)]
+    _axis_size = int(input_tensor.shape[axis])
+    _result = []
+    for i in range(num):
+        _b = i * stride % _axis_size
+        _begins[axis] = _b
+        if _b + width <= _axis_size:
+            _sizes[axis] = width
+            slice_tensor = tf.slice(
+                input_tensor, _begins, _sizes)
+        else:
+            _sizes[axis] = -1
+            _r = _b + width - _axis_size
+            slice_tensor = tf.slice(
+                input_tensor, _begins, _sizes)
+            _begins[axis] = 0
+            _sizes[axis] = _r
+            slice_tensor = tf.concat(
+                [slice_tensor, tf.slice(
+                    input_tensor, _begins, _sizes)], axis=axis)
+        _result.append(slice_tensor)
+    return _result
