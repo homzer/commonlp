@@ -105,7 +105,7 @@ def max_and_mean_concat(embeddings, input_mask):
     return embeds_mix
 
 
-def loop_slice(input_tensor, stride, width, num, axis):
+def loop_slice(input_tensor, stride, width, num, axis, concat=True):
     """
     Repeat to slice a tensor into several pieces. If meet to an end,
     start over from the very beginning.
@@ -113,25 +113,32 @@ def loop_slice(input_tensor, stride, width, num, axis):
 
     ```python
     x = tf.constant([[1, 1], [2, 2], [3, 3]])
-    loop_slice(x, stride=1, width=2, num=3, axis=0)  # [[[1, 1], [2, 2]],
-                                                        [[2, 2], [3, 3]],
-                                                        [[3, 3], [1, 1]]]]
+    loop_slice(
+        x, stride=1, width=2,
+        num=3, axis=0, concat=False)  # [Array([[1, 1], [2, 2]]),
+                                         Array([[2, 2], [3, 3]]),
+                                         Array([[3, 3], [1, 1]])]
+    loop_slice(
+        x, stride=1, width=2,
+        num=3, axis=0, concat=True)  # [[[1, 1], [2, 2]],
+                                        [[2, 2], [3, 3]],
+                                        [[3, 3], [1, 1]]]
     ```
     :param input_tensor: `Tensor` that you want to slice.
     :param stride: `Integer` the step moves while slicing.
     :param width: `Integer` the size of slicing window.
     :param axis: `Integer` the axis of dim that you want to slice.
     :param num: `Integer` the number of the result.
-    :return: `list` of `Tensor`, whose length is `num`.
+    :param concat: whether to concat the results to a single `Tensor`
+    :return: If `concat` is True, return `list` of `Tensor`, whose length is `num`.
+    Else return a `Tensor` whose shape[axis] = num.
     """
     _rank = input_tensor.shape.ndims
     assert axis < _rank
-    if axis == -1:
-        axis = _rank - 1
     _begins = [0 for _ in range(_rank)]
     _sizes = [-1 for _ in range(_rank)]
     _axis_size = int(input_tensor.shape[axis])
-    _result = []
+    _results = []
     for i in range(num):
         _b = i * stride % _axis_size
         _begins[axis] = _b
@@ -149,5 +156,10 @@ def loop_slice(input_tensor, stride, width, num, axis):
             slice_tensor = tf.concat(
                 [slice_tensor, tf.slice(
                     input_tensor, _begins, _sizes)], axis=axis)
-        _result.append(slice_tensor)
-    return _result
+        _results.append(slice_tensor)
+    if concat:
+        return tf.concat(
+            [tf.expand_dims(
+                _tensor, axis=axis)
+                for _tensor in _results], axis=axis)
+    return _results

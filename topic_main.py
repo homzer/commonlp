@@ -161,7 +161,7 @@ def validate(checkpoint_file):
 
 
 if __name__ == '__main__':
-    checkpoint = 'result/topic/model.ckpt-3000'
+    checkpoint = 'result/topic/model.ckpt-bert'
     # train(checkpoint, 3000)
     # validate(checkpoint)
     predict(checkpoint)

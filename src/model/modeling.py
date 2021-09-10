@@ -14,7 +14,10 @@ class Model(object):
 
     def __init__(self, features, labels, model_graph):
         """
-        Building Model
+        Building Model.
+
+        Before training or prediction or any other op., please run `compile` op first.
+
         :param features: `tf.placeholder`, e.g. tf.placeholder("int32", [None, seq_length])
         :param labels: `tf.placeholder`, e.g. self.labels = tf.placeholder("int32", [None, ])
         :param model_graph: a function defining the graph of model,
@@ -46,25 +49,33 @@ class Model(object):
         """ Compile model structure. """
         self._global_step = tf.Variable(
             initial_value=0, trainable=False, name='global_step', dtype=tf.int32)
-        self._optimizer = AdamOptimizer(1e-5).minimize(
+        self._optimizer = AdamOptimizer(1e-4).minimize(
             self._loss, self._global_step, self._update_var_list)
         self._sess.run(tf.global_variables_initializer())
 
     def freeze(self, var_name_list):
         """
         Not apply back-propagation for var in var_list
-        :param var_name_list: list or tuple of `Variable`'s name.
+        :param var_name_list: list or tuple of `Variable`'s name, or just
+        a part of it.
         for example:
         var_list = ['embeddings/word_embeddings', 'embeddings/position_embeddings']
+        You can also write:
+        var_list = ['embeddings'], which will freeze all variable names contain str `embeddings`.
         """
+        def is_frozen(var):
+            for frozen_name in var_name_list:
+                if frozen_name in var:
+                    return True
+            return False
+
         tvars = tf.trainable_variables()
         self._update_var_list = []
         for tvar in tvars:
             tvar_name = get_variable_name(tvar)
-            for frozen_name in var_name_list:
-                if frozen_name in tvar_name:
-                    print("Frozen variables: %s" % tvar_name)
-                    continue
+            if is_frozen(tvar_name):
+                print("Frozen variables: %s" % tvar_name)
+                continue
             self._update_var_list.append(tvar)
 
     def train(self, features, labels):

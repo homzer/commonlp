@@ -78,72 +78,72 @@ def Conv1D(input_tensor, filter_shape, name):
     # `S` donates length        `H` donates hidden_size
     # `I` donates in_channels   `O` donates out_channels
     # `W` donates channel_win_size
-    slice_contents = tf.concat(  # [B, S, F, H, I]
-        [tf.expand_dims(
-            _tensor, axis=1) for _tensor in loop_slice(
-            input_tensor, stride=1,
-            width=filter_width, num=seq_length,
-            axis=1)], axis=1)
-    slice_channels = tf.concat(  # [B, S, F, H, O, W]
-        [tf.expand_dims(
-            _tensor, axis=-2) for _tensor in loop_slice(
-            slice_contents, stride=channel_stride,
-            width=channel_win_size,
-            num=out_channels, axis=-1)], axis=-2)
-    filter_shape = [filter_width, hidden_size, out_channels, channel_win_size]
-    filter_weights = tf.get_variable(  # [F, H, O, W]
+    slice_contents = loop_slice(  # [B, S, F, H, I]
+        input_tensor, stride=1, width=filter_width,
+        num=seq_length, axis=1)
+    slice_channels = loop_slice(  # [B, S, F, H, W, O]
+        slice_contents, stride=channel_stride,
+        width=channel_win_size, num=out_channels, axis=-1)
+    filter_shape = [filter_width, hidden_size, channel_win_size, out_channels]
+    filter_weights = tf.get_variable(  # [F, H, W, O]
         name=name+'_W', shape=filter_shape, initializer=create_initializer())
     bias_shape = [out_channels]
     filter_bias = tf.get_variable(  # [O]
         name=name+'_b', shape=bias_shape, initializer=create_initializer())
     filter_weights = tf.expand_dims(filter_weights, axis=0)
-    filter_weights = tf.expand_dims(filter_weights, axis=0)  # [1, 1, F, H, O, W]
+    filter_weights = tf.expand_dims(filter_weights, axis=0)  # [1, 1, F, H, W, O]
     result = tf.reduce_sum(  # [B, S, F, H, O]
-        tf.multiply(filter_weights, slice_channels), axis=-1)
+        tf.multiply(filter_weights, slice_channels), axis=-2)
     result = tf.reduce_sum(result, axis=2)  # [B, S, H, O]
     result = gelu(tf.add(result, filter_bias))
     return result
 
 
-def MaxPooling1D(input_tensor):
+def MaxPooling1D(input_tensor, pool_size, stride=None):
     """
     Max Pooling layer.
+    Pooling 2-D `Tensor`. However, higher rank is also supported.
+    Specifically, `Tensor` with shape [batch, length, hidden_size, channels]
+    Require (length - pool_size) % stride == 0.
     For examples:
     ```python
 
     x = tf.constant(
-    [[[1, 3, 5],
-    [6, 9, 1],
-    [3, 6, 6],
-    [1, 0, 9],
-    [4, 4, 4]]])  # num_windows = 5, num_channels = 3
+        [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4,
+         5, 5, 5, 6, 6, 6, 7, 7, 7, 8, 8, 8],
+        shape=[2, 4, 3])
 
-    MaxPooling1D(x)  # [[6, 9, 9]]
+    MaxPooling1D(x, 2, 2)  # [[[2, 2, 2], [4, 4, 4]],
+                              [[6, 6, 6], [8, 8, 8]]]
     ```
-    :param input_tensor: `Tensor` with shape [batch, num_windows, num_channels].
-    :return: `Tensor` with shape [batch, num_channels]
+    :param input_tensor: `Tensor` with shape [batch, length, ...].
+    :param pool_size: `Integer` the width of pooling window.
+    :param stride: `Integer` the step of pooling window moving.
+    If None, stride = pool_size by default.
+    :return: `Tensor` with shape [batch, num_pools, ...],
+    where num_pools is the times of pooling, which can be calculated as follow:
+    num_pools = (length - pool_size) / stride + 1.
     """
-    input_tensor = tf.transpose(input_tensor, [0, 2, 1])
-    return tf.reduce_max(input_tensor, axis=-1)
+    length = int(input_tensor.shape[1])
+    if stride is None:
+        stride = pool_size
+    assert (length - pool_size) % stride == 0
+    num_pools = int((length - pool_size) / stride) + 1
+    result = loop_slice(  # [batch, num_pools, pool_size, ...]
+        input_tensor, stride=stride,
+        width=pool_size, num=num_pools, axis=1)
+    return tf.reduce_max(result, axis=2)
 
 
-def MeanPooling1D(input_tensor):
+def Flatten1D(input_tensor):
     """
-    Average Pooling Layer.
-    For examples:
-    ```python
-
-    x = tf.constant(
-    [[[3, 5, 5],
-    [1, 3, 5],
-    [1, 1, 5],
-    [3, 2, 8],
-    [2, 4, 2]]])  # num_windows = 5, num_channels = 3
-
-    MaxPooling1D(x)  # [[2, 3, 5]]
-    ```
-    :param input_tensor: `Tensor` with shape [batch, num_windows, num_channels].
-    :return: `Tensor` with shape [batch, num_channels]
+    Apply Flatten Layer after 1-D CNN layers,
+    reshape the output of `CNN` to the input of `DNN`
+    :param input_tensor: 4-D `Tensor` of shape [batch, length, hidden_size, channels]
+    :return: [batch_size, length * hidden_size * channels]
     """
-    input_tensor = tf.transpose(input_tensor, [0, 2, 1])
-    return tf.reduce_mean(input_tensor, axis=-1)
+    length = input_tensor.shape[1]
+    hidden = input_tensor.shape[2]
+    channels = input_tensor.shape[3]
+    last_dim = length * hidden * channels
+    return tf.reshape(input_tensor, [-1, last_dim])
