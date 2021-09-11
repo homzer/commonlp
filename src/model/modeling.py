@@ -41,15 +41,25 @@ class Model(object):
 
     def _build_graph(self):
         print("Building model graph......")
-        self._predictions, self._loss, self._variables = self._model_graph(
-            self._features, self._labels)
+        returned = self._model_graph(self._features, self._labels)
+        if len(returned) == 3:
+            self._predictions = returned[0]
+            self._loss = returned[1]
+            self._variables = returned[2]
+        elif len(returned) == 2:
+            self._predictions = returned[0]
+            self._loss = returned[1]
+        else:
+            raise ValueError("The return of `model_graph` op must be `list` or `tuple` "
+                             "with content: [predicts, loss, variables] or "
+                             "[predicts, loss]. Got return value:", returned)
         print("Building model graph complete!")
 
-    def compile(self):
+    def compile(self, learning_rate=1e-4):
         """ Compile model structure. """
         self._global_step = tf.Variable(
             initial_value=0, trainable=False, name='global_step', dtype=tf.int32)
-        self._optimizer = AdamOptimizer(1e-4).minimize(
+        self._optimizer = AdamOptimizer(learning_rate).minimize(
             self._loss, self._global_step, self._update_var_list)
         self._sess.run(tf.global_variables_initializer())
 
@@ -127,6 +137,58 @@ class Model(object):
         saver = tf.train.Saver(rvars)
         saver.restore(self._sess, checkpoint_file)
         print("Restoring model complete!")
+
+    def auto_train(
+            self, train_generator, eval_generator, save_path,
+            total_steps=None, eval_step=500, save_step=1000):
+        """
+        Training model automatically.
+        :param train_generator: `DataGenerator` instance.
+        :param eval_generator: `DataGenerator` instance.
+        :param save_path: where the checkpoint file will be saved.
+        :param total_steps: total training steps which you can specify.
+        If is None, total steps will be automatically calculated.
+        :param eval_step: how often to do the evaluation op.
+        :param save_step: how often to save the model.
+        """
+        if total_steps is None:
+            total_steps = train_generator.total_steps
+        for step in range(total_steps):
+            train_features, train_labels = train_generator.next_batch()
+            self.train(train_features, train_labels)
+            if step % 100 == 0:
+                print("Global Step %d of %d" % (step, total_steps))
+            if step % eval_step == 0:
+                print("Evaluating......")
+                all_train_loss = []
+                all_train_acc = []
+                all_eval_loss = []
+                all_eval_acc = []
+                for _ in range(100):
+                    eval_features, eval_labels = eval_generator.next_batch()
+                    train_features, train_labels = train_generator.next_batch()
+                    eval_loss, eval_acc = self.evaluate(eval_features, eval_labels)
+                    train_loss, train_acc = self.evaluate(train_features, train_labels)
+                    all_eval_loss.append(eval_loss)
+                    all_eval_acc.append(eval_acc)
+                    all_train_loss.append(train_loss)
+                    all_train_acc.append(train_acc)
+                eval_features, eval_labels = eval_generator.next_batch()
+                predicts = self.predict(eval_features, eval_labels)
+                join_str = ' ' if len(str(predicts[0])) == 1 else '\n'
+                eval_label_str = join_str.join([str(label) for label in eval_labels])
+                pred_label_str = join_str.join([str(pred) for pred in predicts])
+                print("************************************")
+                print("Eval Loss: ", np.mean(all_eval_loss))
+                print("Eval Accuracy: %.2f%%" % (np.mean(all_eval_acc) * 100))
+                print("Train Loss: ", np.mean(all_train_loss))
+                print("Train Accuracy: %.2f%% " % (np.mean(all_train_acc) * 100))
+                print("Evaluate Labels:\t", eval_label_str)
+                print("Evaluate Predicts:\t", pred_label_str)
+                print("************************************")
+            if step % save_step == 0 and step != 0:
+                self.save(step, save_path)
+        self.save(total_steps, save_path)
 
     def __del__(self):
         self._sess.close()

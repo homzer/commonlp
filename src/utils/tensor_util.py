@@ -134,7 +134,9 @@ def loop_slice(input_tensor, stride, width, num, axis, concat=True):
     Else return a `Tensor` whose shape[axis] = num.
     """
     _rank = input_tensor.shape.ndims
-    assert axis < _rank
+    if axis < 0:
+        axis = _rank + axis
+    assert -_rank <= axis < _rank
     _begins = [0 for _ in range(_rank)]
     _sizes = [-1 for _ in range(_rank)]
     _axis_size = int(input_tensor.shape[axis])
@@ -148,11 +150,11 @@ def loop_slice(input_tensor, stride, width, num, axis, concat=True):
                 input_tensor, _begins, _sizes)
         else:
             _sizes[axis] = -1
-            _r = _b + width - _axis_size
+            _remain = _b + width - _axis_size
             slice_tensor = tf.slice(
                 input_tensor, _begins, _sizes)
             _begins[axis] = 0
-            _sizes[axis] = _r
+            _sizes[axis] = _remain
             slice_tensor = tf.concat(
                 [slice_tensor, tf.slice(
                     input_tensor, _begins, _sizes)], axis=axis)

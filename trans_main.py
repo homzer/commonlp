@@ -1,17 +1,16 @@
 import random
 
-import numpy as np
 import tensorflow as tf
 
 from src.input.data_generator import DataGenerator
 from src.input.data_processor import DataProcessor
+from src.model.cnn.conv1d_v2 import Conv1D, MaxPooling1D, Flatten1D
 from src.model.dnn.Dense import Dense
 from src.model.dnn.Dropout import Dropout
 from src.model.modeling import Model
 from src.model.transformer.Embedding import Embedding
-from src.model.transformer.Encoder import Encoder
 from src.utils.log_util import set_verbosity
-from src.utils.tensor_util import reshape_to_matrix, create_tensor_mask, create_attention_mask
+from src.utils.tensor_util import reshape_to_matrix
 from src.utils.visual_util import draw_array_img
 
 set_verbosity()
@@ -23,29 +22,33 @@ vocab_file = 'config/vocab.txt'
 def model_graph(features, labels):
     input_ids = reshape_to_matrix(features)
     embeddings = Embedding(input_ids)  # [b * 2, s, h]
-    with tf.variable_scope("encoder"):
-        input_mask = create_tensor_mask(input_ids)
-        attention_mask = create_attention_mask(input_ids, input_mask)
-        encoder_output = Encoder(embeddings, attention_mask, 'layer_0')
-        encoder_output = Encoder(encoder_output, attention_mask, 'layer_1')
-        encoder_output = Encoder(encoder_output, attention_mask, 'layer_2')
-        encoder_output = Encoder(encoder_output, attention_mask, 'layer_3')
-        encoder_output = Encoder(encoder_output, attention_mask, 'layer_4')
-    with tf.variable_scope("dense"):
-        dense_input = tf.slice(encoder_output, [0, 0, 0], [-1, 1, -1])  # [b*2, 1, h]
-        dense_input = tf.reshape(dense_input, [-1, 2 * hidden_size])
-        dense_output = Dense(dense_input, 128, name='dense128')
-        dense_output = Dropout(dense_output)
-        dense_output = Dense(dense_output, 64, name='dense64')
-        dense_output = Dropout(dense_output)
+    with tf.variable_scope("conv"):
+        conv_output = Conv1D(embeddings, [2, 1, 6], 'layer_0')
+        conv_output = MaxPooling1D(conv_output, 3)  # [b*2, 16, h, o]
+        conv_output = Dropout(conv_output)
 
-    with tf.variable_scope("softmax"):
-        logits = Dense(dense_output, 2, name='dense2')
+        conv_output = Conv1D(conv_output, [2, 6, 12], 'layer_1')
+        conv_output = MaxPooling1D(conv_output, 4)  # [b*2, 4, h, o]
+        conv_output = Dropout(conv_output, 0.5)
+
+        conv_output = Conv1D(conv_output, [2, 12, 24], 'layer_2')
+        conv_output = MaxPooling1D(conv_output, 2)  # [b*2, 2, h, o]
+        conv_output = Dropout(conv_output, 0.5)
+
+        conv_output = tf.transpose(conv_output, [0, 1, 3, 2])
+        conv_output = tf.reduce_mean(conv_output, axis=-2)  # [b*2, 2, h]
+        conv_output = tf.reduce_mean(conv_output, axis=-2)  # [b*2, h]
+        conv_output = tf.reshape(conv_output, [-1, 2 * hidden_size])
+
+    with tf.variable_scope("soft"):
+        dense_output = Dense(conv_output, 64)
+        dense_output = Dropout(dense_output, 0.5)
+        logits = Dense(dense_output, 2)
         predicts = tf.argmax(logits, axis=-1)
         loss = tf.reduce_mean(
             tf.nn.sparse_softmax_cross_entropy_with_logits(
                 logits=logits, labels=labels))
-    return predicts, loss, None
+    return predicts, loss
 
 
 def read_file(filename):
@@ -64,7 +67,7 @@ def read_file(filename):
     return labels, ens, cns
 
 
-def train(checkpoint_file, save_checkpoint_steps=2000):
+def train(checkpoint_file, save_steps=2000):
     train_labels, train_ens, train_cns = read_file('data/trans_train.txt')
     eval_labels, eval_ens, eval_cns = read_file('data/trans_dev.txt')
     print("*****Examples*****")
@@ -74,10 +77,10 @@ def train(checkpoint_file, save_checkpoint_steps=2000):
         print("Chinese: ", train_cns[i])
         print("Label: ", train_labels[i])
     processor = DataProcessor(vocab_file)
-    train_ens = processor.texts2ids(train_ens, seq_length, True)
-    train_cns = processor.texts2ids(train_cns, seq_length, True)
-    eval_ens = processor.texts2ids(eval_ens, seq_length, True)
-    eval_cns = processor.texts2ids(eval_cns, seq_length, True)
+    train_ens = processor.texts2ids(train_ens, seq_length)
+    train_cns = processor.texts2ids(train_cns, seq_length)
+    eval_ens = processor.texts2ids(eval_ens, seq_length)
+    eval_cns = processor.texts2ids(eval_cns, seq_length)
     train_features = []
     for en, cn in zip(train_ens, train_cns):
         train_features.append([en, cn])
@@ -92,59 +95,29 @@ def train(checkpoint_file, save_checkpoint_steps=2000):
         print("Label: ", train_labels[i])
 
     train_generator = DataGenerator(
-        batch_size=4,
-        epochs=4,
+        batch_size=12,
+        epochs=32,
         features=train_features,
         labels=train_labels)
     eval_generator = DataGenerator(
-        batch_size=8,
-        epochs=4,
+        batch_size=12,
+        epochs=32,
         features=eval_features,
         labels=eval_labels)
     model = Model(
         features=tf.placeholder("int32", [None, 2, seq_length]),
         labels=tf.placeholder("int32", [None, ]),
         model_graph=model_graph)
+    # model.freeze(['embeddings'])
     model.compile()
     model.restore(checkpoint_file)
-    # training
-    total_steps = train_generator.total_steps
-    for step in range(total_steps):
-        train_batch_features, train_batch_labels = train_generator.next_batch()
-        global_step = model.train(train_batch_features, train_batch_labels)
-        if step % 100 == 0:
-            print("Global Step %d of %d" % (global_step, total_steps))
-        if step % 500 == 0:
-            print("Evaluating......")
-            all_eval_loss = []
-            all_train_loss = []
-            all_train_acc = []
-            all_eval_acc = []
-            for eval_step in range(100):
-                if eval_step % 10 == 0:
-                    print("Evaluate Step %d of %d......" % (eval_step, 100))
-                eval_batch_features, eval_batch_labels = eval_generator.next_batch()
-                train_batch_features, train_batch_labels = train_generator.next_batch()
-                eval_loss, eval_acc = model.evaluate(eval_batch_features, eval_batch_labels)
-                train_loss, train_acc = model.evaluate(train_batch_features, train_batch_labels)
-                all_train_loss.append(train_loss)
-                all_train_acc.append(train_acc)
-                all_eval_loss.append(eval_loss)
-                all_eval_acc.append(eval_acc)
-            eval_batch_features, eval_batch_labels = eval_generator.next_batch()
-            predicts = model.predict(eval_batch_features, eval_batch_labels)
-            print("************************************")
-            print("Evaluation Loss: ", np.mean(all_eval_loss))
-            print("Evaluation Accuracy: ", np.mean(all_eval_acc))
-            print("Train Loss: ", np.mean(all_train_loss))
-            print("Train Accuracy: ", np.mean(all_train_acc))
-            print("Evaluate Labels:\t", " ".join([str(label) for label in eval_batch_labels]))
-            print("Evaluate Predicts:\t", " ".join([str(pred) for pred in predicts]))
-            print("************************************")
-
-        if step % save_checkpoint_steps == 0 and step != 0:
-            model.save(step, "result/trans")
-    model.save(total_steps, "result/trans")
+    model.auto_train(
+        train_generator,
+        eval_generator,
+        save_path="result/trans",
+        total_steps=20000,
+        eval_step=1000,
+        save_step=save_steps)
 
 
 def predict(checkpoint_file):
@@ -206,11 +179,10 @@ def validate(checkpoint_file):
         model_graph=model_graph)
     model.restore(checkpoint_file)
     var = model.validate(features, labels)
-    draw_array_img(var, 'result/trans/img')
+    draw_array_img(var, 'result/trans/img', True)
 
 
 if __name__ == '__main__':
-    checkpoint = 'result/trans/model.ckpt-5-layers'
-    train(checkpoint, 5000)
-    # predict(checkpoint)
+    checkpoint = 'result/trans/model.ckpt-10000'
+    train(checkpoint, 10000)
     # validate(checkpoint)
