@@ -1,0 +1,1817 @@
+1	She put the magazine on the table.	她把雜誌放在桌上。
+1	Hey, what are you doing here?	嘿，你在這做什麼？
+1	Please keep this secret.	請保守這個秘密。
+0	How could things get worse?	她做了一套新衣服給他。
+0	Kyoto and Boston are sister cities.	你喜欢吗 ?
+1	Tom mostly kept to himself.	汤姆大多一个人独处。
+1	Do you like music?	你爱音乐吗？
+1	Tell me the reason why she got angry.	告诉我她为什么生气。
+0	When does the game begin?	你週末有什麼計劃？
+0	I passed by her house yesterday.	五年太漫長而無法等待。
+1	Are you all ready?	你們都準備好了嗎?
+0	He's not very strict about this.	我不想要問他。
+1	She is fond of singing old songs.	她喜歡唱老歌。
+1	I wish to climb Mt. Fuji again.	我希望再爬一次上富士山。
+0	More than twenty boys went there.	我不知道他今晚會不會來。
+0	Any emotion, if it is sincere, is involuntary.	你的建議似乎是合理的。
+0	How long did you live there?	我們在等對的時機。
+1	I don't understand German.	我不懂德语。
+0	I don't like her face.	我們和朋友一起度過週末。
+1	He substituted for his father.	子承父业。
+0	She plays the piano very well.	他給了我任何我需要的幫助。
+1	You are no better at remembering things than I am.	你记事情的能力并不比我好多少。
+1	Would you lend me some money?	你可以借我一些錢嗎?
+1	She hit the ball hard.	她用力地拍了球。
+0	Please serve him his meal first.	我不在就别开始。
+1	He had kept the secret to himself.	他保守著這個秘密。
+1	He graduated from Harvard University with honors.	他光榮地從哈佛大學畢業了。
+1	Tom started dating Mary three months ago.	汤姆三个月前开始和玛丽约会。
+1	All my homework is done.	我做完了所有的回家作業。
+0	My uncle never writes letters.	我是札幌的市民。
+0	It's too late to apologize.	檸檬是酸的。
+1	I gave you a book.	我给了你一本书。
+1	Could you teach me how to play the piano?	您能教我弹钢琴吗？
+1	I only spent three dollars.	我只花了三美元。
+0	I'm sleepy.	猫看着鱼。
+0	You're really beautiful.	我弟弟没我两年前高。
+1	Whether you succeed or not depends on your own efforts.	你成功与否取决于你自身的努力。
+1	That's what Tom requested.	那就是汤姆想要的。
+0	Have you been to London before?	她要求他打開窗戶。
+0	He doesn't speak our language.	新娘好像非常漂亮。
+0	I have a computer.	请联系我们。
+0	Turn right at the next corner.	我现在30岁了。
+0	I ate caviar.	你能待一会吗？
+0	She works as a massage therapist.	她給了我一個認可的微笑。
+0	What do you usually eat for lunch?	他不是意大利人吗？
+1	That's a bad day for me.	那天我不行。
+1	I like sports.	我喜歡運動。
+0	She may come.	英語是第三節。
+0	We expect a lot from him.	我已经试过那个了。
+1	I took a picture of my family.	我為我的家人拍了照片。
+0	She greeted me with a smile.	雖然有一些印刷錯誤, 但大致上說來, 這是一本好書。
+0	Every time I went to his place, he was studying.	我匆忙的吃了午餐。
+1	Only four horses were in the race.	只有四匹馬參加了比賽。
+1	That is your book.	那是你的書。
+0	Tom had a heart attack last year.	他們全都被他的笑話逗笑了。
+0	Any comments are welcome.	你問這個幹什麼?
+0	She spread the butter on the bread.	我父親太忙而無法去散步。
+0	Don't make fun of people.	我们应该做到最好。
+0	Karuizawa is famous as a summer resort.	他和他的儿子放风筝了。
+0	What's your favorite home-cooked food?	你最好立刻離開這裡。
+1	It makes me feel sad.	这让我感到沮丧。
+0	This car handles very easily.	我們不該期望從Tom那得到太多幫助。
+0	I've never underestimated Tom.	您已经去过纽约了吗？
+1	Would you please have a look at these papers?	請你看看這些文件。
+0	His life after retirement was unhappy.	打電話到我辦公室來。
+1	The plane made a perfect landing.	這架飛機完美的著陸了。
+0	It all depends on the weather.	他很英俊。
+1	We're very different.	我们很不一样。
+1	It is definite that he will go to America.	他肯定要去美国。
+0	I threw away my shoes.	我不記得了。
+0	I'm so excited.	那棟白色的建築物是一家醫院。
+0	Had he known what was about to happen, he would have changed his plan.	他不是那么出色的作家我想他知道这一点。
+0	You have nice skin.	他错过了7点30分的车。
+0	My heart was filled with happiness.	把这封信寄了。
+0	I didn't see him.	我们每周在这儿聚一次。
+1	My parents usually speak to each other in French, even though my mother is a native English speaker.	我父母通常用法语对话，即使我母亲的母语是英语。
+0	Which do you like better, spring or autumn?	我能用信用卡支付吗？
+0	You've been late for school more often than before.	他非常生气。
+1	You're partially correct.	你部分正确。
+1	I will give you whatever you want.	我會給你任何你想要的東西。
+0	Women tend to live longer than men.	我父親感冒了。
+1	They don't seem to be Americans.	他們似乎不是美國人。
+0	She laid the work on him.	告诉我拿它做什么。
+1	They were listening to the radio.	他們在聽收音機。
+0	I always thought that Tom was a bit different.	那是他工作的辦公室。
+0	He can speak French, and obviously English.	他扮演哈姆雷特的角色。
+1	Everyone admired his courage.	每個人都佩服他的勇氣。
+1	He did not think he needed their protection.	他认为他不需要他们的保护。
+1	What are you staring at?	你在看什麼？
+0	Give him an inch and he'll take a yard.	我想沒關係。
+0	The cough syrup has a licorice flavoring.	倫敦被轟炸過許多次。
+1	The meat has gone bad.	這肉已經壞了。
+1	Six divided by two is three.	六除以二得三。
+0	Ask him if he can speak Japanese.	一張卡片被附在了禮物上。
+1	If you see a mistake, then please correct it.	如果你发现错误，那就请你纠正它。
+0	What time is it?	電話於1876年由貝爾所發明。
+0	Come here by ten at the latest.	你能为我翻译这首歌吗？
+1	Why did you show me this?	你为什么让我看这个？
+1	I'm free tonight.	我今晚有空。
+0	I want to be the one who decides.	請不要問。
+1	Tom has been struck by lightning three times.	湯姆被閃電擊中過三次。
+1	Here is your book.	這是你的書。
+1	Tom, I want to have a chat with you.	Tom，我想和你談談。
+1	Tom wrote his name in the sand with a stick.	汤姆用棍子在沙上写了他的名字。
+1	It's as cold as ice.	它冷得像冰一樣。
+0	My brother gave me a cute doll.	請讓我看看您的登機證好嗎?
+0	I was a student at that time.	可以相信他到什麼程度？
+0	It was not long before we met again by chance.	現在該你發球。
+0	Everybody will die.	給我點東西吃。
+0	She had the nerve to speak out.	猴子從樹上掉了下來。
+0	She was holding a small parasol in her hand.	她很聰明。
+1	He passed the entrance examination.	他通過了入學考試。
+0	A friend of mine is studying abroad.	你的英語正在進步。
+1	I get along with my younger brother.	我與我的弟弟相處融洽。
+0	His house is somewhere about here.	這些女孩當中其中一個被留下來了。
+0	This ticket is good for three days.	你出价多少？
+0	Do you have any smaller sizes?	我猜她超過三十歲了。
+1	I gave careful consideration to the problem.	我仔細地考慮了這個問題。
+1	Answer the question.	回答問題。
+0	I must help my mother.	他的母親不想做。
+0	What's your home address?	他一點一點地變好。
+0	The prince fell in love with a woodcutter's daughter.	谢谢你烤的美味蛋糕。
+1	I think you're a really nice guy.	我認為你真的是一個好人。
+1	A burglar broke into his house.	一個竊賊闖進了他的房子。
+0	Jealousy was the motive for the murder.	我改了一下我的网站的布局。
+0	My sister became a college student.	汤姆参加了讨论。
+0	They are at lunch.	她把書還給了圖書館。
+1	You should know that's impossible.	你应该知道这是不可能的。
+0	I forgot it in the garage.	禍不單行。
+1	I do not allow sleeping in class.	我不允许有人在课上睡觉。
+0	Tom has a lot of experience in computers.	经过银行，左边就是他的办公室了。
+0	It cost me ten thousand yen to have my television set repaired.	她的祖母活到了88岁。
+1	I made some mistakes on the test.	我在考试时犯了些错。
+1	I have already finished the job.	我已經完成了這項工作。
+1	Do you have something to say?	您有什么事要说吗？
+1	They sank ten enemy ships.	他们使10艘敌船沉了
+1	Everything went according to plan.	一切按計劃進行。
+0	Is one thousand yen enough?	她看到鏡子裡的自己。
+0	Move the chair nearer to the desk.	數學對我來說很難。
+1	He had no luck in finding work.	他不幸找不到工作。
+1	This chair is ugly.	這把椅子很醜。
+1	He doesn't realise that he's tone deaf.	他不知道他自己五音不全。
+1	He barely passed the examination.	他勉強地通過了考試。
+0	I don't want any excuses.	你做完了嗎?
+1	Don't waste your time.	别浪费时间。
+1	He looks a bit tired, doesn't he?	他看起來有點累，不是嗎？
+1	My brother is a high school student.	我哥哥是個高中生。
+0	It's pretty heavy.	他有个大家庭。
+1	Tom didn't write back to Mary.	汤姆没给玛丽写回复。
+1	The meaning of this sentence is obscure.	这句句子意思模糊。
+1	We'll be in Boston for another three weeks.	我們還會在波士頓待三個月。
+0	It would take forever for me to explain everything.	我中奖了。
+0	It would take me too much time to explain to you why it's not going to work.	我愛百香果汁。
+0	I try not to think about it.	群鸟南翔。
+1	I don't worry about the risk.	我不担心风险。
+0	Tom was there physically, but not mentally.	你不需要考试。
+1	Is that better?	那更好吗？
+0	The United States borders Canada.	我认为我现在该走了。
+0	Let's take a ten-minute break.	汤姆被警察盘问。
+1	I'm as hungry as a horse.	我餓得像匹馬。
+1	So you give up, right?	所以你放弃了，是吗？
+1	I'd like a glass of water, please.	請給我一杯水。
+1	I hear they're pretty good.	我听说他们挺好。
+0	I would like fruit juice.	这个海滩是冲浪者的天堂。
+0	He's accustomed to traveling.	你要想到你必须死。
+1	I started thinking about Tom.	我开始想起汤姆。
+1	Many attended his funeral.	很多人都参加了他的葬礼。
+0	My baby began crying, asking for milk.	明天有可能會下雨。
+0	Don't walk alone after dark.	他長長的故事讓我們覺得厭煩了。
+1	He ate all of the apple.	他吃了所有的蘋果。
+1	We'll save a seat for you.	我们会给你留个位置。
+1	Training will be provided.	会有训练。
+1	It was been raining since early morning.	從清晨開始一直下雨。
+1	My parents' generation went through the war.	我父母那一代经历过战争。
+0	Please be quiet, everybody.	她買了一個玩具給她的孩子。
+0	His little brother is a famous soccer player.	世界語只有16個語法規則。
+0	Let's go by bus.	湯姆沒有再出現。
+0	What's that bird called?	汤姆昨天用刀切到自己了。
+1	Would you like to come?	你愿意来吗？
+0	We want to hear it.	我一會兒就來。
+1	I'm planning to study tonight.	我打算今天晚上讀書。
+1	There was scarcely any money left.	几乎没剩下钱。
+1	You can drive a car, can't you?	你會開車，不是嗎?
+0	Tears rolled down my cheeks.	京都以古廟有名。
+0	He suddenly became very happy.	飛行員用無線電與機場溝通。
+1	I am sixteen years old.	我16岁了。
+0	I had a nice chat with her.	请说慢一些。
+0	I tried to convince Tom to come home.	把想法付諸實踐是困難的。
+0	I don't know how to handle children.	我買的房子離市中心比較遠。
+0	He has been to many places.	你確定你的資料屬實嗎？
+1	I put the money into the safe.	我把錢放入保險櫃裡。
+0	Someone is watching you.	你想跟我说什么？
+0	Nobody had ever heard of it.	他想去美國。
+1	"He'd like to have a coffee after work." "I would too."	"他想在下班後喝杯咖啡。" "我也想。"
+1	There are not many books on these shelves.	这些书架上没有很多书。
+1	Spring is my favorite season.	春天是我最喜爱的季节。
+0	You don't go to school on Sunday, do you?	我一個人把兩個小孩扶養長大。
+0	They referred to Chaucer as the father of English poetry.	如果你听到她讲的英语，你会以为她是美国人呢。
+0	He said nothing, which made her angry.	我開始學習世界語了。
+0	I slapped his face.	你可以走了。
+1	Have you ever climbed Mt. Yari?	你曾爬過槍岳嗎?
+1	Is there a doctor on board?	船上有醫生嗎?
+1	I'm looking for you.	我在找你。
+1	You ought to have come to see me yesterday.	你昨天應該來看我的。
+1	I always enjoy listening to classical music in my free time.	有空的时候，我总喜欢听古典音乐。
+0	There is no place like home.	我打算待在旅館裡。
+0	My mother made me take some medicine.	你曾經在圖書館讀書嗎?
+1	We enjoyed listening to the music.	我們喜歡聽音樂。
+0	I like pop music.	不管喜不喜歡，我們都得參加那個會議。
+0	Can I rest a bit?	說謊是錯誤的。
+0	Tom had no children.	这毫无意义。
+0	She was buried in her hometown.	我借錢。
+0	I can't believe you're giving up.	我看见远处有灯光。
+1	He is a student at Harvard.	他是一個哈佛的學生。
+0	Please lock the door.	他帮助我克服了困难。
+0	This is a present for you.	我買了那輛車。
+1	Tom has calmed down.	汤姆冷静下来了。
+1	What language is spoken in Egypt?	在埃及说什么语言？
+1	I don't like any of these records.	我不喜歡這些唱片中的任何一張。
+0	May I eat this orange?	不要忘了熄火。
+1	I'm able to speak.	我能说。
+0	I am used to hearing the train pass by my house.	我任何地方都找不到我的傘。
+1	Please speak more loudly.	請說大聲一點兒。
+1	As soon as the bell rang the teacher came into the classroom.	鐘聲一響起，老師就走進了教室。
+1	This is going to be very expensive.	这要花很多钱。
+0	Our school begins at eight-thirty.	我遇见了一位老妇人。
+1	Since I had met him once before, I recognized him right away.	由於我以前見過他一次，所以我馬上就認出他了。
+0	Let me know where you're staying.	他们喜欢那个
+0	I'm sorry I didn't call.	请说慢一点。
+0	He did not speak unless spoken to.	来抽签决定谁先走吧。
+0	She spoke scarcely a word of English.	她一天一天地好轉。
+1	There's nothing to forgive.	没什么可原谅的。
+1	Some of them seem to be too difficult.	其中一些似乎太难了。
+1	Keep next Sunday free.	把下周日空出来。
+0	I will take you for a swim.	我的手抖得太厉害，没法穿针了。
+1	Get it done as soon as possible.	盡快把它完成。
+0	I got a letter from her today.	早上起来，嗓子变得很沙哑，我想是不是感冒了。
+0	Tom knows that I don't like him.	我以为你是我的朋友。
+0	I made a mistake.	我想访问韩国。
+1	They talk as though they were old friends.	他们像老朋友一样交谈。
+0	Tom told me that he had lost his textbook.	对他人要友善。
+0	He saw her and blushed.	我喜欢短发。
+0	She will be seventeen next year.	为什么责备汤姆？
+1	She fumbled with a piece of paper.	她摸索著一張紙。
+0	I can speak Chinese, but I can't read Chinese.	湯姆發動了引擎。
+1	Why did you stay at home yesterday?	你昨天為甚麼在家？
+1	You don't understand the procedure.	你不明白程序。
+1	You can't understand this sentence, can you?	你不懂这句句子，不是吗？
+1	I felt an impulse to cry out loud.	我突然好想大叫。
+0	Can you explain why you were late?	有你不能做的事吗？
+1	She gets good marks in English.	她取得了優異的英語成績。
+0	Quite by chance, I met my old friend in the airport.	你可以把你的車賣給我嗎？
+1	Tom made a list of places he wants to visit.	汤姆把他想去的地方列成了一张清单。
+1	Don't you think it's strange that he's not here?	他不在这儿你不觉得这很奇怪吗？
+1	She saddled him with the work.	她強迫他做這個工作。
+0	Look around.	我的房間很小。
+0	Don't get involved with that guy.	我现在仅有的东西就是我的记忆了。
+0	Tom came home early yesterday.	我很确定汤姆住在公园街。
+0	How about going to the movies?	根据电视新闻，一架飞机在印度坠毁了。
+1	It's a nice day, isn't it?	美丽的一天，不是吗？
+0	I'll miss you so much.	你是怎么认识他的？
+1	Get up early in the morning.	早上要早起。
+1	He speaks both English and French.	他會講英語和法語。
+1	I asked each boy three questions.	我問了每個男孩三個問題。
+0	His second son married and settled down.	你见到的是两兄弟中的哪一个？
+1	I'm a free man.	我是一個自由的人。
+1	I should have known better than to call him.	早知道我不應該打電話給他。
+1	Tom has been quite cooperative.	汤姆很合作。
+0	What do you want it for?	她爱慕她哥哥。
+1	I just want you to come.	我只是想要你来。
+1	I don't know much about computers.	我對電腦知道的不多。
+1	At lunchtime today, our usual restaurant was closed because of a funeral in the family.	今天午餐時間，我們常去的飯館關門了，因為他們家在辦喪事。
+1	Hurry up.	趕快!
+0	Let's take a walk in the park.	她留了很多钱给她儿子。
+0	He hasn't come yet.	聖誕節是12月25日。
+1	I'm a new student.	我是个新生。
+0	It became dark before I knew it.	他每天早上在公園裡散步。
+1	She plays tennis every Sunday.	她每個星期天打網球。
+1	You don't have to do it immediately.	你没必要马上去做。
+0	This tie doesn't go with my suit.	汤姆不能告诉玛丽他知道的所有事。
+1	It's going to rain, for sure.	要下雨了，我敢肯定。
+1	I'm getting off at the next station.	我下一站下车。
+0	I used to eat pizza, but now I don't.	健康比财富重要。
+0	He's a sucker for beautiful women.	我們喜歡踢足球。
+0	I know it's time to go, but I want to stay longer.	汤姆年纪大去世了。
+0	He decided to become a pilot.	能不能麻烦你告诉我去邻村怎么走？
+0	He made me sing on the stage.	等一下請打電話到我住的旅館。
+0	She can speak English very well.	别盯着别人看。
+0	I was delayed by a traffic jam.	瑪麗很喜歡牛奶。
+0	You have a way with women.	汽车发生故障了。
+1	Could you show me this bag?	你能給我看看這個包嗎？
+0	The sky is clear almost every day.	他跟他们干脆地断绝来往了。
+0	No other mountain in the world is as tall as Mt. Everest.	列车停下前别下车。
+0	Please keep an eye on my suitcase.	她特別喜愛音樂。
+1	They arrived in Osaka at the beginning of May.	他们五月初到了大阪。
+1	I got her to clean my room.	我讓她清掃了我的房間。
+1	It's none of your concern.	这不关你的事。
+1	Would you carry my luggage upstairs?	你可以把我的行李拿到樓上嗎?
+1	I like you.	我喜欢你。
+1	I will teach you to play chess.	我會教你下棋。
+0	This homework is difficult for me.	她非常周到和耐心。
+0	Are you a high school student?	我所有的朋友都喜歡足球。
+0	I like your room.	我不知道你的計畫。
+1	Let him in.	让他进来。
+1	I'm sure Tom will do his best.	我确定汤姆会尽力去做。
+1	Would you like me to explain it?	你要我解釋一下嗎？
+1	He admitted his guilt.	他承認他有罪。
+0	He played baseball after school.	樹下有一些男孩。
+0	Always be true to yourself.	湖冻冰了。
+1	I had an accident at work.	我出了工伤。
+0	Tom is laughing.	你今天为什么忙？
+0	You don't have to work on Sundays.	我喜歡器樂。
+1	I didn't mean it.	我不是这个意思。
+1	I also heard a similar story.	我也听过一个类似的故事。
+1	I heard a knock at the door.	我聽到了敲門聲。
+0	I'd like to go abroad one day.	这些年空气质量恶化了。
+0	I don't understand any French.	你咖啡喝得太多了。
+0	I am going to play tennis.	我們住在美國。
+1	Prices have dropped recently.	最近物價已經下降。
+0	Tom managed to find a new job.	她大声诅咒。
+0	There are a lot of eggs in the box.	我们谈谈比较好。
+0	I brush my teeth twice a day.	你才是自己命运的主人。
+1	I was very confused by his questions.	我對他的問題感到很困惑。
+0	Tom began talking.	我有一個朋友, 他的父親是老師。
+0	My team is always losing.	大多數的美國人喜歡漢堡。
+0	Only one third of the members turned up at the meeting.	你擋住了我的路。
+1	Attack is the best form of defense.	進攻是最好的防禦。
+0	The leaves of the trees in the garden have turned completely red.	我打開盒子看看裡面。
+1	She followed him home to find out where he lived.	她跟他到家，以知道他住哪。
+1	Draw a circle.	画一个圈。
+1	He graduated from high school this spring.	今年春天他從高中畢業了。
+0	She loves Tom, not me.	UN代表聯合國。
+1	Don't miss the bus.	不要错过公车。
+0	The party was put off for a week.	你可以想象在月球上行走吗？
+0	It was just as I thought.	给我留点冰激凌。
+1	There wasn't a soul in sight.	一個人影也看不到。
+0	People usually don't like what they don't understand.	周三你可以载我到办公室吗？
+0	I want a dog.	我的眼睛進了些沙。
+0	Everyone in the town knows about it.	你在看什麼？
+1	It's up to you.	由你來決定。
+1	Japan is confronted with severe economic problems.	日本正面臨著嚴重的經濟問題。
+1	I will go on ahead.	我會繼續前進。
+0	Bring me a sheet of paper, please.	你看起來就像你的母親。
+1	I'll do it.	我會做的。
+0	Have a good Christmas.	我有一隻狗和一隻貓。
+0	I got sick from drinking too much.	顯然地她生病了。
+0	What do you think of Tom's cooking?	昨晚不是很熱。
+1	He left without saying goodbye.	他不辭而別。
+0	My uncle lives in an apartment.	我能预定一下打高尔夫球吗？
+0	Are there any messages for me?	我拿到了他還給我的錢。
+0	Don't you know what happened yesterday?	請給我看看這件綠色的襯衫。
+1	He speaks too fast.	他说话太快了。
+0	What do you think of Japan's economy?	他拿出了他的護照。
+1	Tokyo is the largest city in Japan.	東京是日本最大的城市。
+0	I often use SSH to access my computers remotely.	你走後，我會想念你的。
+0	You should have helped him with his work.	他给我讲述了他的一生。
+0	I was so homesick.	她是我女儿。
+1	He is driving at top speed.	他全速驾驶着。
+1	The history class starts at nine.	历史课九点开始。
+0	You didn't need to hurry.	你很幸運找到了它。
+0	I should have tried out this electric shaver before buying it.	我九岁的时候问我妈妈圣诞老人是否真的存在。
+0	I have almost no money with me.	要是你老打游戏的话，你的视力会下降的。
+0	She went to Shanghai by train.	切除這塊肉的脂肪。
+0	Your bicycle is similar to mine.	我们难以找到汤姆。
+1	He disappeared without a trace.	他消失了，不留一丝踪迹。
+1	There's nothing else we can do.	没有我们能还做的事。
+0	These flowers you see are roses.	我会开车送你去机场。
+0	I buy donuts every Sunday after church.	我已經持續讀了一個小時了。
+0	I have many discs.	您生气了吗？
+1	Do you have change for a dollar?	你有零錢換一元美金嗎？
+1	The ages of the two children put together was equivalent to that of their father.	两个孩子的年龄加起来和他们的父亲相当。
+1	Tom went down the hill.	汤姆走下山坡。
+1	I take a bath every other day.	我每兩天洗一次澡。
+1	I was waiting for something to happen.	我在等事情發生。
+1	I am on the right.	我在右邊。
+1	The child has a case of chicken pox.	这孩子有水痘的症状。
+0	He isn't going to buy a camera.	他不會長壽。
+1	I can't get at the exact meaning of the sentence.	我抓不到句子的确切含义。
+0	I will explain it to her.	你可以借我你的字典嗎?
+0	Did you play tennis yesterday?	你很快就會習慣這種冷天氣。
+0	He wanted to get his shirts washed.	汤姆知道我的什么？
+0	You're still green.	下周一开学。
+0	Where are those posters now?	你本應該更努力學習的。
+0	What's your favorite beverage?	我不懂他的意思。
+0	I had a long talk with her.	我比汤姆有钱。
+1	We want you to marry Tom.	我们希望你和汤姆能结婚。
+1	He quickly made friends with the new boy on the block.	他很快便与小区里新来的男孩交上了朋友。
+1	Let's call the dog Skipper.	讓我們叫這隻狗Skipper。
+0	This is a secret just between you and me, so don't let it slip out.	哪本書是你們的？
+0	They moved ahead slowly.	你能告诉我你为什么喜欢她吗？
+0	Underage drinking is a crime.	我想用信用卡支付。
+1	We must keep up the family traditions.	我们必须保持家庭传统。
+1	I retired last year.	我去年退休了。
+0	I need your cooperation.	我找不到他的家。
+0	He knows almost nothing about that animal.	你最喜欢的iPad应用是什么?
+0	What is done cannot be undone.	請關燈。
+0	That wasn't funny.	我从没认为你错了。
+0	Few students knew his name.	這些是筆。
+1	We still don't know why.	我們仍然不知道為什麼。
+0	I want you to grow up.	神戶是著名的港口。
+1	I studied English when I was there.	當我在那裡的時候，我學習英語。
+0	What are you punishing them for?	在下一站換火車。
+1	It is not easy to catch a hare with your bare hands.	空手赤拳抓野兔並不容易。
+1	You can't speak English, can you?	你不会说英语，是吗？
+0	Tom wrote Mary a long letter, but he didn't send it to her.	汤姆告诉我他是加拿大人。
+0	Are you free tomorrow evening?	哪本是你們的書？
+1	The smell of food made me hungry.	食物的味道讓我餓了。
+0	I can't meet you.	“你在哪里？” “我在一个朋友家。”
+1	Tom has known Mary since childhood.	汤姆从小就认识玛丽了。
+1	She rides a motorcycle well.	她骑摩托车的技术不错！
+0	Tom made his servants eat in the dark.	我哥哥成了一名工程師。
+1	There was an earthquake this morning.	今天早上發生了地震。
+0	A good cook doesn't throw out yesterday's soup.	芬蘭的首都是什麼？
+1	You must answer these questions.	你必須回答這些問題。
+1	The police will put you in prison.	警方將把你關在監獄裡。
+1	It is ten minutes before eleven.	還有十分鐘就十一點。
+0	I don't know where she lives.	小屋干净又整洁。
+0	Keep trying.	工作一切顺利吗？
+0	Pull the plant up by the roots.	人會隨著年齡的增長而更加地玩世不恭。
+0	The situation is improving, so cheer up!	我會為這次行動負起全責。
+1	The weather was so cold that the lake froze over.	天冷得足以让湖结冰。
+1	I don't feel like working today.	我今天不想上班。
+0	Japan imports various raw materials from abroad.	她總是低聲地說話。
+1	The picture is hanging on the wall.	畫掛在牆上。
+0	How high can you jump?	汤姆告诉玛丽他不能做她要他做的事。
+1	Take it.	拿走吧。
+1	He lost his eyesight in the accident.	他在意外中失明了。
+1	I would like to improve my English pronunciation.	我想改善我的英语发音。
+1	Wait just a moment.	就等一會兒。
+1	It is good to be a winner.	做个赢家很好。
+1	He said that it was nine o'clock.	他说九点了。
+1	I spent my vacation in Hakone.	我在箱根渡假。
+0	He hung a lamp from the ceiling.	他擦去了脸上的汗水。
+1	He is my youngest brother.	他是我最年轻的兄弟。
+1	The admission is ten dollars a person.	入場費一個人10美元。
+1	Could you wrap this separately, please?	請你分開包裝好嗎？
+0	Feel free to get yourself a drink if you are thirsty.	她給自己一間大房子。
+0	I don't want to eat lunch now.	巴士早了兩分鐘。
+1	She was hit by a car.	她被車撞了。
+0	You will be able to see him tomorrow.	这个教授对他的学生有很大的影响力。
+1	She is not afraid of anything.	她不害怕任何東西。
+0	We traveled to Mexico by plane.	他学习非常努力。
+0	I don't want to drink anything.	你可以放心，他會準時的。
+0	Let me show you around our house.	祝你好梦。
+1	I will wait until she comes.	我会等到她来。
+0	He is playing in his room.	他来自英格兰。
+0	He's already too far away to hear us.	這是值得探討的話題。
+1	He visited her house the other day.	他前幾天拜訪了她家。
+0	He is often absent from school.	我差點被淹死。
+0	It may be that he likes his job.	你学英语吗？
+1	I'll attend the next meeting.	我会参加下次的会议。
+1	He was made captain.	他被選為隊長。
+1	Most boys like computer games.	大多数男生喜欢电脑游戏。
+0	Can I have a bite?	她是他的一切。
+0	He went to New York on business.	我約會遲到了。
+1	I don't know why they are fighting.	我不知道他們為什麼在打架。
+1	This is not very stylish.	這不是很流行。
+0	He's a student at this college.	人們似乎只在夏天烤肉。
+1	How long does it take to go to Okinawa by plane?	坐飛機去沖繩要花多長時間？
+0	There is a fork missing.	你為什麼懲罰他們？
+1	He rushed into the room with his coat on.	他穿着衣服冲进房间。
+1	Tom is anxious to know the result.	汤姆急着想知道结果。
+0	Visitors to Switzerland admire the Alps.	我十年前參觀了福岡。
+0	May I leave now?	当我还是个孩子的时候，我在这个泳池里游过泳。
+1	What do you want for breakfast?	你早餐想要吃什麼？
+1	You might have heard of it.	你可能听说过。
+1	It exploded with a loud noise.	它發出巨響爆炸了。
+1	Father bought me the latest model motorcycle.	父親給我買了最新型的摩托車。
+1	He wrote this book at the age of twenty.	他在20岁的时候写了这本书。
+0	I love my yellow sweater.	他是个咄咄逼人的的人。
+0	She employed a private detective to keep a watch on her husband.	这是战斗发生的地方。
+1	I can swim well.	我游泳可以游得很好。
+1	I'm awfully sorry that I was late.	非常抱歉，我遲到了。
+0	I go to school.	希望明年再次見到你。
+0	Do you think animals have a soul?	我這學期修西班牙文。
+0	Birds fly.	你认识我吗？
+1	He's not at all afraid of snakes.	他一點也不怕蛇。
+1	We import tea from India.	我們從印度進口茶葉。
+1	Hemingway enjoyed big game hunting in Africa.	海明威喜歡在非洲的大狩獵。
+0	Could you put this report into Italian for me?	這輛車很容易操控。
+1	I was a little bit nervous.	我有点紧张。
+1	I am not always free on Sundays.	我星期日並不總是有空。
+1	I had a really bad nightmare last night.	昨晚我做了一个可怕的噩梦。
+1	I saw him swim across the river.	我看見他游過了河。
+1	This is mine.	这是我的。
+1	He likes watching baseball games on TV.	他喜歡看電視上的棒球比賽。
+0	Many people were killed in the war.	汤姆多才多艺。
+0	Please add my name to the list.	你的學校離你家很遠嗎?
+1	They drive on the left in England.	在英國開車要靠左行駛。
+1	I'll take him with me to the hospital.	我會帶他跟我一起去醫院。
+0	He seldom goes to church.	请告诉我它的事情。
+0	This food does not agree with me.	您允许我去吗？
+1	Please come as soon as possible.	请尽快过来。
+0	His name is not on the list.	我能用一下你的字典吗？
+1	He gave us the signal to begin.	他給了我們信號讓我們開始。
+0	The fire reduced the house to ashes.	他們等了他好幾個小時。
+1	We're all hungry.	我們都餓了。
+0	I can't locate the source of the problem.	他今天必須完成他的功課。
+1	Mary is studying in her room.	瑪麗在她的房間裡讀書。
+1	The tigers escaped from the zoo.	老虎從動物園中逃出來了。
+0	There's no one in the room.	妈妈煮了十只蛋。
+1	He grew up in a little village.	他在一個小村莊裡長大。
+1	He gave his life for his country.	他把他的一生獻給了他的國家。
+1	I like to run.	我喜欢跑步。
+0	Stop talking and listen to me.	等到指示燈變成綠色。
+1	I wish Tom could've been there.	我希望汤姆能在那里。
+0	I fed the leftovers to my dog.	汤姆想跟你说玛丽的事。
+1	I don't want to wait that long.	我不想等那么久。
+0	Tom filled out the application form.	這支鉛筆比那隻好。
+1	What's your favorite way to cook potatoes?	你最喜歡用什麼方式煮馬鈴薯？
+1	It seemed to be cheap.	似乎很便宜。
+1	She's almost the same height as you.	她差不多和你一样高。
+1	They made us work all day.	他們讓我們工作了一整天。
+1	I must go now.	我現在必須走了。
+1	Please let me take your picture.	請讓我為你拍照。
+0	I got him to fix my bicycle.	我怀疑有什么事在他身上发生了。
+0	They grow strawberries in their greenhouse.	他有豐富的經驗。
+1	He introduced me to a pretty girl.	他把我介紹給了一個漂亮的女孩。
+1	Hurry up.	快点！
+0	I can't thank you enough.	我們是男孩。
+1	Tom can keep a secret.	汤姆会保密。
+0	Tennis is my favorite sport.	你觉得我是在开玩笑吗？
+0	Someone has taken my shoes by mistake.	他冒着失去所有财产的危险。
+0	Wait here till I come back.	她警告了他不要一個人去。
+1	She might come.	她也許會來。
+1	I'll take you to the bus stop.	我会带你到公交车站。
+0	She made cookies for the children.	汤姆非常孤单。
+1	Why don't we get out of here?	我们为什么不离开这里？
+0	I ran a race with him.	我同意他。
+0	The man and his wife helped each other.	這座橋是在兩年前建造的。
+0	When is your bed time?	要做的事太多了!
+0	Tom is the one I saw.	他摘下了眼鏡。
+1	I hate you.	我恨你。
+0	We all felt sorry for Tom.	一鳥在手勝過二鳥在林。
+1	I don't know if he would have done it for me.	我不知道他是否已经为我做好了。
+0	I spent all day in the library.	如果他是清白的，那他妻子就有罪。
+1	I had a good opinion of her.	我對她的評價很好。
+0	To tell the truth, I don't agree with you.	是晚上了。
+1	Are you lost?	您迷路了吗？
+1	Tomorrow's going to be a big day.	明天是个大日子。
+0	The tire leaks air.	你要去哪裡?
+1	Do you know if my father is still in the office?	你知道我父親是否還在辦公室嗎？
+1	Someone locked me in the room.	有人把我鎖在這房間裡。
+1	I have neither seen nor heard of such a thing.	我没见过也没听过这样的事。
+0	People should understand that the world is changing.	讓我看看。
+1	Give me something to do.	给我点事做。
+0	Where are you now?	和东京比，伦敦很小。
+1	Are you free on Friday afternoon?	你星期五下午有空嗎？
+1	Life is very hard.	人生良苦。
+0	I don't mind if it's hot and spicy.	法國是一個福利國家，但它卻不再能夠負擔得起了。
+0	The speaker's comments were highly offensive.	你比我记得好。
+0	Which road goes to city hall?	我希望你在我身边。
+1	Tom certainly is good at baseball.	汤姆打棒球打的非常好。
+0	I borrowed money from my father.	海滩是一个供孩子们玩乐的理想场所。
+1	I shave every morning.	我每天早上刮鬍子。
+0	My aunt made me a new skirt.	这不是我所擅长的事。
+1	Don't talk in the classroom.	別在教室裡說話。
+1	Your friendship means a lot to me.	你的友誼對我來說意義重大。
+0	Would you please lend me some money?	在美國的人說英語。
+0	I still haven't heard from him.	他應該感謝您。
+1	She insisted that I should see the doctor.	她坚持让我去看医生。
+0	Tom added both his and Mary's name to the list.	城市裡充滿了飢餓的士兵。
+0	He never drinks alcohol.	我買了一台新的縫紉機。
+0	Our baseball team is very strong.	我只想跟汤姆说话。
+0	I miss you.	汤姆脸红了。
+1	Look there.	看那里。
+1	In March, many flowers come out.	許多花在三月份綻放。
+0	If you don't understand, ask.	书桌下有一只猫。
+0	They're children.	你真笨去接受他的提議。
+1	This is my property.	這是我的財產。
+0	Anyway, you'll never know.	我要去換我的襯衫。
+0	He heard a shout.	我不想要你。
+0	Mass production reduced the price of many goods.	我從昨天開始一直忙著。
+0	She was asked to write her name in ink.	我們點太多食物了。
+0	Tom is going out this afternoon with Mary.	8点那班车今天早到了。
+0	Let's meet here again tomorrow.	第一次世界大戰於1914年爆發。
+1	How annoying!	真烦人。
+1	She is Tom’s older sister.	她是Tom的姐姐。
+0	I was very tired last night.	她一支铅笔也没有。
+0	Nobody gave us a chance.	他想去哪裡?
+0	I am six feet tall.	你认为他能够胜任这个任务吗?
+1	I'm used to staying up late.	我习惯晚睡。
+1	I played tennis.	我打網球了。
+0	Where can you get tickets?	汤姆拧干毛巾挂起来晾干。
+1	He gave in.	他让步了.
+1	These pants fit me well.	我穿這條褲子很合身。
+0	Prices are double what they were two years ago.	起初我不相信他。
+0	How many people can do that?	看我为你做了什么。
+1	We must cancel our trip to Japan.	我們必須取消我們去日本的旅行。
+1	We managed to get some foreign stamps.	我們設法得到一些外國的郵票。
+1	She studied abroad in order to brush up her English.	她在國外學習以便提升她的英語。
+0	You may go anywhere.	有人在监视。
+0	Don't bother me.	倫敦以霧著名。
+0	He showed me her picture.	我结婚了。
+1	Here's your tea.	这是你的茶。
+0	I'm tired of listening to Tom.	我们去看了比赛。
+0	He did not eat anything yesterday.	桌布在櫥櫃裡。
+0	I explained the process to him.	她已經死了十年了。
+0	I'm absolutely elated.	她工作做得亂七八糟。
+1	Excuse me, I have to get off at the next stop.	对不起，我要在下一站下。
+0	Let's begin with this problem.	考慮到他的年紀，他做得很好。
+1	It took me three days to read through this book.	它花了我三天时间去阅读这本书。
+1	Are you saying Tom's hiding something from us?	你说Tom对我们隐藏了一些事情？
+0	Are you afraid of insects?	你昨天去上學了嗎？
+1	This dictionary is my sister's.	這本字典是我妹妹的。
+0	He put the book on the table.	我回家比较好。
+0	He always left the problem of his children's education to his wife.	我的嗜好是收集舊瓶子。
+1	How about taking a rest?	休息一下怎麼樣?
+1	You have to leave home at six.	你必須在六點鐘時從家中出發。
+1	I'm now rich enough to afford to get anything I want.	我现在富得能买我想要的任何东西。
+0	Agriculture consumes a great amount of water.	我不喜欢学校。
+1	Tom has a very friendly smile.	汤姆有很友好的微笑。
+0	I'm going to take my car.	我恐怕您打错电话了。
+1	She furnished the room with beautiful furniture.	她用漂亮的家具佈置了房間。
+1	I need a Japanese-English dictionary.	我需要一本日英字典。
+1	He knows how to brush his teeth.	他知道怎么刷牙。
+0	She didn't want to speak to anyone.	学好一门外语需要坚韧不拔的毅力。
+1	They believe in a life after death.	他們相信死後的生命。
+1	To the best of my knowledge, the rumor is not true.	据我所知，这个谣言不是真的。
+0	I got over the difficulty with my characteristic tenacity.	契約簽訂了。
+0	She hung the picture upside down.	我在书商Maruzen那里买了这本书。
+0	How much did the glasses cost?	它不是一條路，而是一條小徑。
+1	He's a bit energetic.	他有点活泼。
+1	It's for you to decide.	這由你來決定。
+0	Here's where they usually have dinner.	不要小看我的力量。
+0	The whole country was covered in snow.	虽然有阳光照射，但还是很冷。
+0	He's bound to forget.	我增加了體重。
+1	I want a cellular phone, but I don't have enough money to pay for one.	我想要一支手機, 但是我沒有足夠的錢買一支。
+1	I don't care if it snows.	我不在乎是否下雪。
+0	The well has run dry.	我拒绝回答你的问题。
+0	The moon was full last night.	他们让我很生气。
+1	Tom did better this time than he did last time.	汤姆这次做得比上次好。
+1	I advised her to come by 9:00.	我建議她九點前來。
+1	You people are no fun at all.	你们这帮人真没意思。
+1	I love my work very much.	我非常喜欢我的工作。
+1	Tom could be Canadian.	汤姆可能是加拿大人。
+1	Remember to mail this letter.	記得要去寄這封信。
+1	I can do it without her help.	沒有她的幫忙我也能做。
+1	One of my bags is missing.	我的一個包包不見了。
+1	Many friends saw him off.	許多朋友為他送行。
+1	Shame on you!	你真丢脸！
+1	Actions speak louder than words.	行動比語言更響亮。
+0	I'm too tired to walk any further.	她跟我生气了。
+1	What happened that night?	这个晚上发生了什么？
+1	What country are you from?	你是从哪个国家来的？
+0	Tom doesn't know whether Mary is happy or not.	晚飯後她變得昏昏欲睡。
+0	I have no intention of resigning.	你在釧路多久了？
+1	Use it or lose it.	使用它或失去它。
+1	Prices are going up.	物价上涨了。
+1	I was awfully confused by his question.	我對他的問題感到非常困惑。
+1	Tom doesn't quite get it. Could you explain it to him again?	汤姆不大明白。你能再跟他解释一遍吗？
+0	Why do you want to leave today?	我把他带到校区里最贵的餐馆去了。
+0	I like to play basketball.	公司放弃了那个项目。
+0	I took a shower.	一部分人感觉Tom的行为举止不太合适。
+0	Tom is a decent sort of guy.	紐約的天氣如何?
+0	Did you bring your family with you?	这个男孩害怕黑夜。
+0	What's your favorite place to vacation in Japan?	他帶回了一些紀念品。
+0	I'd like to see a doctor.	我怕蜘蛛。
+1	You should not have lent the money to such a person.	你不應該借錢給這樣的人。
+1	Which bed do you want to use?	你想睡哪張床?
+1	Japan depends on other countries for oil.	日本的石油依靠进口。
+1	How is your wife?	你太太怎么样？
+0	She thought that I was a doctor.	如果你盡力而為, 你就會成功。
+1	Please spell your name.	请拼一下您的名字。
+1	The quickest means of travel is by plane.	旅行最快的方式是乘飞机。
+0	Read this book.	他看向四周，但沒看到任何人。
+1	He boarded a plane bound for Los Angeles.	他登上了前往洛杉矶的飞机。
+1	Hurry up, or you will miss the train.	快点，不然你就要错过火车了。
+0	Have you eaten lunch?	我不能吃这么多食物。
+0	I would like to visit New York.	笑一笑，十年少。
+0	It's our pleasure.	你應該重視那個事實。
+1	Tom always sings out of tune.	汤姆唱歌总跑调。
+0	My father's hobby is fishing.	看，这是我的问题。
+0	The child had no overcoat on although it was very cold.	他的講座很長。
+1	After asking for my key at the front desk, I took the elevator to my floor.	我到櫃檯拿了鑰匙，然後就乘電梯去了我房間的樓層。
+0	Tom often reads when his children aren't at home.	那时候我不喜欢啤酒。
+0	She gave him a watch.	我將永遠不會忘記你告訴過我的話。
+0	Why didn't she come?	幫我看著我的相機。
+0	I paid ten dollars for this cap.	我们必须查明汤姆在哪里。
+1	Give us a ride downtown.	載我們到市區。
+1	The elevator seems to be out of order.	电梯好像故障了。
+1	Tom refused to even listen to my suggestions.	汤姆甚至拒绝听我的建议。
+1	You'd better not wait here.	你最好不要在這裡等。
+0	This is all I know.	给我一杯水。
+0	The price of rice has come down.	我要去银行了。
+1	I ordered some books from London.	我從倫敦訂購了一些書。
+0	I want to buy something to eat.	我不應該做那件事的。
+1	I usually have a light breakfast.	我早餐通常吃得很清淡。
+0	Some of the money was stolen.	病人随时会死。
+1	He wasn't able to attend the party.	他無法參加這個派對。
+0	He got down the book from the shelf.	我喜歡孩子們笑的聲音。
+1	How long would it take to swim across the river?	游过这条河要多久？
+1	It's quite difficult to master French in 2 or 3 years.	很难在2、3年内掌握法语。
+1	Can we save the planet?	我们能拯救这颗星球吗？
+0	I saw him after ten years.	人们需要更多的交流。
+1	Why don't you wait here while I finish what I'm doing?	为什么你不在这里等到我做完为止？
+0	How long will this rope hold?	我的老闆要我加班。
+0	Imagine that you have a time machine.	下车，把手放在背后。
+1	I can't remember.	我想不起來。
+1	I took a day off last week.	上週我休了一天的假。
+0	Bee stings can be very painful.	他骑自行车去的。
+0	Tom can swim faster than anyone else I know.	我的白髮越來越多。
+1	You swim better than me.	你游泳游得比我好。
+1	He traveled on business.	他旅行洽商。
+0	She is a good dancer.	汤姆，我想要你来操作这一个。
+1	He walked past the house.	他走過這棟房子。
+1	Maybe I'll go, and maybe I won't.	也許我會去，也許我不會。
+0	He will reach Hakodate tonight.	我們因缺乏準備而失敗了。
+1	All of you are familiar with the truth of the story.	你們所有的人都熟悉這個故事的真相。
+0	I'm glad that I didn't buy something like this.	不要拉我的腿！
+0	This work doesn't pay.	這讓我非常憤怒。
+1	French has many more vowels than Japanese.	法语的元音比日语的多得多。
+1	I'm getting off at the next stop.	我將在下一站下車。
+1	I'm getting off at the next station.	我會在下一站下車。
+1	She discovered that she had run out of salt.	她发现她已经断盐了。
+0	London, where I live, used to be famous for its fog.	你可能會見到他。
+1	I wish to go to Hawaii.	我希望去夏威夷。
+0	Is his pulse regular?	他裁開了那個信封。
+0	Kuala Lumpur is worth visiting.	汤姆在努力工作。
+1	Please put on your shoes.	請穿上你的鞋子。
+0	Tom told me that his father had passed away.	孩子们在旁边的时候，你不应该说那种事。
+1	He's very straightforward.	他说话很直接。
+1	Helen Keller was blind, deaf and dumb.	海倫凱勒眼盲，耳聾，又啞。
+1	Imagination affects every part of our lives.	想像力影响着我们生活的各个方面。
+0	The sum of 5 and 3 is 8.	花園裡沒有人。
+1	He is American.	他是美国人。
+1	She is collecting material for a book.	她为一本书收集材料。
+0	Is breakfast included?	我叔叔偶爾來看我。
+1	My gums are bleeding.	我的牙齦流血。
+1	Go back to your seat.	回到你的座位。
+1	He is rather hard to please.	取悅他很難。
+1	I vowed that I would never speak to her again.	我發誓再也不跟她說話了。
+0	My father told me where to go.	他們每年冬季去野澤滑雪。
+0	I can't live without you.	你该剪头发了。
+0	Bring your student ID card.	你觉得我之前在做什么？
+1	We're out of tissue paper, so I need to go buy some.	衛生紙用完了，我必須去買。
+0	We are supposed to know the rules.	我請他在這裡等。
+1	Send for a doctor at once.	立即送醫。
+0	She works very hard.	人们需要止住仇恨。
+0	We'll think about it in due time.	我媽媽為我做了一件白色的洋裝。
+0	I have to win.	否極泰來。
+0	Get serious.	你吃晚飯了嗎？
+1	Don't let Tom lie on the floor.	别让汤姆躺在地板上。
+0	This turkey tastes good.	我能试一下吗？
+1	There are two zeros in the number "2010."	2010这个数字里有两个零。
+0	Hope is not a strategy.	其实我工作并不多，但足以让我这周在办公室里忙着了。
+1	All you can do is to wait.	所有你能做的就是等待。
+1	There are no chairs in this room.	這個房間裡沒有椅子。
+0	Let's not discuss the matter today.	沒有什麼東西是跟愛一樣珍貴的。
+0	My parents are divorced.	我會想念你的廚藝。
+0	My shoulder hurts.	你是怎么进来的？
+1	He is going to leave tomorrow afternoon.	他將在明天下午離開。
+0	He stuck to his promise.	她讓座給一位老太太。
+0	Is it OK if I go out with Tom?	該法案將永遠不會通過。
+0	Can you guess how old I am?	他正在他的書桌旁讀書。
+0	This book is really interesting.	我必须靠自己做所有事。
+1	I feel very sorry for your sister.	我對你姐姐感到非常抱歉。
+0	I'm looking forward to your visit.	我比你小三歲。
+0	Switzerland is a beautiful country.	“电话响了。”“我来接。”
+0	Everything will be OK.	老人們很早就起床。
+1	What is the title of your new book?	你新書的書名是什麼？
+1	She was married to a rich man.	她嫁給了一個有錢的男人。
+0	Dogs have a keen sense of smell.	政治家从来不告诉我们他们的别有用心。
+0	Why are you so mean to me?	请睁开眼睛。
+1	You don't need to do this.	你不需要做这事。
+0	I get two hour's exercise every day.	你們的東西在哪裡？
+0	Do you have a lot of pens?	你不應該出門。
+0	Is there enough food for everyone?	他有自己的房间。
+0	Three cubed is twenty-seven.	那里的气候怎么样?
+1	She refused to accept the money.	她拒絕接受這筆錢。
+0	Once again.	我們六點開始。
+1	I feel like getting some fresh air.	我想要呼吸一些新鮮空氣。
+1	I don't want to fail my exams.	我不想不及格。
+1	Something's wrong with my camera.	我的相機壞了。
+1	Everyone said that I was wrong.	大家都說我是錯的。
+1	I don't like you anymore.	我再也不喜欢你了。
+0	I appreciate your help in clarifying this.	它屬於我兄弟。
+0	I wasn't quite sure what to say.	我放弃。
+0	That fish lives in fresh water.	我的法语说得不够好。
+1	I'll lend you the book as soon as I'm done reading it.	我一把这本书读完了就借给你。
+1	I don't care.	我无所谓。
+1	I had hardly left home when it began to rain heavily.	當雨開始下得很大的時候, 我幾乎不能出門了。
+0	You are not at all wrong.	我想要你的照片。
+1	If you don't have anything nice to say, don't say anything at all.	如果你没好话说，那就什么都别说。
+0	Please knock before you come in.	暴動開始時只有一位監獄長值班。
+1	This must be my book.	这肯定是我的书。
+0	I live in this area.	你早该睡了。
+1	Tom won't let you in his house.	汤姆不会让你进他的屋子。
+0	May I ask a few questions?	給我一條乾毛巾。
+0	You're in my way.	你真的相信鬼嗎？
+0	Stay sharp.	给我你的位置。
+0	You are wanted on the phone.	瘧疾是由蚊子傳染的。
+0	They came up with a plan after a long discussion.	那有两块蛋糕。
+1	Turn back, please.	请回来。
+0	We got involved in a traffic accident.	汤姆要竞选市长。
+0	Please have someone else do it.	我買了一輛紅色的跑車。
+1	Were your mother and father home?	你父母親在家嗎？
+0	Do you like China?	也許下午會下雨。
+0	He studies English, but he's also studying German.	你家的電話號碼幾號？
+0	I saw him playing baseball.	汤姆爱玛丽很久了。
+0	She complained that my salary was low.	他的書非常有趣。
+1	I'll leave that to you.	我會留給你。
+0	The school is five kilometers from my home.	我會重新考慮此事。
+0	Let's talk over a cup of tea, shall we?	圣经里有一句话，叫做“人不能只靠面包生活”。
+0	He can swim very fast.	你若是傷害別人，你也會傷害到自己。
+0	It is this window that he broke.	沒有水你不能生活。
+1	You shouldn't have gone there.	你不應該去那裡的。
+1	I feel as if I've woken up from a nightmare.	我覺得我好像從惡夢中驚醒。
+0	London's climate differs from that of Tokyo.	你將做什麼樣的工作?
+1	Please go to the bank.	請去銀行。
+1	You are not a coward.	你不是个懦夫。
+0	I found your letter in the mailbox.	請​​借我你的書。
+0	We saw Tom talking to Mary.	他下了公車。
+1	They are plotting to kill the king.	他們正密謀要殺害國王。
+0	There's a hair in my soup.	為什麼我應該在乎你怎麼想？
+1	I won!	我赢了。
+1	He was very old.	他很老。
+0	She can speak English, of course.	那是原创的想法。
+1	Wash your hands before eating.	進食前先洗手。
+1	Everybody thinks so.	大家都是这样想的。
+0	Those are my pants.	我们一开始就知道。
+0	Earth is a planet.	我要去看電影。
+0	The bell rang.	我侄子對雞蛋過敏。
+0	In the Edo period, moon-viewing parties were very popular.	我确实喜欢我的同事。
+0	We'll always be friends.	精通英語是困難的。
+0	It's true.	我的一些朋友英语说得很好。
+1	Your parents didn't come, did they?	你的父母沒來，是嗎？
+1	Tom slept with his shoes on.	汤姆穿着鞋睡了。
+1	Leave my car alone.	離我的車遠一點。
+1	Speaking in English is fun.	說英語很有趣。
+0	I must catch the first train.	滾！
+0	We speak the same language, don't we?	試圖勸她是沒有用的。
+1	The party ended at ten o'clock.	派對在十點鐘結束。
+1	Let's eat sushi.	讓我們吃壽司吧。
+1	I left my briefcase in the bus.	我把我的公事包留在公車上了。
+1	She fooled him.	她愚弄了他。
+1	You're so bad.	你真壞。
+0	Excuse me for opening your letter by mistake.	我不能说。
+1	I can see the light.	我能看到光線。
+0	He often eats breakfast there.	我昨天剛收到你的信。
+1	Give me the book.	給我這本書。
+0	I am amazed at your audacity.	我幾乎能確定。
+0	The news of his death spread.	我生病了。
+0	He was laughed at in public.	但願我有一輛車。
+1	I'm sure Tom won't have any trouble finding us.	我确定汤姆找到我们没有任何问题。
+1	Count me in.	算我一个.
+1	Have you finished reading that book yet?	你讀完那本書了嗎?
+1	They didn't like you.	他们不喜欢你。
+1	How deep is the hole?	這個洞多深?
+1	She is watering the flowers.	她正在澆花。
+0	"Why are you going to Japan?" "To attend a conference in Tokyo."	Tom正在喝蘋果汁。
+1	I'll drive to Detroit.	我會開車到底特律。
+0	I don't go in for that sort of thing.	她十幾歲時就結婚了。
+0	I'm sorry I didn't make myself clear.	我答应他我今天会来。
+1	Tom is very good at doing things with his hands.	汤姆善于动手做事。
+1	I want a massage. I need to relax.	我想要按摩。我需要放松。
+1	Didn't you see the man?	你們沒看見那個人嗎？
+0	I'm happy to see you here.	他的妻子為他開門了。
+0	Guess what he told me.	這是所有他必須做的事。
+1	He traveled all over the world.	他周遊世界各地。
+0	I'm in a hurry today.	別被嚇壞了。
+1	He took the wrong bus by mistake.	他搭错了车。
+0	I love my life.	我三點鐘可以來。
+1	We're still vulnerable.	我们还是脆弱不堪。
+0	He'll wait for you.	他們禮拜天上教堂。
+0	Tom can run fast.	汤姆能不依靠任何帮助解决那事。
+0	My scalp is very itchy.	我们几乎被冻死了。
+1	The news of his death spread around.	他去世的消息傳遍各地。
+0	I do hope you'll come again.	公車應該很快就會來了。
+1	She spoke through an interpreter.	她透過傳譯員發言。
+1	I speak English every day.	我每天都说英语。
+0	The sun sets earlier in the winter.	我對你毫無隱瞞。
+0	What were you doing at that time?	我本不应该做的。
+1	I'm not particularly thirsty right now.	我现在不特别渴。
+0	You don't have to answer right away.	我沒有什麼可抱怨的。
+0	Compare your translation with his.	說謊是錯誤的。
+0	You look happy today.	您最好穿一件雨衣。
+0	You look very good.	我跟她談了一個小時。
+0	I don't believe such things exist.	我不是很喜歡它。
+1	I ordered a pizza on the phone.	我打电话订了个披萨。
+1	I said shut up!	我说过了，闭嘴！
+1	We did not expect him to finish the task in so short a time.	我们没指望过他在那么短的时间里完成工作。
+1	She didn't like living in the city.	她不喜歡住在城市裡。
+1	How come you know so much about Japanese history?	你為什麼知道這麼多的日本歷史?
+0	The number of cars is on the increase.	他延遲到下個月去北海道。
+1	I got up at seven this morning.	我今天早上7点起床。
+1	"Where's your book?" "On the table."	「你的書在哪？」「在桌上。」
+0	He didn't mean to hurt you.	我載她去城裡了。
+1	This is a book.	这是一本书。
+1	She kept working.	她不停地工作。
+1	Tom or somebody said that.	汤姆或某人说了那事。
+0	My cats will love this.	没有人跑在他前面。
+1	He went to stay with his cousin.	他去和他的表弟待在一起了。
+1	I heard Tom was captured.	我听说汤姆被捕了。
+0	I haven't seen her since last month.	她明年將要結婚。
+0	That wasn't my intention.	他研究了十年。
+0	He came to my office yesterday.	在新加坡的街道上扔垃圾会被罚款。
+0	Dentists take x-rays to examine your teeth.	羅馬以其古代建築而聞名。
+1	Tom didn't want to talk to anyone.	汤姆不想跟任何人说话。
+0	She wrapped herself in a blanket.	查查你的字典。
+0	I miss her so much.	她终生未婚。
+1	He was late for school yesterday.	他昨天上学迟到了。
+0	We took strong measures to prevent it.	这种威士忌太烈了。
+0	I'd like to send this package to Japan.	戰爭隨時可能爆發。
+0	I feel like crying.	他比任何人都好。
+0	Sentences begin with a capital letter.	他愛她。她也愛他。
+1	What time does the train arrive at Yokohama?	火车什么时候到横滨？
+1	I visited my friend Tom yesterday.	我昨天拜訪了我的朋友湯姆。
+1	He agrees with my opinion.	他同意我的意見。
+1	I will not attend the party.	我将不出席派对。
+1	Auckland is a city in New Zealand.	奥克兰是一座新西兰的城市。
+0	He loves her. She loves him, too.	句子以一個大寫字母開頭。
+0	He is better than anyone else.	我想哭。
+0	War may break out at any moment.	我想把這個包裹寄到日本。
+0	This whisky is too strong.	我们采取了强有力的预防措施。
+1	You're not going in the right direction.	你要南辕北辙了。
+0	She remained single all her life.	我那么想念她。
+0	Look it up in your dictionary.	她用一條毯子把自己裹起來。
+1	It depends on the context.	这得看情况。
+0	Rome is famous for its ancient architecture.	牙医用X光检查你的牙齿。
+0	They fine you in Singapore if you throw trash in the streets.	他昨天來我的辦公室。
+0	He studied for ten years.	这不是我的初衷。
+0	She'll be getting married next year.	我從上個月開始就沒有看到她了。
+1	Please forgive me.	请原谅我。
+1	Tom likes swimming.	湯姆喜歡游泳。
+0	No one ran ahead of him.	我的猫会爱上这个。
+1	She died of stomach cancer.	她死于胃癌。
+1	There are seven men and four women in my section.	在我的部门里有七男四女。
+1	The man finally confessed.	那个男人最终供认了他的罪行。
+0	I gave her a lift to town.	他不是故意要傷害你。
+1	I think she's an honest woman.	我认为她是一个诚实的女人。
+1	We had a slight difference of opinion.	我們的看法有一點不同。
+0	He postponed leaving for Hokkaido until next month.	汽车的数量在增长。
+1	Who told you the story?	誰告訴你這個故事？
+1	This man is not reliable.	这个人靠不住的。
+1	I will not allow you to use my pen.	我不允许你用我的钢笔。
+1	They were all hoarse from shouting.	他們全都叫到沙啞了。
+1	Something's wrong with my camera.	我的相機有毛病。
+0	I didn't enjoy it very much.	我不相信這樣的事情存在。
+0	I talked with her for an hour.	你看上去很好。
+0	You had better put on a raincoat.	你今天看起來很高興。
+0	It is wrong to tell a lie.	比較你和他的翻譯。
+0	I have nothing to complain about.	你不用马上回答。
+1	Tom might have missed the last train.	汤姆可能错过了最后一班列车。
+0	I shouldn't have done it.	當時你在做什麼？
+0	I have no secrets from you.	在冬天，太阳下山比往常更早。
+1	"Where have you been?" "I've been to the barber's."	你去哪儿了？我去了理发店。
+1	Please stay here till I get back.	請待在這裡直到我回來。
+0	The bus should be coming soon.	我很希望你会再来。
+1	We are having dinner.	我們在吃晚餐。
+0	We were nearly frozen to death.	我的頭皮非常癢。
+0	Tom could've figured that out without any help.	Tom可以跑得很快。
+0	They go to church on Sunday.	他會等你。
+1	He has three older sisters.	他有三个姐姐。
+0	I can come at three.	我爱我的生活。
+1	This is where I want to live for the rest of my life.	這裡是我餘生想待的地方
+0	Don't be terrified.	我今天趕時間。
+1	The man kept talking for an hour.	這個男人連續說了一個小時的話。
+0	This is all he has to do.	猜猜看他告訴了我什麼。
+0	His wife opened the door for him.	我很高興在這裡看到你。
+1	At first, I thought I was sick.	一开始，我以为我病了。
+1	When water freezes it becomes ice.	水結凍後，變成冰。
+1	I hope I will have a chance to see you next time I'm in New York.	希望下次我在纽约还可以有机会见到你。
+0	I promised him that I would come today.	對不起，我沒講清楚。
+0	She got married in her teens.	我讨厌那种事。
+1	Who is your teacher?	谁是你老师？
+0	Tom is drinking apple juice.	“你去日本干嘛？”“去东京参加一个会议。”
+1	You'll forget about me someday.	有一天你会忘了我。
+1	He placed the ladder against the fence.	他把梯子倚著柵欄放。
+1	Whose fault is it?	是誰的錯呢？
+1	We saw him walk across the street.	我們看到他過馬路。
+1	She has always lived in Otaru.	她一直住在小樽。
+1	His advice didn't help much.	他的忠告没起到太大的作用。
+0	I wish I had a car.	他在众人面前被嘲笑。
+0	I am sick.	他去世的消息傳開來了。
+0	I'm almost sure of it.	我对你的厚颜无耻感到惊讶。
+1	Be careful with it.	当心它。
+0	I just got your letter yesterday.	他常常在那裡吃早餐。
+1	His brother studies very hard.	他的哥哥很用功讀書。
+0	I can't say.	對不起, 我錯開了你的信。
+1	He grew up to be a doctor.	他長大後成為了一名醫生。
+1	It was difficult for him to hide his pride in his success.	他很难掩饰对自己成功的骄傲。
+1	Tom is in prison for a crime he didn't commit.	汤姆为他不认的罪进了监狱。
+1	We had three tries and failed each time.	我们试了三次，都失败了。
+1	I still prefer to write letters by hand.	我更喜欢用手写信。
+0	It's no good trying to persuade her.	我們說的是同樣的語言，不是嗎？
+0	Get away!	我必须赶上头班火车。
+1	Is it really possible?	真的是可能的嗎？
+1	I've caught a terrible cold.	我得了一種可怕的感冒。
+1	They didn't know what to do first.	他們不知道先做什麼。
+1	Whose shirt is this?	這是誰的襯衫。
+0	Some of my friends can speak English well.	這是真的。
+0	Mastering English is difficult.	我们永远都会是朋友。
+0	I really like my coworkers.	在江戶時代賞月的宴會非常受歡迎。
+0	My nephew is allergic to eggs.	铃响了。
+0	I want to go to see a movie.	地球是一個行星。
+0	We knew it all along.	那些是我的褲子。
+1	I'm sorry she's not here.	對不起，她不在這裡。
+1	A great number of books are published every year.	每年都有大量新书出版。
+0	That's an original idea.	她會講英語，當然。
+1	A bicycle will rust if you leave it in the rain.	如果你把自行車留在雨中，它會生鏽的。
+1	I don't expect that they will support my view.	我不期望，他们能够支持我的观点。
+0	Why should I care what you think?	我的湯裡有一根頭髮。
+1	Could you help us after school?	你能在放學後幫助我們嗎？
+0	He got off the bus.	我们看见汤姆跟玛丽说话。
+0	Lend me your book, please.	我在信箱中發現了你的信件。
+1	I should've declined.	我本应婉拒。
+1	All of us like you very much.	我们都非常喜欢你。
+0	What kind of work will you do?	伦敦的气候和东京的不同。
+1	The magician had the children's attention.	魔术师吸引了孩子们的注意。
+1	This is the time he normally arrives.	他这个时候该到了。
+0	You can't live without water.	他砸坏的是这扇窗。
+0	When you hurt others, you also hurt yourself.	他能游得很快。
+0	It says in the Bible, "Man shall not live on bread alone."	我们用喝茶的时间谈谈，好吗？
+0	I'll reconsider the matter.	學校離我家有五公里遠。
+1	To err is human, to forgive divine.	人皆有錯，唯聖者能恕。
+0	His book is very interesting.	她抱怨我的薪水很低。
+0	Tom has loved Mary for a long time.	我看到他在打棒球。
+0	What's your home phone number?	他学英语，但他也学德语。
+0	Perhaps it will rain in the afternoon.	你喜歡中國嗎？
+1	Which one do you think is correct?	你認為哪一個是正確的?
+0	I bought a red sports car.	請讓別人去做。
+0	Tom is going to run for mayor.	我們被捲入了一場交通事故。
+1	It isn't necessary to answer that letter.	沒有必要回那封信。
+0	There were two pieces of cake.	他们终于在漫长的讨论之后得出了一个计划。
+0	Malaria is carried by mosquitoes.	有你的電話。
+0	Give me your location.	保持警惕。
+0	Do you really believe in ghosts?	你擋住了我的路。
+0	Bring me a dry towel.	我能问一些问题吗？
+1	As soon as she opened the door, a cat ran out.	她一開門，一隻貓就跑了出來。
+0	It is high time you were in bed.	我住在这区。
+1	There must be a way to arrive at a diplomatic solution.	必须有外交解决的途径。
+0	There was only one warden on duty when the riot started.	进来之前请敲门。
+1	Here goes nothing.	毫無希望，白費心思。
+0	I would like your picture.	你并不完全错误。
+1	Tom seems to be much happier than me.	汤姆看来比我高兴。
+1	I hope he'll wait for me.	我希望他會等我。
+1	The threat to Richmond was ended.	对里士满的威胁结束了。
+0	My French isn't good enough.	那魚棲息在淡水域中。
+0	I resign.	我不太確定要說什麼。
+0	It belongs to my brother.	我感谢你帮助澄清。
+1	Why don't you eat vegetables?	为什么你不吃蔬菜？
+1	Why did you say such a thing?	你為什麼說了這樣的事?
+1	My wish is to become a teacher.	我的願望是成為一個老師。
+1	It is less muggy today than it was yesterday.	今天不比昨天悶熱。
+1	I am not writing a letter.	我不是正在寫信。
+0	We started at six.	再一次。
+1	Which is your book?	哪本書是你們的？
+0	How's the weather there?	三的立方是二十七。
+0	He has his own room.	有足夠的食物給大家嗎？
+0	You ought not to go out.	你有很多笔吗？
+0	Where are your things?	我每天做兩個小時的練習。
+1	He didn't say a word to me all day.	他一天也没跟我说一句话。
+0	Open your eyes, please.	你为什么对我这么小气？
+0	Politicians never tell us their inner thoughts.	狗的嗅觉灵敏。
+1	He will not be able to do the work.	他没能力做这个工作。
+1	She's busy now and can't speak to you.	她現在忙，沒有辦法跟你們說話。
+0	Old people get up very early.	一切都会好的。
+0	"The phone is ringing." "I'll get it."	瑞士是一個美麗的國家。
+0	I'm three years younger than you.	我期待著您的光臨。
+1	I feel like going to the movies.	我想去看電影。
+0	I've had to do everything by myself.	這本書真的很有趣。
+0	He is studying at his desk.	你能猜到我的年龄吗？
+0	The bill will never go through.	我跟汤姆外出行吗？
+0	She made room for an old lady.	他信守了承诺.
+1	The risk is too great.	风险太大。
+0	How did you get in here?	我肩膀痛。
+0	I'll miss your cooking.	我父母离婚了。
+0	Nothing is as precious as love.	今天讓我們不要討論這件事。
+1	I think you're quite right.	我認為你說得很對。
+1	He is still very much alive.	他依旧充满活力。
+0	I don't have a lot of work, but it's enough to keep me in the office this week.	希望不是一种策略。
+1	You should follow your teacher's advice.	您應遵循你老師的建議。
+0	Can I try this on?	这只火鸡味道很好。
+1	He found me a good seat.	他幫我找到了一個好位子。
+0	Have you eaten dinner?	认真点。
+0	After a storm comes a calm.	我必须赢。
+0	My mother made me a white dress.	到时候我们再考虑吧。
+0	People need to stop hating.	她很努力工作。
+1	I would rather live by myself than do as he tells me to do.	我寧願自己獨立生活也不要他來指使我。
+0	I asked him to wait here.	我们应该了解相应的规则。
+1	I haven't smoked for ages.	我很久没有抽烟了。
+0	What do you think I've been doing?	帶上你的學生卡。
+0	You should get your hair cut.	沒有你我活不下去。
+0	They go skiing at Nozawa every winter.	我爸爸告诉我去哪儿。
+1	Popcorn is my favorite snack.	爆米花是我最喜欢的零食。
+1	Do you think I'm stupid?	你認為我傻嗎？
+1	Tom teaches me French twice a week.	汤姆每周两次教我法语。
+1	I sort of understand.	我大概懂了。
+0	My uncle comes to see me from time to time.	包括早饭吗？
+1	I'm glad we hired you for this job.	我很高兴我们录用了你来担任这份工作。
+1	This job doesn't pay.	这份工作不付钱的。
+0	There was nobody in the garden.	五和三的總和是八。
+1	I'm getting ready for the worst.	我已经做好了最坏的打算。
+1	We are in the era of atomic energy.	我們身在原子能時代。
+1	My sister went to Kobe yesterday.	我妹妹昨天去神戶了。
+0	You shouldn't say that kind of thing when children are around.	汤姆告诉我他父亲去世了。
+1	I wash my hands before eating lunch.	我在吃午饭前洗手。
+0	Tom is working hard.	吉隆坡值得一遊。
+0	He cut the envelope open.	他的脈搏正常嗎？
+1	It was my duty to do that.	做那事是我的责任。
+0	You might meet him.	我住的地方－倫敦，從前以霧聞名。
+1	I told Tom that I thought his house needed to be painted.	我告诉汤姆我认为他的房子要刷漆。
+1	He'd prefer not to eat that.	他宁愿不吃这个。
+1	The rumor proved to be true.	经过证实，谣言是真的。
+1	Where are those people from?	那些人从哪来的？
+0	This makes me so angry.	这个工作没有酬劳。
+0	Don't pull my leg!	我很高兴没有买这样的东西。
+1	I should stop procrastinating.	我做事该果断。
+0	We failed due to a lack of preparation.	他今晚將抵達函館。
+1	I wasn't busy yesterday.	我昨天不忙。
+1	We have almost finished our work.	我們幾乎完成了我們的工作。
+0	Tom, I want you to handle this one.	她是一個很好的舞者。
+1	Hello, Tom.	你好，汤姆。
+1	Please find a solution to the problem.	请找到问题的解决方法。
+0	I'm getting more and more gray hair.	汤姆是我认识的人当中游泳最快的。
+0	He went by bicycle.	蜜蜂螫人可以是非常痛苦的。
+1	We had a kid just last year.	就在去年我們有了一個孩子。
+1	He is doing very well considering he lacks experience.	考虑到他缺乏经验，他做得[已经]非常好了。
+0	Step out of the car and place your hands behind your back.	想象一下，假如你有一台时光机。
+0	My boss made me work overtime.	這條繩子能撐多久?
+1	Who drew it?	誰畫的？
+0	People should get more involved.	十年之後我看到了他。
+1	You should have shown him the device.	你应该给他看看这装置。
+1	Tell me which you want.	告訴我你想要哪個。
+1	Where is the bank?	银行在哪里？
+0	I love the sound of children laughing.	他從架上拿下書。
+1	I like running.	我喜欢跑步。
+0	That patient may die at any time.	一部分钱被偷了。
+1	She is a very good teacher.	她是个非常好的老师。
+0	You shouldn't have done that.	我想買點東西吃。
+1	I forgot what his name was.	我忘记他叫什么名字了。
+0	I'm going to the bank.	米价下跌了。
+0	Bring me a glass of water.	這是我所知道的。
+1	I had difficulty working out the problem.	我很難解決這個問題。
+1	I can barely stand his behavior.	我可以勉強地容忍他的行為。
+1	We managed to swim across the river.	我們成功地游過了河。
+1	He really likes music a lot.	他真的很热爱音乐。
+0	We have to find out where Tom is.	我付了十美元買這頂帽子。
+0	Watch my camera for me.	她为什么没来？
+0	I'll never forget what you told me.	她给了他一块表。
+0	I didn't like beer at that time.	汤姆经常在孩子们不在家时阅读。
+1	I wish you could come with us.	但願你可以跟我們一起來。
+0	His lectures are very long.	尽管天气很冷，孩子却没有大衣穿。
+0	Look, it's my problem.	我父親的嗜好是釣魚。
+1	Come on! Give me a chance.	来嘛！给我个机会。
+0	You should emphasize that fact.	这是我们的荣幸。
+0	Laughter is good for your health.	我想去紐約。
+0	I can't eat this much food.	你吃過午飯了嗎？
+1	Have you ever been to America?	你去過美國嗎？
+1	I am engaged to her.	我跟她訂婚了。
+0	He looked around, but he saw no one.	看这本书。
+1	Let's drink coffee while we talk.	让我们边喝咖啡边谈。
+1	She stabbed him in the back.	她在他的背上戳了一下。
+0	If you do your best, you will succeed.	她以为我是大夫。
+1	There was a shortage of fuel.	燃料短缺。
+1	Very few people live to be 100.	很少人活到100岁。
+1	I don't feel like taking a walk this morning.	我今天早上不想散步。
+1	I couldn't answer all the questions.	我无法回答所有问题。
+0	I'm afraid of spiders.	我想看醫生。
+0	He brought back several souvenirs.	你最喜欢去日本的什么地方度假？
+0	The boy feared the dark.	你帶著家人一起來嗎?
+0	How's the weather in New York?	汤姆是个诚实的男孩。
+0	Some people felt that Tom's behavior was inappropriate.	我洗了澡。
+0	The company abandoned that project.	我喜歡打籃球。
+0	I took him to the most expensive restaurant on campus.	你们为什么想今天走？
+1	Hi! Do you work here?	嗨！你在这儿工作吗？
+1	I played catch with my father.	我和我爸爸玩接球。
+1	Don't look a gift horse in the mouth.	不要對人家送的禮物挑三揀四，嫌東嫌西的。
+1	He may have been ill.	他可能病了。
+0	How long have you been in Kushiro?	我無意辭職。
+0	She becomes drowsy after dinner.	汤姆不知道玛丽是高兴呢，还是不高兴。
+1	What did you do with that camera?	你用那台相機做了什麼？
+1	I think I made a mistake.	我认为我犯了个错。
+0	She is mad at me.	我累得再也走不動了。
+1	Mary has a bad back. It's hard for her to lift things.	瑪麗的背不好, 她很難把東西舉起來。
+1	No pain, no gain.	一分耕耘，一分收穫。
+1	I invited my friends to dinner.	我邀請我的朋友吃晚餐。
+1	The strong wind indicates that a storm is coming.	強風暗示著即將到來的暴雨。
+1	What a beautiful flower!	多漂亮的花啊!
+1	Laura Ingalls grew up on the prairie.	勞拉英戈爾斯是在草原上長大的。
+1	My house has a small yard.	我的房子有一個小院子。
+1	He hit his head against a rock.	他的头撞倒了一块岩石。
+1	You ought not to have disclosed the secret.	你本不该透露秘密的。
+1	Air is to us what water is to fish.	空气对人来说就是水对鱼的意义。
+1	We must reduce energy demand.	我们必须降低能源需求。
+0	They made me really angry.	昨晚月亮满了。
+0	I refuse to answer your question.	這口井乾涸了。
+1	They were scolded by the teacher.	他们被老师训斥了。
+1	She was absorbed in the video.	她迷上了视频。
+0	I've gained weight.	他准会忘。
+0	The sun was shining, yet it was cold.	整个国家被大雪覆盖了。
+0	Don't underestimate my power.	这儿是他们通常吃晚饭的地方。
+1	Tom's coach likes him.	汤姆的教练喜欢他。
+1	I wonder what this phrase means.	我想知道这句话的意思。
+0	It's not a road, but a path.	這副眼鏡多少錢？
+0	I bought this book at Maruzen Bookstore.	她把画挂反了。
+0	The contract was signed.	我凭韧性克服了困难。
+1	I'm very happy.	我很快樂。
+1	She was wearing long boots.	她穿着长靴。
+0	Mastering a foreign language involves a lot of patience.	她不想跟任何人說話。
+1	How much will it cost?	这要多少钱？
+1	I will live in Sasayama next year.	我明年會住在筱山。
+1	The box is almost empty.	盒子几乎是空的。
+0	I'm afraid you have the wrong number.	我将去取我的车。
+1	Please shuffle the cards carefully.	请仔细洗牌。
+0	I don't like school.	农业需要消耗的大量水。
+1	He married a pretty girl.	他娶了一個漂亮的女孩。
+1	I can't take the place of her as an English teacher.	我无法取代她做英语老师。
+1	She has already left the office.	她已經離開了辦公室。
+0	My hobby is collecting old bottles.	他總是把孩子的教育問題留給他的妻子。
+0	I'd better get back home.	他把书放在了桌上。
+1	That's my favorite chair.	那是我最喜歡的椅子。
+0	Did you go to school yesterday?	你怕虫子吗？
+1	I'll give you a prescription.	我会给你开个药方。
+1	He fought against racial discrimination.	他反對種族歧視。
+0	Tom did well considering his age.	从这个问题开始吧。
+1	I've lost a little weight.	我瘦了一點。
+0	She made a mess of the work.	我真是欣喜若狂。
+0	She has been dead for ten years.	我向他解釋了這個過程。
+0	The tablecloth is in the cabinet.	他昨天沒有吃任何東西。
+0	We went to the races.	我厌倦了听汤姆说话。
+1	They got married six months ago.	他們六個月前結婚了。
+0	I'm married.	他給我看了她的照片。
+0	London is famous for its fog.	别来烦我。
+0	Someone is watching.	你可以随便去哪儿。
+1	My father will often read the newspaper during meals.	我父亲常在吃饭时看报纸。
+1	The lecture lasted for two hours.	這場演講持續了兩個小時。
+1	He looks young.	他看起来很年轻。
+0	Look what I made for you.	有多少人能做？
+0	I didn't believe him at first.	價格是兩年前的兩倍。
+1	It's obvious that he lied.	顯然地他撒了謊。
+1	My sister has made remarkable progress in English.	我妹妹的英语有了明显的进步。
+0	Tom wrung out the towel and hung it up to dry.	在哪里可以买到车票？
+1	Tom is a very good tennis player.	湯姆是一個非常好的網球選手。
+1	I was alone in the classroom.	我独自待在教室里。
+0	Do you think that he is equal to the task?	我六英尺高。
+0	Where does he want to go?	没人给我们机会。
+0	She didn't have any pencils.	我昨晚很累了。
+1	How strange!	真奇怪。
+1	I met a friend of Mary's.	我遇到了瑪麗的一位朋友。
+0	World War I broke out in 1914.	讓我們明天再在這裡見面吧。
+0	The eight o'clock bus was early today.	今天下午汤姆和玛丽会一起出去。
+0	We ordered too much food.	她被要求用墨水写下她的名字。
+0	I have been busy since yesterday.	大量生產降低許多商品的價格。
+0	I don't want you.	他聽到了叫聲。
+0	I'm going to change my shirt.	不管怎樣，你永遠不會知道。
+1	Just take it slowly.	慢慢来。
+0	It was foolish of you to accept his offer.	她们是孩子。
+0	There is a cat under the desk.	如果你不懂，那就问。
+1	Put the book there.	把書放在那裡。
+1	We really appreciate their effort.	我们真的感激他们的努力。
+0	Tom blushed.	我想念你。
+0	I just wanted to speak to Tom.	我們的棒球隊很強。
+0	I bought a new sewing machine.	他從不喝酒。
+0	The city was full of starving soldiers.	汤姆将他自己和玛丽的名字添加到了名单上。
+1	I am looking forward to hearing from you soon.	我期待很快就能收到你的信。
+0	He should thank you.	我還沒收到他的信。
+0	People in the United States speak English.	你能借我些钱吗？
+1	I'm thinking about you.	我突然想到你。
+1	You had better wait until the police come.	你最好等到警察前来。
+0	It's not something I'm very good at.	我舅母做了一條新裙子給我。
+1	You'd better not go today.	你今天最好不要去。
+0	The beach is an ideal place for children to play.	我向我父親借錢。
+1	He wore a mask so that no one could recognize him.	他戴著面具以至於沒有人認出他。
+0	I wish you were close to me.	哪條路通往市政廳？
+0	You remember it better than I do.	发言人的评论极有攻击性。
+0	France is running a welfare state it can no longer afford.	辣点儿没关系。
+1	Everybody wanted to eat.	每个人都想吃。
+1	Stay out of my room.	别进我的房间。
+0	In comparison with Tokyo, London is small.	你现在在哪里呢？
+1	He was listening to music.	他正在聽音樂。
+0	Let me have a look.	人应该明白世界在变。
+1	My throat feels dry.	我喉咙很干。
+1	Could we go somewhere and talk?	我们能去别的地方谈谈吗？
+1	"Will you have some more coffee?" "No, thanks. I've had enough."	“你想再来点咖啡吗？”“不，谢谢。我够了。”
+0	Where do you want to go?	轮胎漏气了。
+1	A lot of people swim here in the summer.	许多人夏天在这里游泳。
+1	It's fun to ride a motorcycle.	騎摩托車很有趣。
+0	It's night.	实话说，我不赞成你。
+1	I have written down his phone number.	我記下了他的電話號碼。
+0	If he is innocent, it follows that his wife is guilty.	我整天待在图书馆。
+1	Because he's sick, he can't come.	因為他生病了，所以他不能來。
+0	A bird in the hand is worth two in the bush.	我們都為Tom感到遺憾。
+1	He arrived at school exactly on time.	他刚好准时到校。
+0	He took off his glasses.	我看见的是汤姆。
+0	There are too many things to do!	你什么时候睡觉？
+0	This bridge was built two years ago.	这男人和他妻子互相帮助。
+0	I agree with him.	我和他比賽跑步。
+1	All he thinks about is himself.	他只顾自己的利益。
+0	Tom is very much alone.	她给孩子们做了曲奇。
+1	Science begins when you ask why and how.	為何如何？你疑問的當下就是科學的開端。
+1	Research on the causes of cancer is very expensive.	有關癌症成因的研究耗費頗巨。
+0	She warned him not to go alone.	在這兒等著，直到我回來。
+0	He risked losing all his fortune.	有人拿错了我的鞋。
+0	Do you think I'm joking?	网球是我最喜欢的运动。
+1	The library is on the 4th floor.	圖書館在四樓。
+0	We are boys.	我無法表達我對你的感謝。
+1	Life is beautiful.	生活是美丽的。
+1	This shirt needs ironing.	这衬衫需要熨。
+0	He has a great deal of experience.	他們在他們的溫室裡種植草莓。
+0	I wonder if anything happened to him.	我讓他修理了我的腳踏車。
+1	Stop putting off finding a job.	不要拖延去找工作的事。
+1	Tom is a good person.	湯姆是個好人。
+1	She has many friends in Hong Kong.	她在香港有很多朋友。
+1	I haven't seen you in ages.	我已經好久沒有見到你了。
+1	How many books do you have?	你有多少本書？
+1	It's already nine o'clock.	已经9点了。
+0	This pencil is better than that one.	湯姆填寫了申請表。
+1	I've got time.	我有时间。
+0	Tom wants to tell you about Mary.	我把剩下的东西给我的狗吃。
+1	Could you sign here?	你能在这里签名吗?
+0	Wait till the light turns green.	別說話，聽我說。
+1	I've quit drinking beer.	我已經不喝啤酒了。
+1	I'm so fat.	我好胖哦。
+1	My father got married in his twenties.	我父親在他二十多歲時結婚了。
+0	My mother boiled ten eggs.	沒有人在房間裡。
+1	She carried that habit to her grave.	她到死都改不了那個習慣。
+1	Do you know this song?	你知道這首歌嗎？
+0	He must finish his homework today.	我无法找到问题的根源。
+1	The boy denied having stolen the bicycle.	那个男孩否认偷了自行车。
+0	They waited for him for hours.	房子被大火烧成了灰烬。
+1	He flatly refused to let me in.	他斷然地拒絕讓我進去。
+0	Can I use your dictionary for a minute?	他的名字不在名单里。
+1	Being rich isn't enough.	有钱还不够。
+0	Will you permit me to go there?	这食物不适合我。
+0	Please tell me about it.	他很少去教堂。
+1	Do you have this in a bigger size?	你有比這個再大一點的尺寸嗎?
+1	He is fluent in French.	他说法语说得很流利。
+0	Is your school far from your home?	請把我的名字加在名單上。
+0	Tom is very talented.	很多人在戰爭中被殺。
+1	They won't come until tomorrow.	他們直到明天前不會來。
+1	She left her umbrella in the train.	她把她的雨傘留在火車上了。
+1	They trust Tom.	他们信任汤姆。
+1	I don't want Tom to die.	我不想让汤姆死。
+1	I miss my children.	我想念我的孩子。
+1	We headed for the mountain cottage.	我们向山间小屋走去。
+0	This car is easy to handle.	你可以為我把這份報告翻譯成意大利文嗎？
+1	That's what I like.	我就喜欢它。
+1	Who is that?	那是谁？
+1	I made efforts to improve my grades.	我努力的改善我的成績。
+0	Do you know me?	鳥類飛行。
+0	I'm taking Spanish this semester.	你认为动物有灵魂吗？
+0	Hope to see you again next year.	我去学校。
+1	He sat next to the stream.	他坐在河边。
+1	Who cares?	爱谁谁。
+0	This is the place where the battle took place.	她僱了一個私人偵探看守她的丈夫。
+0	He is an aggressive person.	我很喜欢我的黄色套衫。
+1	You can go or stay, as you wish.	你走或留，随你高兴。
+1	My attitude towards him changed.	我对他的态度变了。
+1	She's not a child.	她不是小孩。
+1	I was trying to kill time.	我试着消磨时间。
+1	People who will lie for you, will lie to you.	会为你说谎的人，就会对你说谎。
+0	When I was a child, I used to swim in that pond.	我现在能走了吗？
+0	I visited Fukuoka ten years ago.	遊客到瑞士欣賞阿爾卑斯山。
+1	I couldn't understand him at first.	起初我聽不懂他說的話。
+1	There's bamboo growing in the garden.	花園裡有竹子在生長。
+0	What are you punishing them for?	少一把叉子。
+1	I don't know where Tom was going.	我不知道汤姆往哪去了。
+0	It seems that most people only barbeque in the summer.	他是這所大學的學生。
+1	She gave the blouse a quick wash.	她很快地把襯衫洗一洗。
+1	It is too late.	太晚了。
+0	I was late for the appointment.	他去紐約出差了。
+0	She is everything to him.	我可以吃一口嗎？
+1	Please help yourself to the cake.	你自己拿蛋糕吃吧。
+1	I heard the door close.	我听到门关了。
+1	We saw a funny movie last Sunday.	我們上星期天看了一場很有趣的電影。
+0	Do you study English?	他可能喜欢他的工作。
+0	I almost drowned.	他经常翘课。
+1	It has been raining since last Thursday.	從上週四開始一直下雨。
+0	The topic is worth discussing.	他已經離得太遠聽不到我們了。
+0	He comes from England.	他在自己房里玩。
+1	I saw a dirty dog enter the garden.	我看见一条脏狗进了花园。
+0	Sweet dreams!	讓我帶你四處看看我們的房子。
+0	You can rely upon his being punctual.	我什么都不想喝。
+0	He studied very hard.	我們搭飛機去墨西哥旅行。
+1	It's very uncomfortable.	它真是不舒服。
+0	The teacher has a great influence on his pupils.	明天你可以看到他。
+1	I'm going to propose to her.	我打算向她求婚。
+0	The bus was two minutes early.	我现在不想吃午饭。
+0	She has the large house to herself.	觉得渴了就喝点。
+1	The men are wearing short sleeves.	男人們穿著短袖上衣。
+1	English and German are two related languages.	英語和德語是兩種相關的語言。
+1	You have a really good sense of direction.	你的方向感很好。
+0	He wiped the sweat from his face.	他把一盏灯挂在了天花板上。
+1	I can't do without her help.	沒有她的幫助我做不到。
+1	I have to stay in bed all day.	我不得不一整天都待在床上。
+1	I hope I can see you at Christmas.	我期望能在圣诞节见到你。
+1	A couch potato is something that I don't want to be.	我不想成為整天泡在沙發上看電視的人。
+1	He has a large family.	他有一個大家庭。
+1	She is going to Mount Tate.	她將去立山。
+1	She goes to a girls' high school.	她上女子高中。
+0	Tom told Mary he couldn't do what she asked him to do.	您能跳多高？
+1	The world is full of incompetent doctors.	社会上满是不称职的医生。
+0	She always speaks in a low voice.	日本從國外進口各種原料。
+1	I can't believe Tom is getting married.	我不能相信汤姆要结婚了。
+1	I was wrong.	我搞错了。
+0	I take full responsibility for the action.	情況正在改善，所以振作起來！
+0	People grow more cynical with age.	從根部把植物拔出來。
+0	Is everything going OK at work?	继续努力。
+0	The cottage was clean and tidy.	我不知道她住在哪裡。
+1	Have you eaten your lunch yet?	你吃過午飯了嗎？
+1	I've got a few friends.	我有一些朋友。
+1	Do you want to speak to Tom?	你想跟汤姆说话吗？
+0	What's the capital city of Finland?	一個好的廚師不會丟掉昨天的湯。
+1	He was too drunk to drive home.	他喝酒醉無法開車回家。
+0	My brother became an engineer.	汤姆让他的仆人们在黑暗下进餐。
+1	When did she promise to meet him?	她答应几时见他？
+1	We will only consent on that condition.	我们只会在那样的条件下同意。
+0	"Where were you?" "I was at a friend's house."	遇不到你。
+1	I'm going to meet him tomorrow.	我明天要跟他見面。
+0	Which book is yours?	你明晚有空嗎？
+0	Tom told me he was Canadian.	汤姆给玛丽写了封长信，可是没有寄给她。
+1	This is a picture of my mother.	這張是我媽媽的照片。
+1	That just doesn't make sense to me.	那只是對我來說沒有意義。
+0	Change trains at the next station.	您为什么惩罚他们？
+1	I love you.	我爱您。
+0	Kobe is famous for its port.	我希望你能长大。
+1	Please sit down.	請坐下。
+0	These are pens.	很少学生知道他的名字。
+0	I do not for a moment think you are wrong.	那不好笑。
+0	Turn off the light, please.	覆水難收。
+0	What's your favorite iPad app?	他幾乎對那個動物一無所知。
+0	I couldn't find his house.	我需要你们的合作。
+1	Tom pretended to not hear a thing.	汤姆假装没听见。
+1	I'll drop by the post office on the way home.	我会在回家的路上顺便去邮局。
+0	I'd like to pay by credit card.	未满年龄饮酒是罪行。
+0	Will you tell me why you like her?	他們慢慢地向前進。
+0	Which book is yours?	这只是你和我之间的秘密，所以不要让它流出去。
+1	Press the bell twice.	按两下铃。
+1	Who else uses this room?	还有谁用这个房间？
+1	I'm still the boss here.	我仍是这里的老板。
+0	I have more money than Tom.	我和她有一段長談。
+0	I can't figure out what he means.	你最喜欢的饮料是什么？
+0	You should have studied harder.	那些海报现在都到哪里去了？
+0	School will start next Monday.	你还年轻。
+0	What does Tom know about me?	他想要把他的襯衫洗乾淨。
+0	You'll soon get accustomed to this cold weather.	你昨天打网球了吗？
+0	Would you lend me your dictionary?	我会跟她解释的。
+1	I often played tennis with her.	我常常和她打網球。
+0	He won't live a long life.	他不打算买一个摄像机。
+1	He put on the black coat.	他穿上了黑色的外套。
+1	He worked in a big city hospital.	他在一間很大的市立醫院工作。
+1	I heard the front doorbell ring.	我聽到前門的門鈴響了。
+1	It's clear that you're wrong.	很明顯地你錯了。
+1	They came all the way from Brazil.	他們從巴西遠道而來。
+1	She waited for hours and hours.	她等了好幾個小時。
+1	Marriage frightens some people.	有些人害怕婚姻。
+0	Are you mad?	我有许多唱片。
+0	I had been reading for an hour.	我每个星期日礼拜完都买甜甜圈。
+0	I'll drive you to the airport.	你看到的這些花是玫瑰。
+1	This is my dictionary.	这是我的字典。
+1	I know my limitations.	我知道我的限度。
+0	We're having difficulty locating Tom.	你的腳踏車和我的很相似。
+0	Trim the fat off the meat.	她是坐火車去上海的。
+0	You're going to wreck your eyesight if you play games all the time.	我身上幾乎沒有錢。
+0	I was nine years old when I asked my mom if Santa Claus really existed.	我本该在买下这个电动剃须刀之前试一下的。
+0	It was lucky for you that you found it.	你不需要著急。
+1	Don't make fun of old people.	不要捉弄老人家。
+1	We are leaving Japan next month.	我們下個月將離開日本。
+0	She's my daughter.	我很想家。
+0	He told me the story of his life.	你應該幫他工作的。
+0	I'll miss you when you're gone.	我经常使用SSH来远程连接到我的电脑。
+1	I did not participate in the dialog.	我没有参与对话。
+0	He took out his passport.	您怎樣看日本的經濟呢？
+1	Hang on till I get to you.	坚持下去直到我找到你。
+0	Please show me the green shirt.	你不知道昨天發生什麼事嗎？
+0	I got the money back from him.	有任何給我的訊息嗎？
+0	Can I make a reservation for golf?	我叔叔住在公寓裡。
+1	He has a son and two daughters.	他有一個兒子和兩個女兒。
+0	It wasn't very hot last night.	你覺得Tom的廚藝如何？
+0	It's obvious that she's sick.	因為喝酒喝太多，所以我生病了。
+0	I have a dog and a cat.	祝您有一個愉快的聖誕節。
+1	Step inside.	进来。
+0	You look just like your mother.	请带一张纸给我。
+1	Did you bring them?	你把它们带来了么？
+1	She is still a girl.	她还是个小孩儿。
+1	We elected her captain of our team.	我们选她为我们队的队长。
+0	What are you looking at?	鎮上的每個人都知道它。
+0	I got some sand in my eye.	我想要一隻狗。
+0	Can you give me a ride to the office on Wednesday?	人们通常不喜欢他们不理解的事物。
+1	Life in Japan is expensive.	在日本生活消费很高。
+0	Leave me a bit of ice cream.	这正如我想的一样。
+0	Can you imagine walking around on the moon?	派对延期了一周。
+1	I met him on my way home.	我在回家的路上遇見了他。
+0	UN stands for the United Nations.	她爱汤姆，而不是我。
+1	She gave me this compact disc.	她給了我這個光碟。
+1	He is a reporter for Time magazine.	他是时代杂志的记者。
+1	It's easy for monkeys to climb trees.	猴子爬树容易。
+0	I opened the box and looked inside.	花园里树上的叶子已经完全变红了。
+1	Would you please come again later?	請您稍後再來好嗎？
+0	You are in my way.	仅三分之一的成员出席了会议。
+0	Most Americans like hamburgers.	我们队总是输。
+0	I have a friend whose father is a teacher.	汤姆开始说话。
+1	We're friends from way back.	我们是老朋友了。
+0	You are the master of your own destiny.	我一天刷兩次牙。
+0	We'd better talk.	这个盒子里有很多蛋。
+0	She cursed loudly.	汤姆找到了新工作。
+1	We could see nothing but fog.	除了雾我看不见任何东西。
+0	We live in the United States.	我要去打網球。
+0	You drink too much coffee.	我一点法语都不懂。
+0	Air quality has deteriorated these past few years.	我想有一天去国外。
+1	New York is on the Hudson River.	紐約位在哈得遜河。
+1	Are you ready?	你准备好了吗？
+1	He is leaving Chicago tomorrow.	他明天將離開芝加哥。
+0	I like instrumental music.	你週日不必工作。
+0	Why are you busy today?	汤姆在笑。
+1	Long skirts are out of fashion now.	現在長裙過時了。
+0	The lake was frozen.	永遠要對自己誠實。
+0	There are some boys under the tree.	他放學後打棒球。
+1	I rented a house with a garage.	我租了一間有車庫的房子。
+1	He won everything.	他赢得一切了。
+1	The admission is ten dollars a person.	入會費一個人十美元。
+1	The guy with a beard is Tom.	长胡子的是汤姆。
+0	I didn't know about your plan.	我喜欢你的房间。
+0	All of my friends like soccer.	你是高中生嗎?
+0	She is very thoughtful and patient.	這個家庭作業對我來說很困難。
+1	A Mexican taught him Spanish.	一個墨西哥人教了他西班牙文。
+1	Will you stay at home tonight?	你今晚會待在家裡嗎？
+1	He has ambition, so he works hard.	他有抱負，所以他很努力工作。
+1	This book isn't interesting at all.	這本書一點也不有趣。
+1	English is useful in commerce.	英語在商業中很有用。
+1	You're really brave, aren't you?	你很勇敢，不是嗎？
+0	She especially likes music.	請留神看著我的手提箱。
+0	Don't get off the train till it stops.	世界上任何山峰都达不到珠穆朗瑪峰的高度。
+0	He made a clean break with them.	天空幾乎每天是晴朗的。
+1	She ran as fast as possible.	她盡可能地快跑。
+0	The car broke down.	你对女人有一套。
+0	Mary likes milk very much.	我被交通堵塞耽擱了。
+0	Don't stare at others.	她的英語說的很好。
+0	Please call me at my hotel later.	他讓我在舞台上唱歌。
+0	Sorry, but can you show me the way to the next village?	他決定成為一名飛行員。
+0	Tom has been gone for ages.	我知道該走了，但我想留久一點。
+0	We like to play soccer.	他非常喜歡漂亮的女人。
+0	Health is above wealth.	我以前吃披萨，但现在不了。
+1	Give me three pieces of salmon.	給我三片鮭魚肉。
+1	Thank you for your attention.	谢谢您的关注。
+0	Tom couldn't tell Mary everything he knew.	這條領帶跟我的西裝不配。
+1	My album is here.	我的相簿在這裡。
+1	He lost a fortune in the stock market.	他玩股票赔了。
+0	He walks in the park every morning.	我不知道天色變暗了。
+1	In case of an emergency, get in touch with my agent.	万一有紧急情况，联系我的代理人。
+0	Christmas is December 25th.	他還沒來。
+0	She left her son a lot of money.	讓我們在公園裡散步吧。
+1	Take the elevator to the fifth floor.	搭乘電梯到五樓。
+1	What did she whisper to you?	她小聲地跟你說了什麼?
+1	Let him play your guitar.	讓他彈你的吉他。
+1	How should I know?	我怎麼知道？
+0	She adores her older brother.	你要它干什么？
+1	The doctor may have said so.	医生可能说过。
+1	That film's really interesting.	那部电影很有意思。
+1	Don't quit English.	不要放棄英語。
+0	Which one of the two brothers did you see?	他的第二個兒子結婚並定居下來了。
+1	I was just talking about Tom.	我仅仅是在和Tom交谈。
+1	He wishes he had gone to the theater last night.	昨晚他希望他去了剧场。
+1	The police will look into the case.	警察会调查这起案件。
+0	How did you get to know him?	我會非常想念你。
+1	I wish you had told me that.	但願你告訴過我就好了。
+0	According to TV news, there was a plane crash in India.	去看電影怎樣？
+0	I'm fairly certain Tom lives on Park Street.	湯姆昨天提早回來了。
+0	The only thing I have now are memories.	別和這個人打交道。
+0	My room is very small.	四处看看。
+1	We did it ourselves.	我们自己做的。
+1	I don't know who he is.	我不知道他是谁。
+1	She fainted when she saw blood.	她看见血就晕了。
+0	Will you sell your car to me?	很幸运地，我在机场遇到了我的老朋友。
+1	You look tense.	你看起来很紧张。
+0	Is there anything you can't do?	你能解釋一下你為什麼遲到嗎？
+1	My boss assigned the hard job to me.	我老板把艰巨的任务指派给了我。
+1	They made up and became friends again.	他們和解了，並再次成為了朋友。
+1	Let's go to a movie.	讓我們去看電影。
+1	He was injured in the accident.	他在事故中受傷。
+0	Tom started the engine.	我會說中文，但是我不會讀中文。
+1	Don't do anything like that again.	不要再做那樣的事情了。
+0	Why blame Tom?	她明年將滿十七歲。
+0	I like short hair.	他看到她就臉紅了。
+0	Be nice to others.	汤姆告诉我他丢了课本。
+1	Can you drive a manual transmission?	你會開手排車嗎?
+0	I want to visit Korea.	我犯了一個錯。
+0	I thought you were my friend.	汤姆知道我不喜欢他。
+0	I've had a scratchy throat since this morning. I wonder if I've caught a cold.	我今天收到了她的信。
+1	I don't really read newspapers.	我不太看报纸。
+0	My hands were shaking too much to thread the needle.	我會帶你去游泳。
+1	Who cares when she gets married?	誰管她什麼時候結婚？
+1	I asked Tom what he was reading.	我问了汤姆在读什么。
+1	I got this CD player for free.	我免費得到這個CD播放機。
+0	She is getting better day by day.	她几乎不说英语。
+0	Let's draw lots to decide who goes first.	除非有人跟他說話，他不說話。
+0	Please speak slowly.	我很抱歉我没有打电话。
+0	They love that.	讓我知道你住在哪裡。
+1	I asked her to wait a moment.	我請她等一會兒。
+0	I met an old woman.	我們學校在八點半開始上課。
+1	I'm good at skiing.	我擅長滑雪。
+1	We reached the top of the mountain.	我們到達了山頂。
+1	We should call the doctor.	我們應該去請醫生。
+0	I can't find my umbrella anywhere.	我已经习惯了家门口过火车的声音了。
+1	I said I would make her happy.	我说我会让她幸福的。
+0	Don't forget to put out the fire.	我可以吃這個柳橙嗎？
+1	Tom played with his dog.	汤姆和他的狗玩。
+1	I don't want him to touch me.	我不想被他感动。
+1	It's snowing.	正在下雪。
+0	I bought that car.	這是給你的禮物。
+0	He helped me to get over the difficulties.	請把門鎖上。
+1	Say it in another way.	换种方式说。
+0	I saw a light in the distance.	我不能相信你在放弃。
+0	I borrow money.	她被安葬在她的家鄉。
+0	That's quite meaningless.	Tom沒有孩子。
+0	It is wrong to tell lies.	我能休息一会儿吗？
+0	Like it or not, we have to attend that meeting.	我喜歡流行音樂。
+1	I never thought it would come to this.	我从没想过它会变成这样。
+0	Do you ever study in the library?	我媽媽讓我吃點藥。
+0	I'm planning to stay at the hotel.	金窩銀窩不如自己的狗窩。
+1	I am in trouble.	我有麻煩了。
+1	You have to clean your room.	你该打扫你的房间。
+1	A famous architect built this house.	一个有名的建筑师造了这栋房子。
+1	Evidently, it's going to rain tomorrow.	明天肯定会下雨。
+1	I just need a break.	我只想休息一下
+0	It's okay to go.	我摑了他的臉。
+0	I’ve started learning Esperanto.	他什么也没说，这让她很生气。
+0	If you heard her speak English, you would take her for an American.	他們視喬叟為英詩之父。
+0	I brought up two kids all on my own.	你週日不上學, 對嗎?
+1	She felt insecure about her future.	她對她的未來感到沒有安全感。
+1	Should I cancel the call?	我该取消通话吗?
+1	Go away!	滾！
+0	He wants to go to America.	以前從來沒有人聽說過。
+0	What do you want to tell me?	有人在看著你。
+1	Watch your step.	小心脚下。
+0	Are you sure of your facts?	他去过很多地方。
+0	The house I bought is pretty far from downtown.	我不知道如何對待孩子。
+0	Putting ideas into practice is difficult.	我试着说服汤姆回家。
+0	Please speak slowly.	我和她聊得很愉快。
+1	I am not a student.	我不是學生。
+0	Pilots communicate with the airport by radio.	他突然變得非常開心。
+0	Kyoto is famous for its old temples.	泪水沿着我的面颊流了下来。
+1	You look tired. You ought to rest for an hour or two.	你看起來很累。你應該休息一兩個小時。
+1	What is the population of Japan?	日本的人口是多少？
+1	Tom got angry at the children.	湯姆對孩子們生氣。
+0	I'll join you later.	我们想听听。
+1	Don't throw away this magazine.	不要丟掉這本雜誌。
+0	Tom cut himself with his knife yesterday.	那隻鳥叫什麼名字？
+0	Tom never turned up again.	讓我們坐公共汽車去。
+0	In Esperanto there are only 16 grammar rules.	他弟弟是个有名的足球选手。
+0	She bought a toy for her child.	请大家都保持安静。
+1	Be careful not to fall.	小心别摔倒了。
+1	I go to the office by bicycle except on rainy days.	除了雨天，我都是骑车去上班的。
+1	Does she have a piano?	她有鋼琴嗎？
+1	It turned out that the rumor was false.	谣言[最后]证明是假的。
+1	I would like to speak English fluently.	我想講一口流利的英語。
+0	He bored us with his long stories.	不要一個人在黑暗中走。
+0	It is likely to rain tomorrow.	我的宝宝开始哭了，他想要吃奶。
+1	I ate breakfast at eight.	我八點鐘吃了早餐。
+1	I guess I haven't made myself clear.	我想我沒有把話說清楚。
+0	Keep in mind that you must die.	他習慣了旅行。
+0	This beach is a paradise for surfers.	我想要果汁。
+1	She knows how to do the crawl.	她知道怎麼游自由式。
+1	We got the meeting over with quickly.	我們很快的結束了這個會議。
+1	You should've rejected such an unfair proposal.	你本该拒绝一个那么不公平的提议。
+1	It is by no means certain.	这根本不是确定的。
+0	Tom was questioned by the police.	讓我們休息10分鐘。
+0	I think I'm going to go now.	美国与加拿大相邻。
+1	I'd like to have cake for dessert.	我想吃蛋糕當點心。
+0	You don't have to take an examination.	汤姆人在心不在。
+1	We are not going on vacation.	我们不去度假。
+0	The birds flew to the south.	我試著不去想了。
+0	I love passion fruit juice.	给你解释这为什么行不通要花很多时间。
+0	I won the lottery.	要都解释的话，需要一辈子的时间。
+1	There's no sugar.	没有糖。
+1	I get scared just walking past him.	只是從他旁邊走過去我就覺得害怕。
+1	Tom and Mary even always wear the same color clothes.	汤姆和玛丽甚至经常穿同样颜色的衣服。
+0	He has a big family.	它真重。
+1	Today is my sixteenth birthday.	今天是我十六歲的生日。
+1	I wish that I could speak French better.	我希望我能说法语说得更好。
+1	I believe in you.	我相信你。
+0	Have you finished it?	我不想听解释。
+1	Absolutely nothing is permanent in life.	生活中绝对没有什么是持久的。
+1	Tom hid under the table.	Tom躲在桌子底下。
+1	I was late for school this morning.	我今天早上上學遲到。
+1	Don't forget to take the first-aid kit.	别忘了带上急救箱。
+0	Mathematics is difficult for me.	把椅子挪一挪靠近桌子。
+0	She saw herself in the mirror.	1000日元够不够？
+1	She wants to know who sent the flowers.	她想知道是谁送的花。
+1	Do you guys want to go with me?	你們要和我一起去嗎？
+1	How about going for a drive?	去開車兜風怎樣？
+1	There is insufficient light to take pictures.	拍照片光线不够亮。
+1	I met your father yesterday.	昨天我見到了你父親。
+0	Her grandmother lived to be 88 years old.	把我的電視機修好花了我一萬日元。
+0	His office is past the bank on your left.	汤姆对电脑有很多经验。
+1	You should have come earlier.	你本应该来得更早的。
+0	It never rains but it pours.	我把它忘在车库里了。
+1	Let's discuss the problem with them.	让我们和他们讨论这个问题吧。
+0	She returned the book to the library.	他们在吃午饭。
+0	Tom joined the discussion.	我妹妹成為了一個大學生。
+0	I've changed my website's layout.	嫉妒是謀殺的動機。
+1	Where did you have your picture taken?	你从哪里照的相？
+1	Your cake is delicious.	你的蛋糕很美味。
+0	Thank you for baking this delicious cake.	王子愛上了一個樵夫的女兒。
+0	He is getting better bit by bit.	你家的地址是什麼？
+0	His mother didn't want to do it.	我必須幫忙我母親。
+1	We enjoyed ourselves at the picnic.	我們在野餐玩得很開心。
+1	My father is in his room.	我父親在他的房間裡。
+0	I guess that she is over thirty.	你有任何比較小的尺寸嗎?
+0	How much did you bid?	這張票的有效期是三天。
+0	One of the girls was left behind.	他家在这儿某处。
+1	Mary is pregnant with twins.	玛丽怀了双胞胎。
+0	Your English is improving.	我有一位朋友在國外留學。
+1	Let me read the paper when you have finished with it.	报纸看完后借我看下。
+0	She is very clever.	她手里握着一把小阳伞。
+0	The monkey fell from the tree.	她竟敢說出來。
+0	Give me something to eat.	人固有一死。
+0	Now it's your serve.	没多久，我们又碰巧遇到了。
+0	To what extent can he be trusted?	我当时是学生。
+0	May I see your boarding pass, please?	我哥哥給了我一個可愛的娃娃。
+1	She answered in tears.	她很傷心地回答。
+1	She asked a very good question.	她問了一個非常好的問題。
+1	This door is locked from the inside.	這門從裡面被反鎖了。
+1	What a pity!	太可惜了！
+1	She is a quiet woman.	她是一個安靜的女人。
+0	Please don't ask.	我想成为决策的人。
+1	Just take my word for it.	請相信我的話。
+1	Tom sat down.	汤姆坐下了。
+0	Can you translate this song for me?	最晚十點前來這裡。
+0	The telephone was invented in 1876 by Bell.	几点了？
+1	I'm feeling blue today.	我今天的心情不好。
+0	A card was attached to the gift.	问问他会不会说日语。
+1	Turn on the TV.	开电视。
+1	I can't make out what he wants.	我不明白他想要什么。
+0	London was bombed several times.	咳嗽糖浆有股甘草的味道。
+0	I think it's OK.	得寸进尺。
+1	Words express thoughts.	語詞表達思想。
+1	It took me a little more time than usually to fall asleep.	我花了比平常多一點的時間入睡。
+1	The young man is a doctor.	这个年轻人是医生。
+0	He played the part of Hamlet.	他能说法语，很明显还有英语。
+0	That is the office where he works.	我以前总认为汤姆是有一些与众不同的。
+1	Did you bring a hair dryer?	你吹風機帶來了嗎？
+0	Tell me what to do with it.	她派他去工作了。
+1	You made the mistake on purpose, didn't you?	你故意犯這個錯, 是嗎?
+0	My father is suffering from a cold.	女人往往比男人活得更長。
+1	I think what you say is true.	我觉得你说的是真的。
+1	I want you guys to do me a favor.	我想要大家伙帮我个忙。
+0	He is very angry.	你比以前更容易上課遲到了。
+0	May I pay with a credit card?	春天和秋天，你更喜欢哪个？
+1	Which one is easier?	哪一個最簡單？
+0	We gather here once a week.	我没见到他。
+0	Mail this letter.	我心里充满着快乐。
+0	He was late for the 7:30 bus.	你的皮膚真好。
+0	He's not such a great writer and I think he knows it.	要是他知道会发生什么，他就会改变计划。
+0	That white building is a hospital.	我很激动。
+0	I don't remember.	我把自己的鞋子扔掉了。
+1	You shouldn't wait here.	你不應該在這裡等。
+1	You will fail.	你會失敗。
+0	He is very handsome.	一切都取決於天氣。
+1	You don't deserve it.	你不配。
+0	Call me at the office.	他退休後的生活不快樂。
+1	You really are rude, aren't you?	你真的很粗魯，不是嗎？
+0	Have you ever been to New York?	我从没低估汤姆。
+0	We shouldn't expect too much help from Tom.	这车容易开。
+1	Something is wrong with my watch.	我的錶出了毛病。
+0	You had better get away from here at once.	你最喜歡的家常菜是什麼？
+0	He flew a kite with his son.	輕井澤是著名的避暑勝地。
+0	We have to do our best.	不要取笑人。
+0	My father is too busy to take a walk.	她把奶油塗在麵包上。
+0	Why do you ask?	欢迎作任何评论。
+0	They all laughed at his jokes.	汤姆去年得了心脏病。
+1	I know her address.	我知道她的地址。
+1	He can speak a little English.	他會講一點點英語。
+0	I ate a hasty lunch.	每次我去他住處，他都在讀書。
+0	There are some misprints, but all in all, it's a good book.	她用一个微笑迎接了我。
+1	She ignored all my warnings.	她忽視了我所有的警告。
+0	I've already tried that.	我們對他期望很多。
+0	English is third period.	她可以來。
+1	He amassed a fortune in stock trading during the last boom.	他在上个景气时期炒股攒下了一笔钱。
+1	Please don't speak so fast.	请不要说得那么快。
+0	Isn't he Italian?	你一般中午饭吃什么？
+0	She gave me a smile of recognition.	她是按摩师。
+0	Can you stay for a while?	我吃了魚子醬。
+0	I am 30 years old now.	在下一個轉角右轉。
+0	Please contact us.	我有一台电脑。
+0	The bride seems to be very pretty.	他不會說我們的語言。
+0	She asked him to open the window.	你以前去過倫敦嗎？
+1	Remember to mail this letter tomorrow morning.	明天早上記得去寄這封信。
+1	We had a welcome party for her.	我們為她舉辦了一個歡迎會。
+0	My brother is not as tall as I was two years ago.	你真的很漂亮。
+0	The cat is watching the fish.	我困了。
+1	Don't move, or I'll shoot you.	別動，不然我就開槍射你。
+1	How do you feel?	你感觉如何？
+1	He bought her a sweater.	他買了一件毛衣給她。
+0	Lemons are sour.	现在道歉也迟了。
+0	I am a citizen of Sapporo.	我的叔叔從來不寫信。
+1	I have two cats.	我有两只猫。
+1	Every great writer seems to have been interested in English.	每一個偉大的作家似乎已經對英語感興趣。
+1	I thought you had to get up by 7:30.	我以为你要7点半起床。
+1	I missed the last train.	我錯過了最後一班火車。
+0	Don't begin without me.	請先為他上菜。
+1	The police broke up the fight.	警察驅散了這場鬥毆。
+1	You're too suspicious about everything.	你对什么都太怀疑了。
+1	Did the police find any fingerprints?	警察找到指纹了吗？
+0	He gave me whatever help I needed.	她鋼琴彈得很好。
+1	I am content with my job.	我對我的工作感到滿意。
+0	We spent the weekend with friends.	我不喜歡她的臉。
+1	The end justifies the means.	為了正當目的可以不擇手段。
+0	We're waiting for the right time.	你住在那裡多久了?
+0	Your suggestion seems reasonable.	任何情绪，只要它是真诚的，就说明它是发自内心的自然流露。
+0	I don't know if he can come tonight.	超過二十個男孩去了那裡。
+1	He is full of energy.	他充满活力。
+1	I'll let Tom tell you.	我会让汤姆告诉你。
+0	I'm not about to ask him.	他在这方面不是很严格。
+1	Have you cleaned your room yet?	你打掃你的房間了嗎？
+0	Five years is too long to wait.	我昨天經過她家。
+0	What're your plans for the weekend?	游戏几点开始？
+1	We know our rights.	我们知道我们的权利。
+1	They gave a big party for me.	他們為我辦了一個盛大的派對。
+1	Anything else?	还有别的吗？
+0	Do you like it?	京都和波士顿是姐妹城市。
+0	She made a new suit for him.	事情怎麼變糟的？
+1	How many pens do you have?	你有多少支铅笔？
+1	A fire broke out during the night.	在夜間發生了火災。
+1	It grew larger and larger.	它变得越来越大。
