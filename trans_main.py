@@ -4,13 +4,13 @@ import tensorflow as tf
 
 from src.input.data_generator import DataGenerator
 from src.input.data_processor import DataProcessor
-from src.model.cnn.conv1d_v2 import Conv1D, MaxPooling1D, Flatten1D
+from src.model.cnn.conv1d_v2 import Conv1D, MaxPooling1D
 from src.model.dnn.Dense import Dense
 from src.model.dnn.Dropout import Dropout
 from src.model.modeling import Model
 from src.model.transformer.Embedding import Embedding
 from src.utils.log_util import set_verbosity
-from src.utils.tensor_util import reshape_to_matrix
+from src.utils.tensor_util import reshape_to_matrix, cosine_difference
 from src.utils.visual_util import draw_array_img
 
 set_verbosity()
@@ -25,30 +25,31 @@ def model_graph(features, labels):
     with tf.variable_scope("conv"):
         conv_output = Conv1D(embeddings, [2, 1, 6], 'layer_0')
         conv_output = MaxPooling1D(conv_output, 3)  # [b*2, 16, h, o]
-        conv_output = Dropout(conv_output)
+        conv_output = Dropout(conv_output, 0.5)
 
         conv_output = Conv1D(conv_output, [2, 6, 12], 'layer_1')
-        conv_output = MaxPooling1D(conv_output, 4)  # [b*2, 4, h, o]
+        conv_output = MaxPooling1D(conv_output, 4)  # [b*2, l, h, o]
         conv_output = Dropout(conv_output, 0.5)
 
-        conv_output = Conv1D(conv_output, [2, 12, 24], 'layer_2')
-        conv_output = MaxPooling1D(conv_output, 2)  # [b*2, 2, h, o]
-        conv_output = Dropout(conv_output, 0.5)
+        # conv_output = Conv1D(conv_output, [2, 12, 24], 'layer_2')
+        # conv_output = MaxPooling1D(conv_output, 2)  # [b*2, l, h, o]
+        # conv_output = Dropout(conv_output, 0.5)
 
-        conv_output = tf.transpose(conv_output, [0, 1, 3, 2])
-        conv_output = tf.reduce_mean(conv_output, axis=-2)  # [b*2, 2, h]
-        conv_output = tf.reduce_mean(conv_output, axis=-2)  # [b*2, h]
-        conv_output = tf.reshape(conv_output, [-1, 2 * hidden_size])
+        conv_output = tf.transpose(conv_output, [0, 1, 3, 2])  # [b*2, l, o, h]
+        conv_output = tf.reduce_max(conv_output, axis=-2)  # [b*2, l, h]
+        conv_output = tf.reduce_max(conv_output, axis=-2)  # [b*2, h]
+        conv_output = tf.reshape(conv_output, [-1, 2, hidden_size])
+        loss = cosine_difference(conv_output)
 
-    with tf.variable_scope("soft"):
-        dense_output = Dense(conv_output, 64)
-        dense_output = Dropout(dense_output, 0.5)
-        logits = Dense(dense_output, 2)
-        predicts = tf.argmax(logits, axis=-1)
-        loss = tf.reduce_mean(
-            tf.nn.sparse_softmax_cross_entropy_with_logits(
-                logits=logits, labels=labels))
-    return predicts, loss
+    # with tf.variable_scope("soft"):
+    #     dense_output = Dense(conv_output, 64)
+    #     dense_output = Dropout(dense_output, 0.5)
+    #     logits = Dense(dense_output, 2)
+    #     predicts = tf.argmax(logits, axis=-1)
+    #     loss = tf.reduce_mean(
+    #         tf.nn.sparse_softmax_cross_entropy_with_logits(
+    #             logits=logits, labels=labels))
+    return loss
 
 
 def read_file(filename):
@@ -61,15 +62,15 @@ def read_file(filename):
         for line in lines:
             line = line.strip()
             line = line.split("\t")
-            labels.append(line[0])
-            ens.append(line[1])
-            cns.append(line[2])
+            labels.append(0)
+            ens.append(line[0])
+            cns.append(line[1])
     return labels, ens, cns
 
 
 def train(checkpoint_file, save_steps=2000):
-    train_labels, train_ens, train_cns = read_file('data/trans_train.txt')
-    eval_labels, eval_ens, eval_cns = read_file('data/trans_dev.txt')
+    train_labels, train_ens, train_cns = read_file('data/translate_train.txt')
+    eval_labels, eval_ens, eval_cns = read_file('data/translate_dev.txt')
     print("*****Examples*****")
     for i in range(5):
         print("example-%d" % i)
@@ -108,7 +109,7 @@ def train(checkpoint_file, save_steps=2000):
         features=tf.placeholder("int32", [None, 2, seq_length]),
         labels=tf.placeholder("int32", [None, ]),
         model_graph=model_graph)
-    # model.freeze(['embeddings'])
+    model.freeze(['embeddings'])
     model.compile()
     model.restore(checkpoint_file)
     model.auto_train(

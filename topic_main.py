@@ -46,7 +46,7 @@ def model_graph(input_ids, label_ids):
             loss = tf.reduce_mean(
                 tf.nn.sparse_softmax_cross_entropy_with_logits(
                     logits=logits, labels=label_ids))
-    return predicts, loss, encoder_output
+    return loss, predicts, encoder_output
 
 
 def read_file(filename):

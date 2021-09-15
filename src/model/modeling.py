@@ -42,17 +42,20 @@ class Model(object):
     def _build_graph(self):
         print("Building model graph......")
         returned = self._model_graph(self._features, self._labels)
-        if len(returned) == 3:
-            self._predictions = returned[0]
-            self._loss = returned[1]
+        if type(returned) != list and type(returned) != tuple:
+            self._loss = returned
+        elif len(returned) == 3:
+            self._loss = returned[0]
+            self._predictions = returned[1]
             self._variables = returned[2]
         elif len(returned) == 2:
-            self._predictions = returned[0]
-            self._loss = returned[1]
+            self._loss = returned[0]
+            self._predictions = returned[1]
         else:
-            raise ValueError("The return of `model_graph` op must be `list` or `tuple` "
-                             "with content: [predicts, loss, variables] or "
-                             "[predicts, loss]. Got return value:", returned)
+            raise ValueError(
+                "The return of `model_graph` can be: `list` or `tuple` or a `Tensor`"
+                "`list` or `tuple` with content: [predicts, loss, variables] or "
+                "[predicts, loss]. Got return value:", returned)
         print("Building model graph complete!")
 
     def compile(self, learning_rate=1e-4):
@@ -73,6 +76,7 @@ class Model(object):
         You can also write:
         var_list = ['embeddings'], which will freeze all variable names contain str `embeddings`.
         """
+
         def is_frozen(var):
             for frozen_name in var_name_list:
                 if frozen_name in var:
@@ -100,18 +104,25 @@ class Model(object):
 
     def evaluate(self, features, labels):
         """ Evaluate model """
-        loss = self._sess.run(self._loss, feed_dict={self._features: features, self._labels: labels})
-        predicts = self._sess.run(self._predictions, feed_dict={self._features: features, self._labels: labels})
-        labels = np.array(labels)
-        predicts = np.array(predicts)
-        labels = np.reshape(labels, [-1, ])
-        predicts = np.reshape(predicts, [-1, ])
-        accuracy = np.mean([int(label) == int(predict) for label, predict in zip(labels, predicts)])
+        accuracy = 0.0
+        loss = self._sess.run(self._loss, feed_dict={
+            self._features: features, self._labels: labels})
+        if self._predictions is not None:
+            predicts = self._sess.run(self._predictions, feed_dict={
+                self._features: features, self._labels: labels})
+            labels = np.array(labels)
+            predicts = np.array(predicts)
+            labels = np.reshape(labels, [-1, ])
+            predicts = np.reshape(predicts, [-1, ])
+            accuracy = np.mean([int(label) == int(predict) for label, predict in zip(labels, predicts)])
         return loss, accuracy
 
     def predict(self, features, labels):
         """ Prediction """
-        predicts = self._sess.run(self._predictions, feed_dict={self._features: features, self._labels: labels})
+        predicts = ['']
+        if self._predictions is not None:
+            predicts = self._sess.run(self._predictions, feed_dict={
+                self._features: features, self._labels: labels})
         return predicts
 
     def validate(self, features, labels):
@@ -175,7 +186,7 @@ class Model(object):
                     all_train_acc.append(train_acc)
                 eval_features, eval_labels = eval_generator.next_batch()
                 predicts = self.predict(eval_features, eval_labels)
-                join_str = ' ' if len(str(predicts[0])) == 1 else '\n'
+                join_str = ' ' if len(str(predicts[0])) <= 1 else '\n'
                 eval_label_str = join_str.join([str(label) for label in eval_labels])
                 pred_label_str = join_str.join([str(pred) for pred in predicts])
                 print("************************************")

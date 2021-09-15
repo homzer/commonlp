@@ -165,3 +165,22 @@ def loop_slice(input_tensor, stride, width, num, axis, concat=True):
                 _tensor, axis=axis)
                 for _tensor in _results], axis=axis)
     return _results
+
+
+def cosine_difference(input_tensor):
+    """
+    Compute cosine difference.
+    :param input_tensor: 3-D `Tensor` with shape [batch, 2, hidden]
+    :return: acos.
+    """
+    distance_product = tf.reduce_prod(
+        tf.sqrt(
+            tf.reduce_sum(
+                tf.square(input_tensor), axis=-1)),
+        axis=-1)
+    vector_product = tf.reduce_sum(
+        tf.reduce_prod(
+            tf.transpose(
+                input_tensor, [0, 2, 1]), axis=-1),
+        axis=-1)
+    return tf.acos(vector_product / (distance_product + 1e-8))
